@@ -1,0 +1,63 @@
+Thành phố Long Xuyên, Tỉnh An Giang
+Thành phố Bà Rịa, Tỉnh Bà Rịa – Vũng Tàu
+Thành phố Bạc Liêu, Tỉnh Bạc Liêu
+Thành phố Bắc Giang, Tỉnh Bắc Giang
+Thành phố Bắc Kạn, Tỉnh Bắc Kạn
+Thành phố Bắc Ninh, Tỉnh Bắc Ninh
+Thành phố Bến Tre, Tỉnh Bến Tre
+Thành phố Thủ Dầu Một, Tỉnh Bình Dương
+Thành phố Quy Nhơn, Tỉnh Bình Định
+Thành phố Đồng Xoài, Tỉnh Bình Phước
+Thành phố Phan Thiết, Tỉnh Bình Thuận
+Thành phố Cà Mau, Tỉnh Cà Mau
+Thành phố Cao Bằng, Tỉnh Cao Bằng
+Thành phố Buôn Ma Thuột, Tỉnh Đắk Lắk
+Thành phố Gia Nghĩa, Tỉnh Đắk Nông
+Thành phố Điện Biên Phủ, Tỉnh Điện Biên
+Thành phố Biên Hòa, Tỉnh Đồng Nai
+Thành phố Cao Lãnh, Tỉnh Đồng Tháp
+Thành phố Pleiku, Tỉnh Gia Lai
+Thành phố Hà Giang, Tỉnh Hà Giang
+Thành phố Phủ Lý, Tỉnh Hà Nam
+Thành phố Hà Tĩnh, Tỉnh Hà Tĩnh
+Thành phố Hải Dương, Tỉnh Hải Dương
+Thành phố Vị Thanh, Tỉnh Hậu Giang
+Thành phố Hòa Bình, Tỉnh Hòa Bình
+Thành phố Hưng Yên, Tỉnh Hưng Yên
+Thành phố Nha Trang, Tỉnh Khánh Hòa
+Thành phố Rạch Giá, Tỉnh Kiên Giang
+Thành phố Kon Tum, Tỉnh Kon Tum
+Thành phố Lai Châu, Tỉnh Lai Châu
+Thành phố Lạng Sơn, Tỉnh Lạng Sơn
+Thành phố Lào Cai, Tỉnh Lào Cai
+Thành phố Đà Lạt, Tỉnh Lâm Đồng
+Thành phố Tân An, Tỉnh Long An
+Thành phố Nam Định, Tỉnh Nam Định
+Thành phố Vinh, Tỉnh Nghệ An
+Thành phố Ninh Bình, Tỉnh Ninh Bình
+Thành phố Phan Rang – Tháp Chàm, Tỉnh Ninh Thuận
+Thành phố Việt Trì, Tỉnh Phú Thọ
+Thành phố Tuy Hòa, Tỉnh Phú Yên
+Thành phố Đồng Hới, Tỉnh Quảng Bình
+Thành phố Tam Kỳ, Tỉnh Quảng Nam
+Thành phố Quảng Ngãi, Tỉnh Quảng Ngãi
+Thành phố Hạ Long, Tỉnh Quảng Ninh
+Thành phố Đông Hà, Tỉnh Quảng Trị
+Thành phố Sóc Trăng, Tỉnh Sóc Trăng
+Thành phố Sơn La, Tỉnh Sơn La
+Thành phố Tây Ninh, Tỉnh Tây Ninh
+Thành phố Thái Bình, Tỉnh Thái Bình
+Thành phố Thái Nguyên, Tỉnh Thái Nguyên
+Thành phố Thanh Hóa, Tỉnh Thanh Hóa
+Thành phố Huế, Tỉnh Thừa Thiên Huế
+Thành phố Mỹ Tho, Tỉnh Tiền Giang
+Thành phố Trà Vinh, Tỉnh Trà Vinh
+Thành phố Tuyên Quang, Tỉnh Tuyên Quang
+Thành phố Vĩnh Long, Tỉnh Vĩnh Long
+Thành phố Vĩnh Yên, Tỉnh Vĩnh Phúc
+Thành phố Yên Bái, Tỉnh Yên Bái
+Thành phố Hà Nội
+Thành phố Hải Phòng
+Thành phố Đà Nẵng
+Thành phố Hồ Chí Minh
+Thành phố Cần Thơ
