@@ -16,5 +16,15 @@ namespace ISAD_QLTuyenDung.HoTro
             mainPanel.Tag = f;
             f.Show();
         }
+
+        public static void refreshData(string query, DataGridView d, OracleConnection conn)
+        {
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            DataSet dt = new();
+            OracleDataAdapter ap = new(query, conn);
+            ap.Fill(dt);
+            conn.Close();
+            d.DataSource = dt;
+        }
     }
 }

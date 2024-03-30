@@ -1,28 +1,28 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using ISAD_QLTuyenDung.HoTro;
-using ISAD_QLTuyenDung.NghiepVu.LanhDao;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
     public partial class LanhDaoForm : Form
     {
         private readonly string curUser;
-        private readonly string conn;
+        private readonly OracleConnection conn;
 
         public LanhDaoForm(string curUser, string conn)
         {
             InitializeComponent();
             this.curUser = curUser;
-            this.conn = conn;
+            this.conn = new(conn);
         }
 
         private void LanhDaoForm_Load(object sender, EventArgs e)
         {
+            empName.Text = $"{curUser} - " + NghiepVu.LanhDao.LanhDaoForm.LanhDaoLoad(curUser, conn);
         }
 
         private void DanhGiaDNButton_Click(object sender, EventArgs e)
         {
-            Helper.Loadform(new DanhGiaTiemNang(), mainPanel);
+            Helper.Loadform(new DanhGiaTiemNang(curUser, conn), mainPanel);
         }
 
         private void QuanLyUDButton_Click(object sender, EventArgs e)

@@ -93,10 +93,10 @@
             // 
             // password
             // 
-            password.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            password.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             password.Location = new Point(66, 226);
             password.Name = "password";
-            password.Size = new Size(250, 27);
+            password.Size = new Size(250, 30);
             password.TabIndex = 2;
             password.UseSystemPasswordChar = true;
             password.KeyDown += Password_KeyDown;
@@ -115,10 +115,10 @@
             // username
             // 
             username.CharacterCasing = CharacterCasing.Upper;
-            username.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            username.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             username.Location = new Point(66, 136);
             username.Name = "username";
-            username.Size = new Size(250, 27);
+            username.Size = new Size(250, 30);
             username.TabIndex = 0;
             username.KeyDown += Username_KeyDown;
             // 

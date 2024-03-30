@@ -22,10 +22,11 @@ namespace ISAD_QLTuyenDung.GiaoDien
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                     return;
                 }
-
+                
                 string connString = $"Data Source = {OracleConfig.connString};" +
                     $"User Id = {username.Text};password = {password.Text};";
 
+                this.Hide();
                 if (username.Text[..4] == "N3LD")
                 {
                     LanhDaoForm form = new(username.Text, connString);
