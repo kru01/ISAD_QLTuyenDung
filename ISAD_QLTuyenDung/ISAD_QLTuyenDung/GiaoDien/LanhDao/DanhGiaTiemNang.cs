@@ -4,7 +4,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
     public partial class DanhGiaTiemNang : Form
     {
-        private static ThemDanhGia? f;
+        private static ThemDanhGia? formDG;
+        private static ThongKe? formTK;
         private readonly OracleConnection conn;
         private readonly string curUser;
 
@@ -22,9 +23,9 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void ThemDGButton_Click(object sender, EventArgs e)
         {
-            f = new(curUser, conn);
-            f.FormClosedEvent += FormClosedEvent;
-            f.Show();
+            formDG = new(curUser, conn);
+            formDG.FormClosedEvent += FormClosedEvent;
+            formDG.Show();
         }
 
         private void FormClosedEvent(object? sender, EventArgs e)
@@ -51,6 +52,19 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
         private void LapDSTNButton_Click(object sender, EventArgs e)
         {
             NghiepVu.LanhDao.DanhGiaTiemNang.ExportDanhGia(DanhGiaData);
+        }
+
+        private void ThongKeButton_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(DNThongKe.Text))
+            {
+                MessageBox.Show("Cần nhập mã doanh nghiệp để thống kê!");
+            }
+            else
+            {
+                formTK = new(DNThongKe.Text, conn);
+                formTK.Show();
+            }
         }
     }
 }

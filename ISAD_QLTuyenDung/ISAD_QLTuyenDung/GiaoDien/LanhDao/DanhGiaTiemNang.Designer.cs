@@ -44,7 +44,7 @@
             panel2 = new Panel();
             LamMoiButton = new Button();
             lapDSTNButton = new Button();
-            textBox1 = new TextBox();
+            DNThongKe = new TextBox();
             ThemDGButton = new Button();
             ThongKeButton = new Button();
             panel1.SuspendLayout();
@@ -215,7 +215,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(LamMoiButton);
             panel2.Controls.Add(lapDSTNButton);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(DNThongKe);
             panel2.Controls.Add(ThemDGButton);
             panel2.Controls.Add(ThongKeButton);
             panel2.Location = new Point(12, 31);
@@ -253,12 +253,13 @@
             lapDSTNButton.UseVisualStyleBackColor = false;
             lapDSTNButton.Click += LapDSTNButton_Click;
             // 
-            // textBox1
+            // DNThongKe
             // 
-            textBox1.Location = new Point(187, 48);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 4;
+            DNThongKe.CharacterCasing = CharacterCasing.Upper;
+            DNThongKe.Location = new Point(187, 48);
+            DNThongKe.Name = "DNThongKe";
+            DNThongKe.Size = new Size(125, 27);
+            DNThongKe.TabIndex = 4;
             // 
             // ThemDGButton
             // 
@@ -288,6 +289,7 @@
             ThongKeButton.TabIndex = 3;
             ThongKeButton.Text = "Thống kê";
             ThongKeButton.UseVisualStyleBackColor = false;
+            ThongKeButton.Click += ThongKeButton_Click;
             // 
             // DanhGiaTiemNang
             // 
@@ -316,7 +318,7 @@
         private Panel panel2;
         private Label label1;
         private Button ThemDGButton;
-        private TextBox textBox1;
+        private TextBox DNThongKe;
         private Button ThongKeButton;
         private Button lapDSTNButton;
         private Label label2;

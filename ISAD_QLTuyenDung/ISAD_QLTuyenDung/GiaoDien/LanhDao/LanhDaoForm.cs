@@ -27,7 +27,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void QuanLyUDButton_Click(object sender, EventArgs e)
         {
-            Helper.Loadform(new DeXuatCLUuDai(), mainPanel);
+            Helper.Loadform(new DeXuatCLUuDai(curUser, conn), mainPanel);
         }
 
         private void DangXuatButton_Click(object sender, EventArgs e)

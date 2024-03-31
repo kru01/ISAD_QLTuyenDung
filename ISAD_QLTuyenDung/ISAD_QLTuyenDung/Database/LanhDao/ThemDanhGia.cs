@@ -1,7 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using ISAD_QLTuyenDung.HoTro;
 using System.Data;
-using System.Windows.Forms;
 
 namespace ISAD_QLTuyenDung.Database.LanhDao
 {
@@ -20,7 +19,7 @@ namespace ISAD_QLTuyenDung.Database.LanhDao
         public static bool ThemDG(string maDN, string maLD, int danhGia, string ghiChu, OracleConnection conn)
         {
             String sql = $"INSERT INTO {OracleConfig.schema}.DNTIEMNANG " +
-                $"SELECT '{maDN}', '{maLD}', {danhGia}, '{ghiChu}', TO_DATE(CURRENT_DATE, 'DD/MM/YYYY') FROM DUAL";
+                $"VALUES('{maDN}', '{maLD}', {danhGia}, '{ghiChu}', TRUNC(CURRENT_DATE))";
 
             OracleCommand cmd = new(sql, conn);
 

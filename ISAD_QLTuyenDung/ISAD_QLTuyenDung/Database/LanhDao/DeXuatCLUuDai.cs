@@ -4,13 +4,13 @@ using System.Data;
 
 namespace ISAD_QLTuyenDung.Database.LanhDao
 {
-    internal class DanhGiaTiemNang
+    internal class DeXuatCLUuDai
     {
-        private static readonly string sql = $"SELECT DG.MADN, DN.TENCTY, DG.LDDANHGIA, NS.HOTEN, DG.TIEMNANG, DG.GHICHU, DG.NGAYCAPNHAT " +
-                $"FROM {OracleConfig.schema}.DNTIEMNANG DG JOIN {OracleConfig.schema}.DOANHNGHIEP DN ON DG.MADN=DN.MADN " +
-                $"JOIN {OracleConfig.schema}.NHANSU NS ON DG.LDDANHGIA=NS.MANV";
+        private static readonly string sql = $"SELECT CL.TENCL, CL.MOTA, CL.LDDEXUAT, NS.HOTEN " +
+            $"FROM {OracleConfig.schema}.CHIENLUOCUUDAI CL JOIN {OracleConfig.schema}.NHANSU NS " +
+            $"ON CL.LDDEXUAT = NS.MANV";
 
-        public static DataTable LayDanhGia(OracleConnection conn)
+        public static DataTable LayChienLuocUuDai(OracleConnection conn)
         {
             if (conn.State == ConnectionState.Closed) conn.Open();
             OracleDataAdapter adp = new(sql, conn);

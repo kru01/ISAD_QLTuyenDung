@@ -211,6 +211,7 @@
             Name = "NhanVienForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Nhân viên";
+            Load += NhanVienForm_Load;
             navigator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

@@ -16,5 +16,10 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
         {
             InitializeComponent();
         }
+
+        private void LapHoSoTuyenDung_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

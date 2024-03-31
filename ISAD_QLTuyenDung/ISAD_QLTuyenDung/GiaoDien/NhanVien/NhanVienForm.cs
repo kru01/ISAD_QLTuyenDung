@@ -51,5 +51,10 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
                 this.Close();
             }
         }
+
+        private void NhanVienForm_Load(object sender, EventArgs e)
+        {
+            //empName.Text = $"{curUser} - " + NghiepVu.LanhDao.LanhDaoForm.LanhDaoLoad(curUser, conn);
+        }
     }
 }
