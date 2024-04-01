@@ -20,7 +20,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
             var res = MessageBox.Show("Bạn có chắc là muốn thoát khỏi thêm chiến lược?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
-                this.Close();
+                Close();
             }
         }
 
@@ -34,7 +34,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
             {
                 MessageBox.Show("Thêm đánh giá thành công!");
                 FormClosedEvent?.Invoke(this, EventArgs.Empty);
-                this.Close();
+                Close();
             }
         }
     }

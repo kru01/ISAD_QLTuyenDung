@@ -5,9 +5,9 @@ namespace ISAD_QLTuyenDung.NghiepVu.LanhDao
 {
     internal class ThemDanhGia
     {
-        public static DataSet ThemIDDoanhNghiep(string query, OracleConnection conn)
+        public static DataSet ThemIDDoanhNghiep(OracleConnection conn)
         {
-            return Database.LanhDao.ThemDanhGia.KiemTraThemID(query, conn);
+            return Database.LanhDao.ThemDanhGia.LayIDDoanhNghiep(conn);
         }
 
         public static bool KiemTraThemDanhGia(string maDN, string maLD, int danhGia, string ghiChu, OracleConnection conn)

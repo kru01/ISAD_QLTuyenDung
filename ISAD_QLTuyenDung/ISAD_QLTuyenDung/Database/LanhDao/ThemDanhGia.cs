@@ -6,11 +6,13 @@ namespace ISAD_QLTuyenDung.Database.LanhDao
 {
     internal class ThemDanhGia
     {
-        public static DataSet KiemTraThemID(string query, OracleConnection conn)
+        public static DataSet LayIDDoanhNghiep(OracleConnection conn)
         {
+            String sql = $"SELECT MADN, TENCTY FROM {OracleConfig.schema}.DOANHNGHIEP ORDER BY MADN";
+
             if (conn.State == ConnectionState.Closed) conn.Open();
             DataSet dt = new();
-            OracleDataAdapter ap = new(query, conn);
+            OracleDataAdapter ap = new(sql, conn);
             ap.Fill(dt);
             conn.Close();
             return dt;

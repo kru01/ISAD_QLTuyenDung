@@ -18,11 +18,9 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void ThemDanhGia_Load(object sender, EventArgs e)
         {
-            String sql = $"SELECT MADN, TENCTY FROM {OracleConfig.schema}.DOANHNGHIEP ORDER BY MADN";
-
             idCbo.DisplayMember = "TENCTY";
             idCbo.ValueMember = "MADN";
-            idCbo.DataSource = NghiepVu.LanhDao.ThemDanhGia.ThemIDDoanhNghiep(sql, conn).Tables[0];
+            idCbo.DataSource = NghiepVu.LanhDao.ThemDanhGia.ThemIDDoanhNghiep(conn).Tables[0];
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
