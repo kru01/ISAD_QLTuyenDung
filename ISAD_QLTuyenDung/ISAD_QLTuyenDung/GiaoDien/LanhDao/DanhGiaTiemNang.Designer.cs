@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            label2 = new Label();
+            XemDGTitleLabel = new Label();
             panel3 = new Panel();
-            label6 = new Label();
-            tiemNang = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
-            tenDN = new TextBox();
-            tenLD = new TextBox();
-            label3 = new Label();
-            ghiChu = new TextBox();
-            label1 = new Label();
+            TiemNangLabel = new Label();
+            TiemNangBox = new TextBox();
+            TenDNLabel = new Label();
+            TenLDLabel = new Label();
+            TenDNBox = new TextBox();
+            TenLDBox = new TextBox();
+            GhiChuLabel = new Label();
+            GhiChuBox = new TextBox();
+            DanhGiaDNTitleLabel = new Label();
             DanhGiaData = new DataGridView();
             panel2 = new Panel();
             LamMoiButton = new Button();
             lapDSTNButton = new Button();
-            DNThongKe = new TextBox();
+            DNThongKeBox = new TextBox();
             ThemDGButton = new Button();
             ThongKeButton = new Button();
+            LapDSTiemNangTip = new ToolTip(components);
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DanhGiaData).BeginInit();
@@ -56,9 +58,9 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(XemDGTitleLabel);
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(DanhGiaDNTitleLabel);
             panel1.Controls.Add(DanhGiaData);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
@@ -67,128 +69,128 @@
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 0;
             // 
-            // label2
+            // XemDGTitleLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.LightSeaGreen;
-            label2.Location = new Point(547, 13);
-            label2.Name = "label2";
-            label2.Size = new Size(162, 31);
-            label2.TabIndex = 8;
-            label2.Text = "Xem đánh giá";
+            XemDGTitleLabel.AutoSize = true;
+            XemDGTitleLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            XemDGTitleLabel.ForeColor = Color.LightSeaGreen;
+            XemDGTitleLabel.Location = new Point(547, 13);
+            XemDGTitleLabel.Name = "XemDGTitleLabel";
+            XemDGTitleLabel.Size = new Size(162, 31);
+            XemDGTitleLabel.TabIndex = 8;
+            XemDGTitleLabel.Text = "Xem đánh giá";
             // 
             // panel3
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(tiemNang);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(tenDN);
-            panel3.Controls.Add(tenLD);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(ghiChu);
+            panel3.Controls.Add(TiemNangLabel);
+            panel3.Controls.Add(TiemNangBox);
+            panel3.Controls.Add(TenDNLabel);
+            panel3.Controls.Add(TenLDLabel);
+            panel3.Controls.Add(TenDNBox);
+            panel3.Controls.Add(TenLDBox);
+            panel3.Controls.Add(GhiChuLabel);
+            panel3.Controls.Add(GhiChuBox);
             panel3.Location = new Point(368, 31);
             panel3.Name = "panel3";
             panel3.Size = new Size(520, 250);
             panel3.TabIndex = 7;
             // 
-            // label6
+            // TiemNangLabel
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.LightSeaGreen;
-            label6.Location = new Point(375, 94);
-            label6.Name = "label6";
-            label6.Size = new Size(91, 23);
-            label6.TabIndex = 14;
-            label6.Text = "Tiềm năng";
+            TiemNangLabel.AutoSize = true;
+            TiemNangLabel.BackColor = Color.Transparent;
+            TiemNangLabel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TiemNangLabel.ForeColor = Color.LightSeaGreen;
+            TiemNangLabel.Location = new Point(375, 94);
+            TiemNangLabel.Name = "TiemNangLabel";
+            TiemNangLabel.Size = new Size(91, 23);
+            TiemNangLabel.TabIndex = 14;
+            TiemNangLabel.Text = "Tiềm năng";
             // 
-            // tiemNang
+            // TiemNangBox
             // 
-            tiemNang.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tiemNang.Location = new Point(384, 120);
-            tiemNang.Name = "tiemNang";
-            tiemNang.ReadOnly = true;
-            tiemNang.Size = new Size(75, 30);
-            tiemNang.TabIndex = 13;
+            TiemNangBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TiemNangBox.Location = new Point(384, 120);
+            TiemNangBox.Name = "TiemNangBox";
+            TiemNangBox.ReadOnly = true;
+            TiemNangBox.Size = new Size(75, 30);
+            TiemNangBox.TabIndex = 13;
             // 
-            // label5
+            // TenDNLabel
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.LightSeaGreen;
-            label5.Location = new Point(59, 24);
-            label5.Name = "label5";
-            label5.Size = new Size(148, 23);
-            label5.TabIndex = 12;
-            label5.Text = "Tên doanh nghiệp";
+            TenDNLabel.AutoSize = true;
+            TenDNLabel.BackColor = Color.Transparent;
+            TenDNLabel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TenDNLabel.ForeColor = Color.LightSeaGreen;
+            TenDNLabel.Location = new Point(59, 24);
+            TenDNLabel.Name = "TenDNLabel";
+            TenDNLabel.Size = new Size(148, 23);
+            TenDNLabel.TabIndex = 12;
+            TenDNLabel.Text = "Tên doanh nghiệp";
             // 
-            // label4
+            // TenLDLabel
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.LightSeaGreen;
-            label4.Location = new Point(59, 94);
-            label4.Name = "label4";
-            label4.Size = new Size(180, 23);
-            label4.TabIndex = 11;
-            label4.Text = "Tên lãnh đạo đánh giá";
+            TenLDLabel.AutoSize = true;
+            TenLDLabel.BackColor = Color.Transparent;
+            TenLDLabel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TenLDLabel.ForeColor = Color.LightSeaGreen;
+            TenLDLabel.Location = new Point(59, 94);
+            TenLDLabel.Name = "TenLDLabel";
+            TenLDLabel.Size = new Size(180, 23);
+            TenLDLabel.TabIndex = 11;
+            TenLDLabel.Text = "Tên lãnh đạo đánh giá";
             // 
-            // tenDN
+            // TenDNBox
             // 
-            tenDN.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tenDN.Location = new Point(59, 50);
-            tenDN.Name = "tenDN";
-            tenDN.ReadOnly = true;
-            tenDN.Size = new Size(400, 30);
-            tenDN.TabIndex = 11;
+            TenDNBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TenDNBox.Location = new Point(59, 50);
+            TenDNBox.Name = "TenDNBox";
+            TenDNBox.ReadOnly = true;
+            TenDNBox.Size = new Size(400, 30);
+            TenDNBox.TabIndex = 11;
             // 
-            // tenLD
+            // TenLDBox
             // 
-            tenLD.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tenLD.Location = new Point(59, 120);
-            tenLD.Name = "tenLD";
-            tenLD.ReadOnly = true;
-            tenLD.Size = new Size(300, 30);
-            tenLD.TabIndex = 10;
+            TenLDBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TenLDBox.Location = new Point(59, 120);
+            TenLDBox.Name = "TenLDBox";
+            TenLDBox.ReadOnly = true;
+            TenLDBox.Size = new Size(300, 30);
+            TenLDBox.TabIndex = 10;
             // 
-            // label3
+            // GhiChuLabel
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.LightSeaGreen;
-            label3.Location = new Point(59, 164);
-            label3.Name = "label3";
-            label3.Size = new Size(69, 23);
-            label3.TabIndex = 9;
-            label3.Text = "Ghi chú";
+            GhiChuLabel.AutoSize = true;
+            GhiChuLabel.BackColor = Color.Transparent;
+            GhiChuLabel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            GhiChuLabel.ForeColor = Color.LightSeaGreen;
+            GhiChuLabel.Location = new Point(59, 164);
+            GhiChuLabel.Name = "GhiChuLabel";
+            GhiChuLabel.Size = new Size(69, 23);
+            GhiChuLabel.TabIndex = 9;
+            GhiChuLabel.Text = "Ghi chú";
             // 
-            // ghiChu
+            // GhiChuBox
             // 
-            ghiChu.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ghiChu.Location = new Point(59, 190);
-            ghiChu.Name = "ghiChu";
-            ghiChu.ReadOnly = true;
-            ghiChu.Size = new Size(400, 30);
-            ghiChu.TabIndex = 4;
+            GhiChuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GhiChuBox.Location = new Point(59, 190);
+            GhiChuBox.Name = "GhiChuBox";
+            GhiChuBox.ReadOnly = true;
+            GhiChuBox.Size = new Size(400, 30);
+            GhiChuBox.TabIndex = 4;
             // 
-            // label1
+            // DanhGiaDNTitleLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.LightSeaGreen;
-            label1.Location = new Point(55, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(265, 31);
-            label1.TabIndex = 2;
-            label1.Text = "Đánh giá doanh nghiệp";
+            DanhGiaDNTitleLabel.AutoSize = true;
+            DanhGiaDNTitleLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DanhGiaDNTitleLabel.ForeColor = Color.LightSeaGreen;
+            DanhGiaDNTitleLabel.Location = new Point(55, 15);
+            DanhGiaDNTitleLabel.Name = "DanhGiaDNTitleLabel";
+            DanhGiaDNTitleLabel.Size = new Size(265, 31);
+            DanhGiaDNTitleLabel.TabIndex = 2;
+            DanhGiaDNTitleLabel.Text = "Đánh giá doanh nghiệp";
             // 
             // DanhGiaData
             // 
@@ -215,7 +217,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(LamMoiButton);
             panel2.Controls.Add(lapDSTNButton);
-            panel2.Controls.Add(DNThongKe);
+            panel2.Controls.Add(DNThongKeBox);
             panel2.Controls.Add(ThemDGButton);
             panel2.Controls.Add(ThongKeButton);
             panel2.Location = new Point(12, 31);
@@ -250,16 +252,17 @@
             lapDSTNButton.Size = new Size(275, 40);
             lapDSTNButton.TabIndex = 6;
             lapDSTNButton.Text = "Lập danh sách tiềm năng";
+            LapDSTiemNangTip.SetToolTip(lapDSTNButton, "Toàn bảng sẽ được copy vào clipboard. Nếu Excel không tự động mở, vui lòng paste vào nơi cần thiết.");
             lapDSTNButton.UseVisualStyleBackColor = false;
             lapDSTNButton.Click += LapDSTNButton_Click;
             // 
-            // DNThongKe
+            // DNThongKeBox
             // 
-            DNThongKe.CharacterCasing = CharacterCasing.Upper;
-            DNThongKe.Location = new Point(187, 48);
-            DNThongKe.Name = "DNThongKe";
-            DNThongKe.Size = new Size(125, 27);
-            DNThongKe.TabIndex = 4;
+            DNThongKeBox.CharacterCasing = CharacterCasing.Upper;
+            DNThongKeBox.Location = new Point(187, 48);
+            DNThongKeBox.Name = "DNThongKeBox";
+            DNThongKeBox.Size = new Size(125, 27);
+            DNThongKeBox.TabIndex = 4;
             // 
             // ThemDGButton
             // 
@@ -316,21 +319,22 @@
         private Panel panel1;
         private DataGridView DanhGiaData;
         private Panel panel2;
-        private Label label1;
+        private Label DanhGiaDNTitleLabel;
         private Button ThemDGButton;
-        private TextBox DNThongKe;
+        private TextBox DNThongKeBox;
         private Button ThongKeButton;
         private Button lapDSTNButton;
-        private Label label2;
+        private Label XemDGTitleLabel;
         private Panel panel3;
-        private TextBox ghiChu;
-        private Label label3;
-        private Label label4;
-        private TextBox tenDN;
-        private TextBox tenLD;
-        private Label label5;
-        private Label label6;
-        private TextBox tiemNang;
+        private TextBox GhiChuBox;
+        private Label GhiChuLabel;
+        private Label TenLDLabel;
+        private TextBox TenDNBox;
+        private TextBox TenLDBox;
+        private Label TenDNLabel;
+        private Label TiemNangLabel;
+        private TextBox TiemNangBox;
         private Button LamMoiButton;
+        private ToolTip LapDSTiemNangTip;
     }
 }

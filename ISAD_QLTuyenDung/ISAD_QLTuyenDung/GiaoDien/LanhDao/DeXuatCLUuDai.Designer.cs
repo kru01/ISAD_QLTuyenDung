@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label2 = new Label();
+            FormTitleLabel = new Label();
             panel3 = new Panel();
-            label4 = new Label();
-            label3 = new Label();
-            tenLD = new TextBox();
+            MaCLLabel = new Label();
+            MaCLBox = new TextBox();
+            TenLDLabel = new Label();
+            TenCLLabel = new Label();
+            TenLDBox = new TextBox();
             LamMoiButton = new Button();
             ThemChienLuocButton = new Button();
-            tenCL = new TextBox();
-            label5 = new Label();
-            moTa = new TextBox();
+            TenCLBox = new TextBox();
+            MoTaLabel = new Label();
+            MoTaBox = new TextBox();
             ChienLuocData = new DataGridView();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -48,7 +50,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(FormTitleLabel);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(ChienLuocData);
             panel1.Dock = DockStyle.Fill;
@@ -57,66 +59,89 @@
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 1;
             // 
-            // label2
+            // FormTitleLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.LightSeaGreen;
-            label2.Location = new Point(323, 11);
-            label2.Name = "label2";
-            label2.Size = new Size(254, 31);
-            label2.TabIndex = 7;
-            label2.Text = "Xem chiến lược ưu đãi";
+            FormTitleLabel.AutoSize = true;
+            FormTitleLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FormTitleLabel.ForeColor = Color.LightSeaGreen;
+            FormTitleLabel.Location = new Point(323, 11);
+            FormTitleLabel.Name = "FormTitleLabel";
+            FormTitleLabel.Size = new Size(254, 31);
+            FormTitleLabel.TabIndex = 7;
+            FormTitleLabel.Text = "Xem chiến lược ưu đãi";
             // 
             // panel3
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(tenLD);
+            panel3.Controls.Add(MaCLLabel);
+            panel3.Controls.Add(MaCLBox);
+            panel3.Controls.Add(TenLDLabel);
+            panel3.Controls.Add(TenCLLabel);
+            panel3.Controls.Add(TenLDBox);
             panel3.Controls.Add(LamMoiButton);
             panel3.Controls.Add(ThemChienLuocButton);
-            panel3.Controls.Add(tenCL);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(moTa);
+            panel3.Controls.Add(TenCLBox);
+            panel3.Controls.Add(MoTaLabel);
+            panel3.Controls.Add(MoTaBox);
             panel3.Location = new Point(12, 28);
             panel3.Name = "panel3";
             panel3.Size = new Size(876, 266);
             panel3.TabIndex = 6;
             // 
-            // label4
+            // MaCLLabel
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.LightSeaGreen;
-            label4.Location = new Point(546, 44);
-            label4.Name = "label4";
-            label4.Size = new Size(171, 23);
-            label4.TabIndex = 20;
-            label4.Text = "Tên lãnh đạo đề xuất";
+            MaCLLabel.AutoSize = true;
+            MaCLLabel.BackColor = Color.Transparent;
+            MaCLLabel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MaCLLabel.ForeColor = Color.LightSeaGreen;
+            MaCLLabel.Location = new Point(54, 44);
+            MaCLLabel.Name = "MaCLLabel";
+            MaCLLabel.Size = new Size(119, 23);
+            MaCLLabel.TabIndex = 22;
+            MaCLLabel.Text = "Mã chiến lược";
             // 
-            // label3
+            // MaCLBox
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.LightSeaGreen;
-            label3.Location = new Point(54, 44);
-            label3.Name = "label3";
-            label3.Size = new Size(120, 23);
-            label3.TabIndex = 19;
-            label3.Text = "Tên chiến lược";
+            MaCLBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaCLBox.Location = new Point(54, 70);
+            MaCLBox.Name = "MaCLBox";
+            MaCLBox.ReadOnly = true;
+            MaCLBox.Size = new Size(119, 30);
+            MaCLBox.TabIndex = 21;
             // 
-            // tenLD
+            // TenLDLabel
             // 
-            tenLD.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tenLD.Location = new Point(546, 70);
-            tenLD.Name = "tenLD";
-            tenLD.ReadOnly = true;
-            tenLD.Size = new Size(275, 30);
-            tenLD.TabIndex = 17;
+            TenLDLabel.AutoSize = true;
+            TenLDLabel.BackColor = Color.Transparent;
+            TenLDLabel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TenLDLabel.ForeColor = Color.LightSeaGreen;
+            TenLDLabel.Location = new Point(546, 44);
+            TenLDLabel.Name = "TenLDLabel";
+            TenLDLabel.Size = new Size(171, 23);
+            TenLDLabel.TabIndex = 20;
+            TenLDLabel.Text = "Tên lãnh đạo đề xuất";
+            // 
+            // TenCLLabel
+            // 
+            TenCLLabel.AutoSize = true;
+            TenCLLabel.BackColor = Color.Transparent;
+            TenCLLabel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TenCLLabel.ForeColor = Color.LightSeaGreen;
+            TenCLLabel.Location = new Point(202, 44);
+            TenCLLabel.Name = "TenCLLabel";
+            TenCLLabel.Size = new Size(120, 23);
+            TenCLLabel.TabIndex = 19;
+            TenCLLabel.Text = "Tên chiến lược";
+            // 
+            // TenLDBox
+            // 
+            TenLDBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TenLDBox.Location = new Point(546, 70);
+            TenLDBox.Name = "TenLDBox";
+            TenLDBox.ReadOnly = true;
+            TenLDBox.Size = new Size(275, 30);
+            TenLDBox.TabIndex = 17;
             // 
             // LamMoiButton
             // 
@@ -148,35 +173,35 @@
             ThemChienLuocButton.UseVisualStyleBackColor = false;
             ThemChienLuocButton.Click += ThemChienLuocButton_Click;
             // 
-            // tenCL
+            // TenCLBox
             // 
-            tenCL.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tenCL.Location = new Point(54, 70);
-            tenCL.Name = "tenCL";
-            tenCL.ReadOnly = true;
-            tenCL.Size = new Size(450, 30);
-            tenCL.TabIndex = 15;
+            TenCLBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TenCLBox.Location = new Point(202, 70);
+            TenCLBox.Name = "TenCLBox";
+            TenCLBox.ReadOnly = true;
+            TenCLBox.Size = new Size(302, 30);
+            TenCLBox.TabIndex = 15;
             // 
-            // label5
+            // MoTaLabel
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.LightSeaGreen;
-            label5.Location = new Point(54, 150);
-            label5.Name = "label5";
-            label5.Size = new Size(56, 23);
-            label5.TabIndex = 14;
-            label5.Text = "Mô tả";
+            MoTaLabel.AutoSize = true;
+            MoTaLabel.BackColor = Color.Transparent;
+            MoTaLabel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MoTaLabel.ForeColor = Color.LightSeaGreen;
+            MoTaLabel.Location = new Point(54, 150);
+            MoTaLabel.Name = "MoTaLabel";
+            MoTaLabel.Size = new Size(56, 23);
+            MoTaLabel.TabIndex = 14;
+            MoTaLabel.Text = "Mô tả";
             // 
-            // moTa
+            // MoTaBox
             // 
-            moTa.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            moTa.Location = new Point(54, 180);
-            moTa.Name = "moTa";
-            moTa.ReadOnly = true;
-            moTa.Size = new Size(500, 30);
-            moTa.TabIndex = 13;
+            MoTaBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MoTaBox.Location = new Point(54, 180);
+            MoTaBox.Name = "MoTaBox";
+            MoTaBox.ReadOnly = true;
+            MoTaBox.Size = new Size(500, 30);
+            MoTaBox.TabIndex = 13;
             // 
             // ChienLuocData
             // 
@@ -222,12 +247,14 @@
         private DataGridView ChienLuocData;
         private Panel panel3;
         private Button LamMoiButton;
-        private Label label2;
-        private Label label5;
-        private TextBox moTa;
-        private TextBox tenCL;
-        private TextBox tenLD;
-        private Label label4;
-        private Label label3;
+        private Label FormTitleLabel;
+        private Label MoTaLabel;
+        private TextBox MoTaBox;
+        private TextBox TenCLBox;
+        private TextBox TenLDBox;
+        private Label TenLDLabel;
+        private Label TenCLLabel;
+        private Label MaCLLabel;
+        private TextBox MaCLBox;
     }
 }

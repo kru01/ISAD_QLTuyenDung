@@ -12,7 +12,7 @@
             {
                 try
                 {
-                    Database.Login.KiemTraLogin(username, password);
+                    Database.LoginDB.KiemTraLogin(username, password);
                     return true;
                 }
                 catch (Exception)

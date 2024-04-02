@@ -1,13 +1,14 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using ISAD_QLTuyenDung.NghiepVu;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
-    public partial class ThongKe : Form
+    public partial class ThongKeDoanhNghiep : Form
     {
-        private readonly string maDoanhNghiep;
-        private OracleConnection conn;
+        readonly string maDoanhNghiep;
+        readonly OracleConnection conn;
 
-        public ThongKe(string maDN, OracleConnection conn)
+        public ThongKeDoanhNghiep(string maDN, OracleConnection conn)
         {
             InitializeComponent();
             this.maDoanhNghiep = maDN;
@@ -17,7 +18,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
         private void ThongKe_Load(object sender, EventArgs e)
         {
             maDN.Text = maDoanhNghiep;
-            DoanhNghiepData.DataSource = NghiepVu.LanhDao.ThongKe.LoadThongKe(maDoanhNghiep, conn);
+            DoanhNghiepData.DataSource = DNTiemNang.LoadThongKe(maDoanhNghiep, conn);
         }
     }
 }

@@ -65,9 +65,12 @@
             // 
             ratingBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ratingBox.Location = new Point(404, 112);
+            ratingBox.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            ratingBox.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             ratingBox.Name = "ratingBox";
             ratingBox.Size = new Size(75, 30);
             ratingBox.TabIndex = 12;
+            ratingBox.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // CancelButton
             // 

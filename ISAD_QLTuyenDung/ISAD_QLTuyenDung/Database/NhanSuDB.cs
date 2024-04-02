@@ -1,14 +1,14 @@
 ﻿using ISAD_QLTuyenDung.HoTro;
 using Oracle.ManagedDataAccess.Client;
 
-namespace ISAD_QLTuyenDung.Database.LanhDao
+namespace ISAD_QLTuyenDung.Database
 {
-    internal class LanhDaoForm
+    internal class NhanSuDB
     {
-        public static string LanhDaoLoad(string curUser, OracleConnection conn)
+        public static string LayTenLanhDao(string curUser, OracleConnection conn)
         {
-            String sql = $"SELECT HOTEN FROM {OracleConfig.schema}.NHANSU WHERE MANV='{curUser}'";
-            String name = " ";
+            string sql = $"SELECT HOTEN FROM {OracleConfig.schema}.NHANSU WHERE MANV='{curUser}'";
+            string name = " ";
             OracleConnection connection = conn;
             OracleCommand cmd = new(sql, conn);
             try

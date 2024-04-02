@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using ISAD_QLTuyenDung.NghiepVu;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
@@ -17,7 +18,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void DeXuatCLUuDai_Load(object sender, EventArgs e)
         {
-            ChienLuocData.DataSource = NghiepVu.LanhDao.DeXuatCLUuDai.LoadChienLuoc(conn);
+            LamMoiButton.PerformClick();
         }
 
         private void ThemChienLuocButton_Click(object sender, EventArgs e)
@@ -29,22 +30,22 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void FormClosedEvent(object? sender, EventArgs e)
         {
-            ChienLuocData.DataSource = NghiepVu.LanhDao.DeXuatCLUuDai.LoadChienLuoc(conn);
+            ChienLuocData.DataSource = ChienLuocUuDai.LoadChienLuoc(conn, f?.chienLuoc);
         }
 
         private void ChienLuocData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1 || e.RowIndex == ChienLuocData.RowCount) return;
             DataGridViewRow cRow = ChienLuocData.Rows[e.RowIndex];
-
-            moTa.Text = cRow.Cells["MOTA"].Value.ToString();
-            tenLD.Text = cRow.Cells["HOTEN"].Value.ToString();
-            tenCL.Text = cRow.Cells["TENCL"].Value.ToString();
+            MaCLBox.Text = cRow.Cells["MACL"].Value.ToString();
+            TenCLBox.Text = cRow.Cells["TENCL"].Value.ToString();
+            MoTaBox.Text = cRow.Cells["MOTA"].Value.ToString();
+            TenLDBox.Text = cRow.Cells["HOTEN"].Value.ToString();
         }
 
         private void LamMoiButton_Click(object sender, EventArgs e)
         {
-            ChienLuocData.DataSource = NghiepVu.LanhDao.DeXuatCLUuDai.LoadChienLuoc(conn);
+            ChienLuocData.DataSource = ChienLuocUuDai.LoadChienLuoc(conn);
         }
     }
 }

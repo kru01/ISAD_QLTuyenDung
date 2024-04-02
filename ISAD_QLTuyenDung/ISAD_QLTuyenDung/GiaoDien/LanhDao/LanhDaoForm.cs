@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using ISAD_QLTuyenDung.NghiepVu;
 using ISAD_QLTuyenDung.HoTro;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
@@ -17,7 +18,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void LanhDaoForm_Load(object sender, EventArgs e)
         {
-            empName.Text = $"{curUser} - " + NghiepVu.LanhDao.LanhDaoForm.LanhDaoLoad(curUser, conn);
+            empName.Text = $"{curUser} - " + NhanSu.LanhDaoLoad(curUser, conn);
         }
 
         private void DanhGiaDNButton_Click(object sender, EventArgs e)

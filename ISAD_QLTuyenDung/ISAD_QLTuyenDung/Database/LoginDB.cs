@@ -3,7 +3,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace ISAD_QLTuyenDung.Database
 {
-    public class Login
+    public class LoginDB
     {
         public static void KiemTraLogin(string username, string password)
         {

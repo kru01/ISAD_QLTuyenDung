@@ -1,11 +1,12 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using ISAD_QLTuyenDung.NghiepVu;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
     public partial class DanhGiaTiemNang : Form
     {
         private static ThemDanhGia? formDG;
-        private static ThongKe? formTK;
+        private static ThongKeDoanhNghiep? formTK;
         private readonly OracleConnection conn;
         private readonly string curUser;
 
@@ -18,7 +19,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void DanhGiaTiemNang_Load(object sender, EventArgs e)
         {
-            DanhGiaData.DataSource = NghiepVu.LanhDao.DanhGiaTiemNang.LoadDanhGia(conn);
+            LamMoiButton.PerformClick();
         }
 
         private void ThemDGButton_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void FormClosedEvent(object? sender, EventArgs e)
         {
-            DanhGiaData.DataSource = NghiepVu.LanhDao.DanhGiaTiemNang.LoadDanhGia(conn);
+            DanhGiaData.DataSource = DNTiemNang.LoadDanhGia(conn, formDG?.danhGia);
         }
 
         private void DanhGiaData_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -38,31 +39,39 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
             if (e.RowIndex == -1 || e.RowIndex == DanhGiaData.RowCount) return;
             DataGridViewRow cRow = DanhGiaData.Rows[e.RowIndex];
 
-            tenDN.Text = cRow.Cells["TENCTY"].Value.ToString();
-            tenLD.Text = cRow.Cells["HOTEN"].Value.ToString();
-            tiemNang.Text = cRow.Cells["TIEMNANG"].Value.ToString();
-            ghiChu.Text = cRow.Cells["GHICHU"].Value.ToString();
+            TenDNBox.Text = cRow.Cells["TENCTY"].Value.ToString();
+            TenLDBox.Text = cRow.Cells["HOTEN"].Value.ToString();
+            TiemNangBox.Text = cRow.Cells["TIEMNANG"].Value.ToString();
+            GhiChuBox.Text = cRow.Cells["GHICHU"].Value.ToString();
         }
 
         private void LamMoiButton_Click(object sender, EventArgs e)
         {
-            DanhGiaData.DataSource = NghiepVu.LanhDao.DanhGiaTiemNang.LoadDanhGia(conn);
+            DanhGiaData.DataSource = DNTiemNang.LoadDanhGia(conn);
         }
 
         private void LapDSTNButton_Click(object sender, EventArgs e)
         {
-            NghiepVu.LanhDao.DanhGiaTiemNang.ExportDanhGia(DanhGiaData);
+            try
+            {
+                DNTiemNang.ExportDanhGia(DanhGiaData);
+                MessageBox.Show("Copy vào clipboard thành công! Nếu Excel không tự động mở, vui lòng paste vào nơi cần thiết!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ThongKeButton_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(DNThongKe.Text))
+            if (String.IsNullOrEmpty(DNThongKeBox.Text))
             {
                 MessageBox.Show("Cần nhập mã doanh nghiệp để thống kê!");
             }
             else
             {
-                formTK = new(DNThongKe.Text, conn);
+                formTK = new(DNThongKeBox.Text, conn);
                 formTK.Show();
             }
         }

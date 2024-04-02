@@ -1,13 +1,15 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using ISAD_QLTuyenDung.NghiepVu;
 using ISAD_QLTuyenDung.HoTro;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
     public partial class ThemDanhGia : Form
     {
-        private readonly OracleConnection conn;
         public event EventHandler? FormClosedEvent;
+        private readonly OracleConnection conn;
         private readonly string curUser;
+        internal DNTiemNang? danhGia;
 
         public ThemDanhGia(string curUser, OracleConnection conn)
         {
@@ -20,7 +22,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
         {
             idCbo.DisplayMember = "TENCTY";
             idCbo.ValueMember = "MADN";
-            idCbo.DataSource = NghiepVu.LanhDao.ThemDanhGia.ThemIDDoanhNghiep(conn).Tables[0];
+            idCbo.DataSource = DNTiemNang.HienDSDoanhNghiep(conn).Tables[0];
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -34,17 +36,22 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            string? id = idCbo?.SelectedValue?.ToString();
-
-            if (!NghiepVu.LanhDao.ThemDanhGia.KiemTraThemDanhGia(id, curUser, (int)ratingBox.Value, NoteBox.Text, conn))
+            string? id = idCbo?.SelectedValue?.ToString() ?? "1";
+            danhGia = new(id, curUser, (int)ratingBox.Value, NoteBox.Text, DateTime.Now);
+            try
             {
-                MessageBox.Show("Tiềm năng phải nằm trong khoảng từ 1 đến 10!");
-            }
-            else
-            {
+                if (!DNTiemNang.ThemDanhGia(danhGia, conn))
+                {
+                    MessageBox.Show("Tiềm năng phải nằm trong khoảng từ 1 đến 10!");
+                    return;
+                }
                 MessageBox.Show("Thêm đánh giá thành công!");
                 FormClosedEvent?.Invoke(this, EventArgs.Empty);
                 this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
-    partial class ThongKe
+    partial class ThongKeDoanhNghiep
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKeDoanhNghiep));
             panel1 = new Panel();
             DoanhNghiepData = new DataGridView();
             maDN = new TextBox();

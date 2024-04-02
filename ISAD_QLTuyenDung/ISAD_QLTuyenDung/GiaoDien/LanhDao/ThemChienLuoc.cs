@@ -1,12 +1,14 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using ISAD_QLTuyenDung.NghiepVu;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
     public partial class ThemChienLuoc : Form
     {
-        private readonly OracleConnection conn;
         public event EventHandler? FormClosedEvent;
-        private readonly string curUser;
+        readonly OracleConnection conn;
+        readonly string curUser;
+        internal ChienLuocUuDai? chienLuoc;
 
         public ThemChienLuoc(string curUser, OracleConnection conn)
         {
@@ -26,15 +28,21 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (!NghiepVu.LanhDao.ThemChienLuoc.KiemTraThemChienLuoc(curUser, TenChienLuoc.Text, MoTa.Text, conn))
+            chienLuoc = new("", TenChienLuoc.Text, MoTa.Text, curUser);
+            try
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
-            }
-            else
-            {
+                if (!ChienLuocUuDai.ThemChienLuoc(ref chienLuoc, conn))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    return;
+                }
                 MessageBox.Show("Thêm đánh giá thành công!");
                 FormClosedEvent?.Invoke(this, EventArgs.Empty);
-                Close();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
