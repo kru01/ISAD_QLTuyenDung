@@ -21,11 +21,6 @@ namespace ISAD_QLTuyenDung.NghiepVu
             return DNTiemNangDB.ThongKeDoanhNghiep(maDN, conn);
         }
 
-        public static DataSet HienDSDoanhNghiep(OracleConnection conn)
-        {
-            return DoanhNghiepDB.LayDSDoanhNghiep(conn);
-        }
-
         public static bool ThemDanhGia(DNTiemNang danhGia, OracleConnection conn)
         {
             if (danhGia.tiemNang < 1 || danhGia.tiemNang > 10) return false;

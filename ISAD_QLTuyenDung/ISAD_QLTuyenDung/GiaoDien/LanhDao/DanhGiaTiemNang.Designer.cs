@@ -44,7 +44,7 @@
             DanhGiaData = new DataGridView();
             panel2 = new Panel();
             LamMoiButton = new Button();
-            lapDSTNButton = new Button();
+            LapDSTNButton = new Button();
             DNThongKeBox = new TextBox();
             ThemDGButton = new Button();
             ThongKeButton = new Button();
@@ -216,7 +216,7 @@
             panel2.BackColor = Color.WhiteSmoke;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(LamMoiButton);
-            panel2.Controls.Add(lapDSTNButton);
+            panel2.Controls.Add(LapDSTNButton);
             panel2.Controls.Add(DNThongKeBox);
             panel2.Controls.Add(ThemDGButton);
             panel2.Controls.Add(ThongKeButton);
@@ -240,21 +240,21 @@
             LamMoiButton.UseVisualStyleBackColor = false;
             LamMoiButton.Click += LamMoiButton_Click;
             // 
-            // lapDSTNButton
+            // LapDSTNButton
             // 
-            lapDSTNButton.BackColor = Color.LightSeaGreen;
-            lapDSTNButton.FlatAppearance.BorderSize = 0;
-            lapDSTNButton.FlatStyle = FlatStyle.Flat;
-            lapDSTNButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lapDSTNButton.ForeColor = Color.White;
-            lapDSTNButton.Location = new Point(37, 175);
-            lapDSTNButton.Name = "lapDSTNButton";
-            lapDSTNButton.Size = new Size(275, 40);
-            lapDSTNButton.TabIndex = 6;
-            lapDSTNButton.Text = "Lập danh sách tiềm năng";
-            LapDSTiemNangTip.SetToolTip(lapDSTNButton, "Toàn bảng sẽ được copy vào clipboard. Nếu Excel không tự động mở, vui lòng paste vào nơi cần thiết.");
-            lapDSTNButton.UseVisualStyleBackColor = false;
-            lapDSTNButton.Click += LapDSTNButton_Click;
+            LapDSTNButton.BackColor = Color.LightSeaGreen;
+            LapDSTNButton.FlatAppearance.BorderSize = 0;
+            LapDSTNButton.FlatStyle = FlatStyle.Flat;
+            LapDSTNButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LapDSTNButton.ForeColor = Color.White;
+            LapDSTNButton.Location = new Point(37, 175);
+            LapDSTNButton.Name = "LapDSTNButton";
+            LapDSTNButton.Size = new Size(275, 40);
+            LapDSTNButton.TabIndex = 6;
+            LapDSTNButton.Text = "Lập danh sách tiềm năng";
+            LapDSTiemNangTip.SetToolTip(LapDSTNButton, "Toàn bảng sẽ được copy vào clipboard. Nếu Excel không tự động mở, vui lòng paste vào nơi cần thiết.");
+            LapDSTNButton.UseVisualStyleBackColor = false;
+            LapDSTNButton.Click += LapDSTNButton_Click;
             // 
             // DNThongKeBox
             // 
@@ -302,7 +302,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "DanhGiaTiemNang";
-            Text = "DanhGiaDoanhNghiep";
+            Text = "DanhGiaTiemNang";
             Load += DanhGiaTiemNang_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -323,7 +323,7 @@
         private Button ThemDGButton;
         private TextBox DNThongKeBox;
         private Button ThongKeButton;
-        private Button lapDSTNButton;
+        private Button LapDSTNButton;
         private Label XemDGTitleLabel;
         private Panel panel3;
         private TextBox GhiChuBox;

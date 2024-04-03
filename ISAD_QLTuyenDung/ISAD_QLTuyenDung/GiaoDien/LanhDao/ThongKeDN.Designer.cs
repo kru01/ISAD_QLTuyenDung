@@ -1,6 +1,6 @@
 ﻿namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
-    partial class ThongKeDoanhNghiep
+    partial class ThongKeDN
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKeDoanhNghiep));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKeDN));
             panel1 = new Panel();
             DoanhNghiepData = new DataGridView();
-            maDN = new TextBox();
+            MaDNBox = new TextBox();
             label3 = new Label();
             label1 = new Label();
             panel1.SuspendLayout();
@@ -42,7 +42,7 @@
             // 
             panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(DoanhNghiepData);
-            panel1.Controls.Add(maDN);
+            panel1.Controls.Add(MaDNBox);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
@@ -69,13 +69,13 @@
             DoanhNghiepData.Size = new Size(682, 500);
             DoanhNghiepData.TabIndex = 11;
             // 
-            // maDN
+            // MaDNBox
             // 
-            maDN.Location = new Point(291, 100);
-            maDN.Name = "maDN";
-            maDN.ReadOnly = true;
-            maDN.Size = new Size(100, 27);
-            maDN.TabIndex = 5;
+            MaDNBox.Location = new Point(291, 100);
+            MaDNBox.Name = "MaDNBox";
+            MaDNBox.ReadOnly = true;
+            MaDNBox.Size = new Size(100, 27);
+            MaDNBox.TabIndex = 5;
             // 
             // label3
             // 
@@ -101,7 +101,7 @@
             label1.TabIndex = 4;
             label1.Text = "Thống kê doanh nghiệp";
             // 
-            // ThongKe
+            // ThongKeDN
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -109,7 +109,7 @@
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "ThongKe";
+            Name = "ThongKeDN";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Thống kê doanh nghiệp";
             Load += ThongKe_Load;
@@ -123,7 +123,7 @@
 
         private Panel panel1;
         private Label label1;
-        private TextBox maDN;
+        private TextBox MaDNBox;
         private Label label3;
         private DataGridView DoanhNghiepData;
     }

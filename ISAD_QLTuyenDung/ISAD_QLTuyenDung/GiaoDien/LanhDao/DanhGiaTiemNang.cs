@@ -6,7 +6,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
     public partial class DanhGiaTiemNang : Form
     {
         private static ThemDanhGia? formDG;
-        private static ThongKeDoanhNghiep? formTK;
+        private static ThongKeDN? formTK;
         private readonly OracleConnection conn;
         private readonly string curUser;
 
@@ -39,6 +39,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
             if (e.RowIndex == -1 || e.RowIndex == DanhGiaData.RowCount) return;
             DataGridViewRow cRow = DanhGiaData.Rows[e.RowIndex];
 
+            DNThongKeBox.Text = cRow.Cells["MADN"].Value.ToString();
             TenDNBox.Text = cRow.Cells["TENCTY"].Value.ToString();
             TenLDBox.Text = cRow.Cells["HOTEN"].Value.ToString();
             TiemNangBox.Text = cRow.Cells["TIEMNANG"].Value.ToString();
@@ -55,7 +56,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
             try
             {
                 DNTiemNang.ExportDanhGia(DanhGiaData);
-                MessageBox.Show("Copy vào clipboard thành công! Nếu Excel không tự động mở, vui lòng paste vào nơi cần thiết!");
+                MessageBox.Show("Copy vào clipboard thành công! Nếu Excel không tự động mở, " +
+                    "vui lòng paste vào nơi cần thiết!");
             }
             catch (Exception ex)
             {

@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemChienLuoc));
             panel1 = new Panel();
             panel2 = new Panel();
-            TenChienLuoc = new TextBox();
-            CancelButton = new Button();
-            AddButton = new Button();
+            TenCLBox = new TextBox();
+            HuyButton = new Button();
+            ThemButton = new Button();
             label3 = new Label();
             label2 = new Label();
-            MoTa = new TextBox();
+            MoTaBox = new TextBox();
             label1 = new Label();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -53,12 +53,12 @@
             // panel2
             // 
             panel2.BackColor = Color.WhiteSmoke;
-            panel2.Controls.Add(TenChienLuoc);
-            panel2.Controls.Add(CancelButton);
-            panel2.Controls.Add(AddButton);
+            panel2.Controls.Add(TenCLBox);
+            panel2.Controls.Add(HuyButton);
+            panel2.Controls.Add(ThemButton);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(MoTa);
+            panel2.Controls.Add(MoTaBox);
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
@@ -66,43 +66,43 @@
             panel2.Size = new Size(532, 353);
             panel2.TabIndex = 1;
             // 
-            // TenChienLuoc
+            // TenCLBox
             // 
-            TenChienLuoc.CharacterCasing = CharacterCasing.Upper;
-            TenChienLuoc.Location = new Point(54, 112);
-            TenChienLuoc.Name = "TenChienLuoc";
-            TenChienLuoc.Size = new Size(425, 27);
-            TenChienLuoc.TabIndex = 12;
+            TenCLBox.CharacterCasing = CharacterCasing.Upper;
+            TenCLBox.Location = new Point(54, 112);
+            TenCLBox.Name = "TenCLBox";
+            TenCLBox.Size = new Size(425, 27);
+            TenCLBox.TabIndex = 12;
             // 
-            // CancelButton
+            // HuyButton
             // 
-            CancelButton.BackColor = Color.LightSeaGreen;
-            CancelButton.FlatAppearance.BorderSize = 0;
-            CancelButton.FlatStyle = FlatStyle.Flat;
-            CancelButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(304, 260);
-            CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(175, 40);
-            CancelButton.TabIndex = 11;
-            CancelButton.Text = "Hủy";
-            CancelButton.UseVisualStyleBackColor = false;
-            CancelButton.Click += CancelButton_Click;
+            HuyButton.BackColor = Color.LightSeaGreen;
+            HuyButton.FlatAppearance.BorderSize = 0;
+            HuyButton.FlatStyle = FlatStyle.Flat;
+            HuyButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            HuyButton.ForeColor = Color.White;
+            HuyButton.Location = new Point(304, 260);
+            HuyButton.Name = "HuyButton";
+            HuyButton.Size = new Size(175, 40);
+            HuyButton.TabIndex = 11;
+            HuyButton.Text = "Hủy";
+            HuyButton.UseVisualStyleBackColor = false;
+            HuyButton.Click += HuyButton_Click;
             // 
-            // AddButton
+            // ThemButton
             // 
-            AddButton.BackColor = Color.LightSeaGreen;
-            AddButton.FlatAppearance.BorderSize = 0;
-            AddButton.FlatStyle = FlatStyle.Flat;
-            AddButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddButton.ForeColor = Color.White;
-            AddButton.Location = new Point(54, 260);
-            AddButton.Name = "AddButton";
-            AddButton.Size = new Size(175, 40);
-            AddButton.TabIndex = 10;
-            AddButton.Text = "Thêm";
-            AddButton.UseVisualStyleBackColor = false;
-            AddButton.Click += AddButton_Click;
+            ThemButton.BackColor = Color.LightSeaGreen;
+            ThemButton.FlatAppearance.BorderSize = 0;
+            ThemButton.FlatStyle = FlatStyle.Flat;
+            ThemButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ThemButton.ForeColor = Color.White;
+            ThemButton.Location = new Point(54, 260);
+            ThemButton.Name = "ThemButton";
+            ThemButton.Size = new Size(175, 40);
+            ThemButton.TabIndex = 10;
+            ThemButton.Text = "Thêm";
+            ThemButton.UseVisualStyleBackColor = false;
+            ThemButton.Click += ThemButton_Click;
             // 
             // label3
             // 
@@ -128,12 +128,12 @@
             label2.TabIndex = 5;
             label2.Text = "Mô tả";
             // 
-            // MoTa
+            // MoTaBox
             // 
-            MoTa.Location = new Point(54, 196);
-            MoTa.Name = "MoTa";
-            MoTa.Size = new Size(425, 27);
-            MoTa.TabIndex = 4;
+            MoTaBox.Location = new Point(54, 196);
+            MoTaBox.Name = "MoTaBox";
+            MoTaBox.Size = new Size(425, 27);
+            MoTaBox.TabIndex = 4;
             // 
             // label1
             // 
@@ -169,12 +169,12 @@
 
         private Panel panel1;
         private Panel panel2;
-        private new Button CancelButton;
-        private Button AddButton;
+        private new Button HuyButton;
+        private Button ThemButton;
         private Label label3;
         private Label label2;
-        private TextBox MoTa;
+        private TextBox MoTaBox;
         private Label label1;
-        private TextBox TenChienLuoc;
+        private TextBox TenCLBox;
     }
 }

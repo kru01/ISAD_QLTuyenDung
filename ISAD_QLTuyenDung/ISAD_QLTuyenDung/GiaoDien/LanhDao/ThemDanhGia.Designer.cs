@@ -30,30 +30,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemDanhGia));
             panel1 = new Panel();
-            ratingBox = new NumericUpDown();
-            CancelButton = new Button();
-            AddButton = new Button();
+            TiemNangUpDown = new NumericUpDown();
+            HuyButton = new Button();
+            ThemButton = new Button();
             label4 = new Label();
             label3 = new Label();
-            idCbo = new ComboBox();
+            TenDNCbo = new ComboBox();
             label2 = new Label();
-            NoteBox = new TextBox();
+            GhiChuBox = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ratingBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TiemNangUpDown).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
-            panel1.Controls.Add(ratingBox);
-            panel1.Controls.Add(CancelButton);
-            panel1.Controls.Add(AddButton);
+            panel1.Controls.Add(TiemNangUpDown);
+            panel1.Controls.Add(HuyButton);
+            panel1.Controls.Add(ThemButton);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(idCbo);
+            panel1.Controls.Add(TenDNCbo);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(NoteBox);
+            panel1.Controls.Add(GhiChuBox);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -61,46 +61,46 @@
             panel1.Size = new Size(532, 353);
             panel1.TabIndex = 0;
             // 
-            // ratingBox
+            // TiemNangUpDown
             // 
-            ratingBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ratingBox.Location = new Point(404, 112);
-            ratingBox.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            ratingBox.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            ratingBox.Name = "ratingBox";
-            ratingBox.Size = new Size(75, 30);
-            ratingBox.TabIndex = 12;
-            ratingBox.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            TiemNangUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TiemNangUpDown.Location = new Point(404, 112);
+            TiemNangUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            TiemNangUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            TiemNangUpDown.Name = "TiemNangUpDown";
+            TiemNangUpDown.Size = new Size(75, 30);
+            TiemNangUpDown.TabIndex = 12;
+            TiemNangUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // CancelButton
+            // HuyButton
             // 
-            CancelButton.BackColor = Color.LightSeaGreen;
-            CancelButton.FlatAppearance.BorderSize = 0;
-            CancelButton.FlatStyle = FlatStyle.Flat;
-            CancelButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(304, 260);
-            CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(175, 40);
-            CancelButton.TabIndex = 11;
-            CancelButton.Text = "Hủy";
-            CancelButton.UseVisualStyleBackColor = false;
-            CancelButton.Click += CancelButton_Click;
+            HuyButton.BackColor = Color.LightSeaGreen;
+            HuyButton.FlatAppearance.BorderSize = 0;
+            HuyButton.FlatStyle = FlatStyle.Flat;
+            HuyButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            HuyButton.ForeColor = Color.White;
+            HuyButton.Location = new Point(304, 260);
+            HuyButton.Name = "HuyButton";
+            HuyButton.Size = new Size(175, 40);
+            HuyButton.TabIndex = 11;
+            HuyButton.Text = "Hủy";
+            HuyButton.UseVisualStyleBackColor = false;
+            HuyButton.Click += HuyButton_Click;
             // 
-            // AddButton
+            // ThemButton
             // 
-            AddButton.BackColor = Color.LightSeaGreen;
-            AddButton.FlatAppearance.BorderSize = 0;
-            AddButton.FlatStyle = FlatStyle.Flat;
-            AddButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddButton.ForeColor = Color.White;
-            AddButton.Location = new Point(54, 260);
-            AddButton.Name = "AddButton";
-            AddButton.Size = new Size(175, 40);
-            AddButton.TabIndex = 10;
-            AddButton.Text = "Thêm";
-            AddButton.UseVisualStyleBackColor = false;
-            AddButton.Click += AddButton_Click;
+            ThemButton.BackColor = Color.LightSeaGreen;
+            ThemButton.FlatAppearance.BorderSize = 0;
+            ThemButton.FlatStyle = FlatStyle.Flat;
+            ThemButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ThemButton.ForeColor = Color.White;
+            ThemButton.Location = new Point(54, 260);
+            ThemButton.Name = "ThemButton";
+            ThemButton.Size = new Size(175, 40);
+            ThemButton.TabIndex = 10;
+            ThemButton.Text = "Thêm";
+            ThemButton.UseVisualStyleBackColor = false;
+            ThemButton.Click += ThemButton_Click;
             // 
             // label4
             // 
@@ -122,18 +122,18 @@
             label3.ForeColor = Color.LightSeaGreen;
             label3.Location = new Point(54, 86);
             label3.Name = "label3";
-            label3.Size = new Size(138, 23);
+            label3.Size = new Size(148, 23);
             label3.TabIndex = 7;
-            label3.Text = "Tên doanh ngiệp";
+            label3.Text = "Tên doanh nghiệp";
             // 
-            // idCbo
+            // TenDNCbo
             // 
-            idCbo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            idCbo.FormattingEnabled = true;
-            idCbo.Location = new Point(54, 112);
-            idCbo.Name = "idCbo";
-            idCbo.Size = new Size(325, 31);
-            idCbo.TabIndex = 6;
+            TenDNCbo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TenDNCbo.FormattingEnabled = true;
+            TenDNCbo.Location = new Point(54, 112);
+            TenDNCbo.Name = "TenDNCbo";
+            TenDNCbo.Size = new Size(325, 31);
+            TenDNCbo.TabIndex = 6;
             // 
             // label2
             // 
@@ -147,12 +147,12 @@
             label2.TabIndex = 5;
             label2.Text = "Ghi chú";
             // 
-            // NoteBox
+            // GhiChuBox
             // 
-            NoteBox.Location = new Point(54, 196);
-            NoteBox.Name = "NoteBox";
-            NoteBox.Size = new Size(425, 27);
-            NoteBox.TabIndex = 4;
+            GhiChuBox.Location = new Point(54, 196);
+            GhiChuBox.Name = "GhiChuBox";
+            GhiChuBox.Size = new Size(425, 27);
+            GhiChuBox.TabIndex = 4;
             // 
             // label1
             // 
@@ -181,21 +181,21 @@
             Load += ThemDanhGia_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ratingBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TiemNangUpDown).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private TextBox NoteBox;
+        private TextBox GhiChuBox;
         private Label label1;
         private Label label2;
         private Label label4;
         private Label label3;
-        private ComboBox idCbo;
-        private Button AddButton;
-        private new Button CancelButton;
-        private NumericUpDown ratingBox;
+        private ComboBox TenDNCbo;
+        private Button ThemButton;
+        private new Button HuyButton;
+        private NumericUpDown TiemNangUpDown;
     }
 }

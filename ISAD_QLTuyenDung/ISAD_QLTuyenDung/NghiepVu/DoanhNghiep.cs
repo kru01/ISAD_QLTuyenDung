@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ISAD_QLTuyenDung.Database;
+using Oracle.ManagedDataAccess.Client;
+using System.Data;
 
 namespace ISAD_QLTuyenDung.NghiepVu
 {
     internal class DoanhNghiep
     {
+        public static DataSet HienDSDoanhNghiep(OracleConnection conn)
+        {
+            return DoanhNghiepDB.LayDSDoanhNghiep(conn);
+        }
     }
 }

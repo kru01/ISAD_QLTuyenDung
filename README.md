@@ -23,6 +23,7 @@
         <li><a href="#to-set-up-the-database">To set up the database</a></li>
         <li><a href="#to-uninstall-the-database">To uninstall the database</a></li>
         <li><a href="#to-link-oracle-with-winforms">To link Oracle with WinForms</a></li>
+        <li><a href="#to-link-excel-with-winforms">To link Excel with WinForms</a></li>
       </ul>
     </li>
     <li><a href="#built-with">Built With</a></li>
@@ -70,16 +71,17 @@
 ### To link Oracle with WinForms
 
 1. Open `ISS_QLTuyenDung.sln` with Visual Studio 2022.
+1. Modify `Others/OracleConfig.cs` to fit your environment.
 1. On the taskbar, select `Project` &rarr; `Manage NuGet Packages...`.
 1. Move to `Browse` tab, search for `oracle`, and install `Oracle.ManagedDataAccess.Core`.
-1. Try to run the program, if it still fails, proceed to step 5.
+1. Try to run the program, if it still fails, proceed to step the next step.
 1. Locate the path to `Oracle.DataAccess.dll` with Windows File Explorer.
     - Mine was `...\Oracle21c\dbhomeXE\ODP.NET\bin\4`.
 1. Back to VS2022, in the `Solution Explorer`, right-click `ISS_QLTuyenDung`.
     - It's right beneath `Solution 'ISS_QLTuyenDung' (1 of 1 project)`.
 1. Select `Add` &rarr; `Project Reference...`.
 1. Move to `Browse` tab, then click `Browse...` at bottom right of the window.
-1. Navigate to the path at step 5.
+1. Navigate to the path at step 6.
 1. Select `Oracle.DataAccess.dll` then `Add`.
     - Try to run the app, if it still fails, o7 then since I got mine to work at this point.
 
@@ -88,13 +90,14 @@
 ### To link Excel with WinForms
 
 1. Open `ISS_QLTuyenDung.sln` with Visual Studio 2022.
+1. Modify `Others/OracleConfig.cs` to fit your environment.
 1. On the taskbar, select `Project` &rarr; `Manage NuGet Packages...`.
 1. Move to `Browse` tab, search for `interop.excel`, and install `Microsoft.Office.Interop.Excel`.
-1. Try to perform any Export to Excel feature, proceed to step 5 if encounter below error.
+1. Try to perform any Export to Excel feature, proceed to the next step if encounter below error.
     ```csharp
     Could not load file or assembly 'office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bc111e9429c' or one of its dependencies. The system cannot find the file specified.
     ```
-1. Uninstall the package at step 3.
+1. Uninstall the package at step 4.
 1. Locate the path to `Microsoft.Office.Interop.Excel.dll` with Windows File Explorer.
     - It should be somewhere in the Microsoft Office folder.
     - Mine was `C:\Program Files\Microsoft Office\root\vfs\ProgramFilesX86\Microsoft Office\Office16\DCF`.
@@ -102,7 +105,7 @@
     - It's right beneath `Solution 'ISS_QLTuyenDung' (1 of 1 project)`.
 1. Select `Add` &rarr; `Project Reference...`.
 1. Move to `Browse` tab, then click `Browse...` at bottom right of the window.
-1. Navigate to the path at step 6.
+1. Navigate to the path at step 7.
 1. Select `Microsoft.Office.Interop.Excel.dll` then `Add`.
     - Try to run the app, if it still fails, o7 then since I got mine to work at this point.
 

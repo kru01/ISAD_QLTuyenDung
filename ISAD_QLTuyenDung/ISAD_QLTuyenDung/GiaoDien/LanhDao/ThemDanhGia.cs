@@ -1,6 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using ISAD_QLTuyenDung.NghiepVu;
-using ISAD_QLTuyenDung.HoTro;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
@@ -20,12 +19,12 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void ThemDanhGia_Load(object sender, EventArgs e)
         {
-            idCbo.DisplayMember = "TENCTY";
-            idCbo.ValueMember = "MADN";
-            idCbo.DataSource = DNTiemNang.HienDSDoanhNghiep(conn).Tables[0];
+            TenDNCbo.DisplayMember = "TENCTY";
+            TenDNCbo.ValueMember = "MADN";
+            TenDNCbo.DataSource = DoanhNghiep.HienDSDoanhNghiep(conn).Tables[0];
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void HuyButton_Click(object sender, EventArgs e)
         {
             var res = MessageBox.Show("Bạn có chắc là muốn thoát khỏi thêm đánh giá?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
@@ -34,10 +33,10 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
             }
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
+        private void ThemButton_Click(object sender, EventArgs e)
         {
-            string? id = idCbo?.SelectedValue?.ToString() ?? "1";
-            danhGia = new(id, curUser, (int)ratingBox.Value, NoteBox.Text, DateTime.Now);
+            string? id = TenDNCbo?.SelectedValue?.ToString() ?? "1";
+            danhGia = new(id, curUser, (int)TiemNangUpDown.Value, GhiChuBox.Text, DateTime.Now);
             try
             {
                 if (!DNTiemNang.ThemDanhGia(danhGia, conn))

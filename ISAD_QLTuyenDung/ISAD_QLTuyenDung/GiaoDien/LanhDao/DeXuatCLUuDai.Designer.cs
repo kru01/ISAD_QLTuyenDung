@@ -37,7 +37,7 @@
             TenCLLabel = new Label();
             TenLDBox = new TextBox();
             LamMoiButton = new Button();
-            ThemChienLuocButton = new Button();
+            ThemCLButton = new Button();
             TenCLBox = new TextBox();
             MoTaLabel = new Label();
             MoTaBox = new TextBox();
@@ -80,7 +80,7 @@
             panel3.Controls.Add(TenCLLabel);
             panel3.Controls.Add(TenLDBox);
             panel3.Controls.Add(LamMoiButton);
-            panel3.Controls.Add(ThemChienLuocButton);
+            panel3.Controls.Add(ThemCLButton);
             panel3.Controls.Add(TenCLBox);
             panel3.Controls.Add(MoTaLabel);
             panel3.Controls.Add(MoTaBox);
@@ -158,20 +158,20 @@
             LamMoiButton.UseVisualStyleBackColor = false;
             LamMoiButton.Click += LamMoiButton_Click;
             // 
-            // ThemChienLuocButton
+            // ThemCLButton
             // 
-            ThemChienLuocButton.BackColor = Color.LightSeaGreen;
-            ThemChienLuocButton.FlatAppearance.BorderSize = 0;
-            ThemChienLuocButton.FlatStyle = FlatStyle.Flat;
-            ThemChienLuocButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ThemChienLuocButton.ForeColor = Color.White;
-            ThemChienLuocButton.Location = new Point(621, 124);
-            ThemChienLuocButton.Name = "ThemChienLuocButton";
-            ThemChienLuocButton.Size = new Size(200, 40);
-            ThemChienLuocButton.TabIndex = 5;
-            ThemChienLuocButton.Text = "Thêm chiến lược";
-            ThemChienLuocButton.UseVisualStyleBackColor = false;
-            ThemChienLuocButton.Click += ThemChienLuocButton_Click;
+            ThemCLButton.BackColor = Color.LightSeaGreen;
+            ThemCLButton.FlatAppearance.BorderSize = 0;
+            ThemCLButton.FlatStyle = FlatStyle.Flat;
+            ThemCLButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ThemCLButton.ForeColor = Color.White;
+            ThemCLButton.Location = new Point(621, 124);
+            ThemCLButton.Name = "ThemCLButton";
+            ThemCLButton.Size = new Size(200, 40);
+            ThemCLButton.TabIndex = 5;
+            ThemCLButton.Text = "Thêm chiến lược";
+            ThemCLButton.UseVisualStyleBackColor = false;
+            ThemCLButton.Click += ThemChienLuocButton_Click;
             // 
             // TenCLBox
             // 
@@ -243,7 +243,7 @@
         #endregion
 
         private Panel panel1;
-        private Button ThemChienLuocButton;
+        private Button ThemCLButton;
         private DataGridView ChienLuocData;
         private Panel panel3;
         private Button LamMoiButton;

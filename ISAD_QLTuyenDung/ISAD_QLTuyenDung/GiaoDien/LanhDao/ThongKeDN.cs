@@ -3,12 +3,12 @@ using ISAD_QLTuyenDung.NghiepVu;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
-    public partial class ThongKeDoanhNghiep : Form
+    public partial class ThongKeDN : Form
     {
         readonly string maDoanhNghiep;
         readonly OracleConnection conn;
 
-        public ThongKeDoanhNghiep(string maDN, OracleConnection conn)
+        public ThongKeDN(string maDN, OracleConnection conn)
         {
             InitializeComponent();
             this.maDoanhNghiep = maDN;
@@ -17,7 +17,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void ThongKe_Load(object sender, EventArgs e)
         {
-            maDN.Text = maDoanhNghiep;
+            MaDNBox.Text = maDoanhNghiep;
             DoanhNghiepData.DataSource = DNTiemNang.LoadThongKe(maDoanhNghiep, conn);
         }
     }
