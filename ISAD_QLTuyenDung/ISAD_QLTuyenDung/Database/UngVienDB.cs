@@ -4,11 +4,11 @@ using System.Data;
 
 namespace ISAD_QLTuyenDung.Database
 {
-    internal class DoanhNghiepDB
+    internal class UngVienDB
     {
-        public static DataSet LayDSDoanhNghiep(OracleConnection conn)
+        public static DataSet LayIDUngVien(OracleConnection conn)
         {
-            String sql = $"SELECT MADN, TENCTY FROM {OracleConfig.schema}.DOANHNGHIEP ORDER BY MADN";
+            String sql = $"SELECT MAUV FROM {OracleConfig.schema}.UNGVIEN";
 
             if (conn.State == ConnectionState.Closed) conn.Open();
             DataSet dt = new();

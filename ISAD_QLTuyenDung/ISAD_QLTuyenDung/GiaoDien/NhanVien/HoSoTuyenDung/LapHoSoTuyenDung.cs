@@ -1,10 +1,12 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using ISAD_QLTuyenDung.NghiepVu;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
 {
     public partial class LapHoSoTuyenDung : Form
     {
         private static ThemHoSo? formHS;
+        private static DuyetHoSo? formDHS;
         private readonly OracleConnection conn;
         private readonly string curUser;
 
@@ -17,7 +19,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
 
         private void LapHoSoTuyenDung_Load(object sender, EventArgs e)
         {
-            HoSoData.DataSource = NghiepVu.NhanVien.HoSoTuyenDung.LapHoSoTuyenDung.LoadHoSo(conn);
+            LamMoiButton.PerformClick();
         }
 
         private void HoSoData_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -34,7 +36,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
 
         private void FormClosedEvent(object? sender, EventArgs e)
         {
-            HoSoData.DataSource = NghiepVu.NhanVien.HoSoTuyenDung.LapHoSoTuyenDung.LoadHoSo(conn);
+            HoSoData.DataSource = HoSoUngTuyen.LoadHoSo(conn);
         }
 
         private void ThemHoSoButton_Click(object sender, EventArgs e)
@@ -42,6 +44,31 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
             formHS = new(curUser, conn);
             formHS.FormClosedEvent += FormClosedEvent;
             formHS.Show();
+        }
+
+        private void DuyetHSButton_Click(object sender, EventArgs e)
+        {
+            formDHS = new(curUser, conn);
+            formDHS.FormClosedEvent += FormClosedEvent;
+            formDHS.Show();
+        }
+
+        private void LapDSHSButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HoSoUngTuyen.ExportHoSo(HoSoData);
+                MessageBox.Show("Copy vào clipboard thành công! Nếu Excel không tự động mở, vui lòng paste vào nơi cần thiết!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LamMoiButton_Click(object sender, EventArgs e)
+        {
+            HoSoData.DataSource = HoSoUngTuyen.LoadHoSo(conn);
         }
     }
 }

@@ -4,7 +4,7 @@
     {
         public static bool XuLyLogin(string username, string password)
         {
-            if (String.IsNullOrWhiteSpace(username) || String.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 return false;
             }

@@ -38,7 +38,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
                 }
                 MessageBox.Show("Thêm đánh giá thành công!");
                 FormClosedEvent?.Invoke(this, EventArgs.Empty);
-                this.Close();
+                Close();
             }
             catch (Exception ex)
             {

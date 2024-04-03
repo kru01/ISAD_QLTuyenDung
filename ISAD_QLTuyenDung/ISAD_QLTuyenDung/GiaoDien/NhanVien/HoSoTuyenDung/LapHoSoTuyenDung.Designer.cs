@@ -32,6 +32,7 @@
             panel1 = new Panel();
             label2 = new Label();
             panel3 = new Panel();
+            LamMoiButton = new Button();
             label6 = new Label();
             tinhTrang = new TextBox();
             label4 = new Label();
@@ -56,7 +57,7 @@
             HoSoData.AllowUserToDeleteRows = false;
             HoSoData.AllowUserToResizeColumns = false;
             HoSoData.AllowUserToResizeRows = false;
-            HoSoData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            HoSoData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             HoSoData.BorderStyle = BorderStyle.None;
             HoSoData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             HoSoData.Dock = DockStyle.Bottom;
@@ -95,6 +96,7 @@
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(LamMoiButton);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(tinhTrang);
             panel3.Controls.Add(label4);
@@ -112,6 +114,21 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(876, 266);
             panel3.TabIndex = 8;
+            // 
+            // LamMoiButton
+            // 
+            LamMoiButton.BackColor = Color.LightSeaGreen;
+            LamMoiButton.FlatAppearance.BorderSize = 0;
+            LamMoiButton.FlatStyle = FlatStyle.Flat;
+            LamMoiButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LamMoiButton.ForeColor = Color.White;
+            LamMoiButton.Location = new Point(596, 202);
+            LamMoiButton.Name = "LamMoiButton";
+            LamMoiButton.Size = new Size(200, 40);
+            LamMoiButton.TabIndex = 23;
+            LamMoiButton.Text = "Làm mới";
+            LamMoiButton.UseVisualStyleBackColor = false;
+            LamMoiButton.Click += LamMoiButton_Click;
             // 
             // label6
             // 
@@ -225,7 +242,7 @@
             ThemHoSoButton.FlatStyle = FlatStyle.Flat;
             ThemHoSoButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ThemHoSoButton.ForeColor = Color.White;
-            ThemHoSoButton.Location = new Point(596, 50);
+            ThemHoSoButton.Location = new Point(596, 22);
             ThemHoSoButton.Name = "ThemHoSoButton";
             ThemHoSoButton.Size = new Size(200, 40);
             ThemHoSoButton.TabIndex = 6;
@@ -240,12 +257,13 @@
             LapDSHSButton.FlatStyle = FlatStyle.Flat;
             LapDSHSButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LapDSHSButton.ForeColor = Color.White;
-            LapDSHSButton.Location = new Point(596, 170);
+            LapDSHSButton.Location = new Point(596, 142);
             LapDSHSButton.Name = "LapDSHSButton";
             LapDSHSButton.Size = new Size(200, 40);
             LapDSHSButton.TabIndex = 5;
             LapDSHSButton.Text = "Lập danh sách hồ sơ";
             LapDSHSButton.UseVisualStyleBackColor = false;
+            LapDSHSButton.Click += LapDSHSButton_Click;
             // 
             // DuyetHSButton
             // 
@@ -254,12 +272,13 @@
             DuyetHSButton.FlatStyle = FlatStyle.Flat;
             DuyetHSButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DuyetHSButton.ForeColor = Color.White;
-            DuyetHSButton.Location = new Point(596, 110);
+            DuyetHSButton.Location = new Point(596, 82);
             DuyetHSButton.Name = "DuyetHSButton";
             DuyetHSButton.Size = new Size(200, 40);
             DuyetHSButton.TabIndex = 5;
             DuyetHSButton.Text = "Duyệt hồ sơ";
             DuyetHSButton.UseVisualStyleBackColor = false;
+            DuyetHSButton.Click += DuyetHSButton_Click;
             // 
             // LapHoSoTuyenDung
             // 
@@ -299,5 +318,6 @@
         private TextBox ghiChu;
         private Label label6;
         private TextBox tinhTrang;
+        private Button LamMoiButton;
     }
 }
