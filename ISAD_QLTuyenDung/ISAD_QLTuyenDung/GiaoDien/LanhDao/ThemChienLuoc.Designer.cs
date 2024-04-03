@@ -169,7 +169,7 @@
 
         private Panel panel1;
         private Panel panel2;
-        private new Button HuyButton;
+        private Button HuyButton;
         private Button ThemButton;
         private Label label3;
         private Label label2;

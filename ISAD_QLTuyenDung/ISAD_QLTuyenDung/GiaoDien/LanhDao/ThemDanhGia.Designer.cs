@@ -195,7 +195,7 @@
         private Label label3;
         private ComboBox TenDNCbo;
         private Button ThemButton;
-        private new Button HuyButton;
+        private Button HuyButton;
         private NumericUpDown TiemNangUpDown;
     }
 }

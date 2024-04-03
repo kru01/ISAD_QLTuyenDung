@@ -38,21 +38,7 @@ namespace ISAD_QLTuyenDung.Database
                     $"'{hoso.ghiChu}', {hoso.tinhTrang}, '{hoso.nvDuyet}')";
                 OracleCommand cmdHoSo = new(hoSoSql, conn);
                 cmdHoSo.ExecuteNonQuery();
-
-                for (int i = 0; i < hoso.loaiGiayTo.Length; i++)
-                {
-                    OracleCommand cmdGiayTo = new($"{OracleConfig.schema}.USP_GIAYTOUT_INS", conn)
-                    {
-                        CommandType = CommandType.StoredProcedure
-                    };
-                    cmdGiayTo.Parameters.Add("IMAUV", OracleDbType.Varchar2, 255).Value = hoso.maUV;
-                    cmdGiayTo.Parameters.Add("IMADN", OracleDbType.Varchar2, 255).Value = hoso.maDN;
-                    cmdGiayTo.Parameters.Add("IMAPHIEU", OracleDbType.Varchar2, 255).Value = hoso.maPhieu;
-                    cmdGiayTo.Parameters.Add("ITHONGTIN", OracleDbType.Varchar2, 255).Value = hoso.thongTin[i];
-                    cmdGiayTo.Parameters.Add("ILOAIGIAYTO", OracleDbType.Int64, 255).Value = hoso.loaiGiayTo[i];
-                    cmdGiayTo.Parameters.Add("IMAGIAY", OracleDbType.Varchar2, ParameterDirection.Output).Size = 255;
-                    cmdGiayTo.ExecuteNonQuery();
-                }
+                GiayToUTDB.ThemGiayTo(hoso, conn);
             }
             catch (Exception)
             {

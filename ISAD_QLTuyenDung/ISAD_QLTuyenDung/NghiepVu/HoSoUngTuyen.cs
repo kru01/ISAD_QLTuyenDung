@@ -5,10 +5,10 @@ using System.Data;
 
 namespace ISAD_QLTuyenDung.NghiepVu
 {
-    internal class HoSoUngTuyen(string maUV, string maDN, string maPhieu, int doUuTien, string ghiChu, int tinhTrang, string nvDuyet, string[] thongTin, int[] loaiGiayTo)
+    internal class HoSoUngTuyen(string maUV, string maDN, string maPhieu, int doUuTien, string ghiChu, int tinhTrang, string nvDuyet, string[]? thongTin = null, int[]? loaiGiayTo = null)
     {
-        readonly public string[] thongTin = thongTin;
-        readonly public int[] loaiGiayTo = loaiGiayTo;
+        readonly public string[]? thongTin = thongTin;
+        readonly public int[]? loaiGiayTo = loaiGiayTo;
         readonly public string maUV = maUV, maDN = maDN, maPhieu = maPhieu, ghiChu = ghiChu, nvDuyet = nvDuyet;
         readonly public int doUuTien = doUuTien, tinhTrang = tinhTrang;
 
@@ -34,6 +34,7 @@ namespace ISAD_QLTuyenDung.NghiepVu
 
         public static bool ThemHoSo(ref HoSoUngTuyen hoso, OracleConnection conn)
         {
+            if (hoso.tinhTrang == 0) return false;
             try
             {
                 HoSoUngTuyenDB.ThemHoSo(hoso, conn);
