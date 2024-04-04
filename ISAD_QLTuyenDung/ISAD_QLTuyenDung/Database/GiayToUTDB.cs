@@ -7,30 +7,30 @@ namespace ISAD_QLTuyenDung.Database
 {
     internal class GiayToUTDB
     {
-        public static void ThemGiayTo(HoSoUngTuyen hoso, OracleConnection conn)
+        public static int ThemGiayTo(GiayToUT giayTo, OracleConnection conn)
         {
             try
             {
-                for (int i = 0; i < hoso?.loaiGiayTo?.Length; i++)
+                conn.Open();
+                OracleCommand cmd = new($"{OracleConfig.schema}.USP_GIAYTOUT_INS", conn)
                 {
-                    OracleCommand cmdGiayTo = new($"{OracleConfig.schema}.USP_GIAYTOUT_INS", conn)
-                    {
-                        CommandType = CommandType.StoredProcedure
-                    };
-                    cmdGiayTo.Parameters.Add("IMAUV", OracleDbType.Varchar2, 255).Value = hoso.maUV;
-                    cmdGiayTo.Parameters.Add("IMADN", OracleDbType.Varchar2, 255).Value = hoso.maDN;
-                    cmdGiayTo.Parameters.Add("IMAPHIEU", OracleDbType.Varchar2, 255).Value = hoso.maPhieu;
-                    cmdGiayTo.Parameters.Add("ITHONGTIN", OracleDbType.Varchar2, 255).Value = hoso?.thongTin?[i];
-                    cmdGiayTo.Parameters.Add("ILOAIGIAY", OracleDbType.Int64, 255).Value = hoso?.loaiGiayTo[i];
-                    cmdGiayTo.Parameters.Add("IMAGIAY", OracleDbType.Varchar2, ParameterDirection.Output).Size = 255;
-                    cmdGiayTo.ExecuteNonQuery();
-                }
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                cmd.Parameters.Add("IMAUV", OracleDbType.Varchar2, 255).Value = giayTo.maUV;
+                cmd.Parameters.Add("IMADN", OracleDbType.Varchar2, 255).Value = giayTo.maDN;
+                cmd.Parameters.Add("IMAPHIEU", OracleDbType.Varchar2, 255).Value = giayTo.maPhieu;
+                cmd.Parameters.Add("ITHONGTIN", OracleDbType.Varchar2, 255).Value = giayTo.thongTin;
+                cmd.Parameters.Add("ILOAIGIAY", OracleDbType.Int64, 255).Value = giayTo.loaiGiay;
+                cmd.Parameters.Add("IMAGIAY", OracleDbType.Varchar2, ParameterDirection.Output).Size = 255;
+                cmd.ExecuteNonQuery();
+                return Convert.ToInt32(cmd.Parameters[5].Value.ToString());
             }
             catch (Exception)
             {
                 throw;
             }
-            finally { if (conn.State == ConnectionState.Open) conn.Close(); }
+            finally { conn.Close(); }
         }
     }
 }

@@ -32,25 +32,25 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            MaDNBox = new TextBox();
+            MaPhieuBox = new TextBox();
+            MaUVBox = new TextBox();
             label7 = new Label();
             label6 = new Label();
-            doUuTien = new NumericUpDown();
+            UuTienUpDown = new NumericUpDown();
             label2 = new Label();
             label4 = new Label();
-            ghiChu = new TextBox();
+            GhiChuBox = new TextBox();
             label5 = new Label();
             HuyButton = new Button();
-            tinhTrang = new ComboBox();
+            TinhTrangCbo = new ComboBox();
             LamMoiButton = new Button();
             label3 = new Label();
-            ThemButton = new Button();
+            DuyetButton = new Button();
             HoSoData = new DataGridView();
-            maUV = new TextBox();
-            maPhieu = new TextBox();
-            maDN = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)doUuTien).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UuTienUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HoSoData).BeginInit();
             SuspendLayout();
             // 
@@ -82,25 +82,49 @@
             // 
             panel2.BackColor = Color.WhiteSmoke;
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(maDN);
-            panel2.Controls.Add(maPhieu);
-            panel2.Controls.Add(maUV);
+            panel2.Controls.Add(MaDNBox);
+            panel2.Controls.Add(MaPhieuBox);
+            panel2.Controls.Add(MaUVBox);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(doUuTien);
+            panel2.Controls.Add(UuTienUpDown);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(ghiChu);
+            panel2.Controls.Add(GhiChuBox);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(HuyButton);
-            panel2.Controls.Add(tinhTrang);
+            panel2.Controls.Add(TinhTrangCbo);
             panel2.Controls.Add(LamMoiButton);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(ThemButton);
+            panel2.Controls.Add(DuyetButton);
             panel2.Location = new Point(25, 31);
             panel2.Name = "panel2";
             panel2.Size = new Size(832, 250);
             panel2.TabIndex = 1;
+            // 
+            // MaDNBox
+            // 
+            MaDNBox.Location = new Point(85, 126);
+            MaDNBox.Name = "MaDNBox";
+            MaDNBox.ReadOnly = true;
+            MaDNBox.Size = new Size(150, 27);
+            MaDNBox.TabIndex = 36;
+            // 
+            // MaPhieuBox
+            // 
+            MaPhieuBox.Location = new Point(259, 126);
+            MaPhieuBox.Name = "MaPhieuBox";
+            MaPhieuBox.ReadOnly = true;
+            MaPhieuBox.Size = new Size(150, 27);
+            MaPhieuBox.TabIndex = 35;
+            // 
+            // MaUVBox
+            // 
+            MaUVBox.Location = new Point(85, 55);
+            MaUVBox.Name = "MaUVBox";
+            MaUVBox.ReadOnly = true;
+            MaUVBox.Size = new Size(150, 27);
+            MaUVBox.TabIndex = 34;
             // 
             // label7
             // 
@@ -108,7 +132,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.LightSeaGreen;
-            label7.Location = new Point(259, 100);
+            label7.Location = new Point(85, 100);
             label7.Name = "label7";
             label7.Size = new Size(147, 23);
             label7.TabIndex = 33;
@@ -126,13 +150,13 @@
             label6.TabIndex = 31;
             label6.Text = "Ưu tiên";
             // 
-            // doUuTien
+            // UuTienUpDown
             // 
-            doUuTien.Location = new Point(435, 126);
-            doUuTien.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            doUuTien.Name = "doUuTien";
-            doUuTien.Size = new Size(50, 27);
-            doUuTien.TabIndex = 30;
+            UuTienUpDown.Location = new Point(435, 126);
+            UuTienUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            UuTienUpDown.Name = "UuTienUpDown";
+            UuTienUpDown.Size = new Size(50, 27);
+            UuTienUpDown.TabIndex = 30;
             // 
             // label2
             // 
@@ -152,18 +176,18 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.LightSeaGreen;
-            label4.Location = new Point(85, 100);
+            label4.Location = new Point(259, 100);
             label4.Name = "label4";
             label4.Size = new Size(83, 23);
             label4.TabIndex = 29;
             label4.Text = "Mã phiếu";
             // 
-            // ghiChu
+            // GhiChuBox
             // 
-            ghiChu.Location = new Point(85, 195);
-            ghiChu.Name = "ghiChu";
-            ghiChu.Size = new Size(400, 27);
-            ghiChu.TabIndex = 26;
+            GhiChuBox.Location = new Point(85, 195);
+            GhiChuBox.Name = "GhiChuBox";
+            GhiChuBox.Size = new Size(400, 27);
+            GhiChuBox.TabIndex = 26;
             // 
             // label5
             // 
@@ -192,14 +216,14 @@
             HuyButton.UseVisualStyleBackColor = false;
             HuyButton.Click += HuyButton_Click;
             // 
-            // tinhTrang
+            // TinhTrangCbo
             // 
-            tinhTrang.FormattingEnabled = true;
-            tinhTrang.Items.AddRange(new object[] { "Chưa đủ điều kiện", "Đủ điều kiện", "Đã xử lý", "Đã đạt" });
-            tinhTrang.Location = new Point(259, 55);
-            tinhTrang.Name = "tinhTrang";
-            tinhTrang.Size = new Size(226, 28);
-            tinhTrang.TabIndex = 23;
+            TinhTrangCbo.FormattingEnabled = true;
+            TinhTrangCbo.Items.AddRange(new object[] { "Chưa đủ điều kiện", "Đủ điều kiện", "Đã xử lý", "Đã đạt" });
+            TinhTrangCbo.Location = new Point(259, 55);
+            TinhTrangCbo.Name = "TinhTrangCbo";
+            TinhTrangCbo.Size = new Size(226, 28);
+            TinhTrangCbo.TabIndex = 23;
             // 
             // LamMoiButton
             // 
@@ -228,20 +252,20 @@
             label3.TabIndex = 21;
             label3.Text = "Mã ứng viên";
             // 
-            // ThemButton
+            // DuyetButton
             // 
-            ThemButton.BackColor = Color.LightSeaGreen;
-            ThemButton.FlatAppearance.BorderSize = 0;
-            ThemButton.FlatStyle = FlatStyle.Flat;
-            ThemButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ThemButton.ForeColor = Color.White;
-            ThemButton.Location = new Point(570, 43);
-            ThemButton.Name = "ThemButton";
-            ThemButton.Size = new Size(175, 40);
-            ThemButton.TabIndex = 12;
-            ThemButton.Text = "Duyệt";
-            ThemButton.UseVisualStyleBackColor = false;
-            ThemButton.Click += ThemButton_Click;
+            DuyetButton.BackColor = Color.LightSeaGreen;
+            DuyetButton.FlatAppearance.BorderSize = 0;
+            DuyetButton.FlatStyle = FlatStyle.Flat;
+            DuyetButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DuyetButton.ForeColor = Color.White;
+            DuyetButton.Location = new Point(570, 43);
+            DuyetButton.Name = "DuyetButton";
+            DuyetButton.Size = new Size(175, 40);
+            DuyetButton.TabIndex = 12;
+            DuyetButton.Text = "Duyệt";
+            DuyetButton.UseVisualStyleBackColor = false;
+            DuyetButton.Click += DuyetButton_Click;
             // 
             // HoSoData
             // 
@@ -262,30 +286,6 @@
             HoSoData.TabIndex = 0;
             HoSoData.CellClick += HoSoData_CellClick;
             // 
-            // maUV
-            // 
-            maUV.Location = new Point(85, 55);
-            maUV.Name = "maUV";
-            maUV.ReadOnly = true;
-            maUV.Size = new Size(150, 27);
-            maUV.TabIndex = 34;
-            // 
-            // maPhieu
-            // 
-            maPhieu.Location = new Point(85, 126);
-            maPhieu.Name = "maPhieu";
-            maPhieu.ReadOnly = true;
-            maPhieu.Size = new Size(150, 27);
-            maPhieu.TabIndex = 35;
-            // 
-            // maDN
-            // 
-            maDN.Location = new Point(259, 126);
-            maDN.Name = "maDN";
-            maDN.ReadOnly = true;
-            maDN.Size = new Size(150, 27);
-            maDN.TabIndex = 36;
-            // 
             // DuyetHoSo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -303,7 +303,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)doUuTien).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UuTienUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)HoSoData).EndInit();
             ResumeLayout(false);
         }
@@ -316,18 +316,18 @@
         private Label label1;
         private Button HuyButton;
         private Button LamMoiButton;
-        private Button ThemButton;
+        private Button DuyetButton;
         private Label label5;
-        private ComboBox tinhTrang;
+        private ComboBox TinhTrangCbo;
         private Label label3;
         private Label label7;
         private Label label6;
-        private NumericUpDown doUuTien;
+        private NumericUpDown UuTienUpDown;
         private Label label2;
         private Label label4;
-        private TextBox ghiChu;
-        private TextBox maUV;
-        private TextBox maPhieu;
-        private TextBox maDN;
+        private TextBox GhiChuBox;
+        private TextBox MaUVBox;
+        private TextBox MaPhieuBox;
+        private TextBox MaDNBox;
     }
 }

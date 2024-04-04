@@ -2,6 +2,7 @@
 using ISAD_QLTuyenDung.GiaoDien.NhanVien.ThongTinDangTuyen;
 using Oracle.ManagedDataAccess.Client;
 using ISAD_QLTuyenDung.HoTro;
+using ISAD_QLTuyenDung.NghiepVu;
 
 namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 {
@@ -55,7 +56,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 
         private void NhanVienForm_Load(object sender, EventArgs e)
         {
-            //empName.Text = $"{curUser} - " + NghiepVu.LanhDao.LanhDaoForm.LanhDaoLoad(curUser, conn);
+            NVNameLabel.Text = $"{curUser} - " + NhanSu.NhanSuLoad(curUser, conn);
         }
     }
 }

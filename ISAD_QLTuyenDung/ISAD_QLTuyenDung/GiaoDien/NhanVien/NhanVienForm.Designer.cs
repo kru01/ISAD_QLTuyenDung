@@ -37,7 +37,7 @@
             DSHetHDButton = new Button();
             GiaHanHDButton = new Button();
             DKDNButton = new Button();
-            empName = new Label();
+            NVNameLabel = new Label();
             pictureBox1 = new PictureBox();
             navigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -60,7 +60,7 @@
             navigator.Controls.Add(DSHetHDButton);
             navigator.Controls.Add(GiaHanHDButton);
             navigator.Controls.Add(DKDNButton);
-            navigator.Controls.Add(empName);
+            navigator.Controls.Add(NVNameLabel);
             navigator.Controls.Add(pictureBox1);
             navigator.Dock = DockStyle.Left;
             navigator.Location = new Point(0, 0);
@@ -176,17 +176,17 @@
             DKDNButton.UseVisualStyleBackColor = false;
             DKDNButton.Click += DKDNButton_Click;
             // 
-            // empName
+            // NVNameLabel
             // 
-            empName.Dock = DockStyle.Top;
-            empName.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            empName.ForeColor = Color.White;
-            empName.Location = new Point(0, 120);
-            empName.Name = "empName";
-            empName.Size = new Size(300, 50);
-            empName.TabIndex = 5;
-            empName.Text = "<Name>";
-            empName.TextAlign = ContentAlignment.MiddleCenter;
+            NVNameLabel.Dock = DockStyle.Top;
+            NVNameLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NVNameLabel.ForeColor = Color.White;
+            NVNameLabel.Location = new Point(0, 120);
+            NVNameLabel.Name = "NVNameLabel";
+            NVNameLabel.Size = new Size(300, 50);
+            NVNameLabel.TabIndex = 5;
+            NVNameLabel.Text = "<Name>";
+            NVNameLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -224,7 +224,7 @@
         private Button DangXuatButton;
         private Button GiaHanHDButton;
         private Button DKDNButton;
-        private Label empName;
+        private Label NVNameLabel;
         private PictureBox pictureBox1;
         private Button HSTuyenDungButton;
         private Button TTDangTuyenButton;

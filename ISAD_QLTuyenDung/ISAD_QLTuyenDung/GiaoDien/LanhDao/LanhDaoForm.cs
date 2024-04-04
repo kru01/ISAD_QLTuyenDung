@@ -18,7 +18,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void LanhDaoForm_Load(object sender, EventArgs e)
         {
-            empName.Text = $"{curUser} - " + NhanSu.LanhDaoLoad(curUser, conn);
+            LDNameLabel.Text = $"{curUser} - " + NhanSu.NhanSuLoad(curUser, conn);
         }
 
         private void DanhGiaDNButton_Click(object sender, EventArgs e)

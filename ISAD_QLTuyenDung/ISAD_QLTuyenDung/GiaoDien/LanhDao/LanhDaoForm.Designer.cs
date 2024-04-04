@@ -33,7 +33,7 @@
             DangXuatButton = new Button();
             QuanLyUDButton = new Button();
             DanhGiaDNButton = new Button();
-            empName = new Label();
+            LDNameLabel = new Label();
             pictureBox1 = new PictureBox();
             mainPanel = new Panel();
             navigator.SuspendLayout();
@@ -46,7 +46,7 @@
             navigator.Controls.Add(DangXuatButton);
             navigator.Controls.Add(QuanLyUDButton);
             navigator.Controls.Add(DanhGiaDNButton);
-            navigator.Controls.Add(empName);
+            navigator.Controls.Add(LDNameLabel);
             navigator.Controls.Add(pictureBox1);
             navigator.Dock = DockStyle.Left;
             navigator.Location = new Point(0, 0);
@@ -108,17 +108,17 @@
             DanhGiaDNButton.UseVisualStyleBackColor = false;
             DanhGiaDNButton.Click += DanhGiaDNButton_Click;
             // 
-            // empName
+            // LDNameLabel
             // 
-            empName.Dock = DockStyle.Top;
-            empName.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            empName.ForeColor = Color.White;
-            empName.Location = new Point(0, 120);
-            empName.Name = "empName";
-            empName.Size = new Size(300, 50);
-            empName.TabIndex = 5;
-            empName.Text = "<Name>";
-            empName.TextAlign = ContentAlignment.MiddleCenter;
+            LDNameLabel.Dock = DockStyle.Top;
+            LDNameLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LDNameLabel.ForeColor = Color.White;
+            LDNameLabel.Location = new Point(0, 120);
+            LDNameLabel.Name = "LDNameLabel";
+            LDNameLabel.Size = new Size(300, 50);
+            LDNameLabel.TabIndex = 5;
+            LDNameLabel.Text = "<Name>";
+            LDNameLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -165,7 +165,7 @@
         private Button QuanLyUDButton;
         private Button DangXuatButton;
         private Panel mainPanel;
-        private Label empName;
+        private Label LDNameLabel;
         private PictureBox pictureBox1;
     }
 }

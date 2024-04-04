@@ -7,13 +7,17 @@ namespace ISAD_QLTuyenDung.Database
 {
     internal class HoSoUngTuyenDB
     {
-        public static DataTable LayHoSo(OracleConnection conn)
+        public static DataTable LayHoSo(OracleConnection conn, HoSoUngTuyen? hoso = null)
         {
-            string sql = $"SELECT DISTINCT HS.MAUV, UV.HOTEN, HS.MAPHIEU, HS.MADN, DT.VITRIUT, HS.DOUUTIEN, HS.GHICHU, HS.TINHTRANG " +
+            string orderSql = "ORDER BY HS.MAUV, HS.MADN, HS.MAPHIEU";
+            string sql = $"SELECT HS.MAUV, UV.HOTEN, HS.MADN, HS.MAPHIEU, DT.VITRIUT, HS.DOUUTIEN, HS.GHICHU, HS.TINHTRANG " +
                 $"FROM {OracleConfig.schema}.HOSOUNGTUYEN HS JOIN {OracleConfig.schema}.UNGVIEN UV ON HS.MAUV=UV.MAUV " +
-                $"JOIN {OracleConfig.schema}.PTTDANGTUYEN DT ON HS.MAPHIEU=DT.MAPHIEU";
+                $"JOIN {OracleConfig.schema}.PTTDANGTUYEN DT ON HS.MADN=DT.MADN AND HS.MAPHIEU=DT.MAPHIEU";
 
-            if (conn.State == ConnectionState.Closed) conn.Open();
+            if (hoso != null) sql += $" WHERE HS.MAUV='{hoso.maUV}' AND HS.MADN='{hoso.maDN}' AND HS.MAPHIEU='{hoso.maPhieu}'";
+            sql += $" {orderSql}";
+
+            conn.Open();
             OracleDataAdapter adp = new(sql, conn);
             try
             {
@@ -32,13 +36,12 @@ namespace ISAD_QLTuyenDung.Database
         {
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 string hoSoSql = $"INSERT INTO {OracleConfig.schema}.HOSOUNGTUYEN " +
                     $"VALUES('{hoso.maUV}', '{hoso.maDN}', '{hoso.maPhieu}', '{hoso.doUuTien}', " +
                     $"'{hoso.ghiChu}', {hoso.tinhTrang}, '{hoso.nvDuyet}')";
                 OracleCommand cmdHoSo = new(hoSoSql, conn);
                 cmdHoSo.ExecuteNonQuery();
-                GiayToUTDB.ThemGiayTo(hoso, conn);
             }
             catch (Exception)
             {
@@ -51,7 +54,7 @@ namespace ISAD_QLTuyenDung.Database
         {
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 string hoSoSql = $"UPDATE {OracleConfig.schema}.HOSOUNGTUYEN " +
                     $"SET DOUUTIEN={hoso.doUuTien}, GHICHU='{hoso.ghiChu}', TINHTRANG={hoso.tinhTrang} " +
                     $"WHERE MAUV='{hoso.maUV}' AND MADN='{hoso.maDN}' AND MAPHIEU='{hoso.maPhieu}'";

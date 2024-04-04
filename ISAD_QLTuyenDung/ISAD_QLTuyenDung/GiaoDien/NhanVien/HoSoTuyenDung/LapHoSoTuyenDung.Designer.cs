@@ -32,17 +32,21 @@
             panel1 = new Panel();
             label2 = new Label();
             panel3 = new Panel();
+            label8 = new Label();
+            MaPhieuBox = new TextBox();
+            label7 = new Label();
+            MaDNBox = new TextBox();
             LamMoiButton = new Button();
             label6 = new Label();
-            tinhTrang = new TextBox();
+            TinhTrangBox = new TextBox();
             label4 = new Label();
-            ghiChu = new TextBox();
-            vitriUT = new TextBox();
+            GhiChuBox = new TextBox();
+            ViTriUTBox = new TextBox();
             label3 = new Label();
             label1 = new Label();
-            maUV = new TextBox();
+            MaUVBox = new TextBox();
             label5 = new Label();
-            tenUV = new TextBox();
+            TenUVBox = new TextBox();
             ThemHoSoButton = new Button();
             LapDSHSButton = new Button();
             DuyetHSButton = new Button();
@@ -96,17 +100,21 @@
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(label8);
+            panel3.Controls.Add(MaPhieuBox);
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(MaDNBox);
             panel3.Controls.Add(LamMoiButton);
             panel3.Controls.Add(label6);
-            panel3.Controls.Add(tinhTrang);
+            panel3.Controls.Add(TinhTrangBox);
             panel3.Controls.Add(label4);
-            panel3.Controls.Add(ghiChu);
-            panel3.Controls.Add(vitriUT);
+            panel3.Controls.Add(GhiChuBox);
+            panel3.Controls.Add(ViTriUTBox);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label1);
-            panel3.Controls.Add(maUV);
+            panel3.Controls.Add(MaUVBox);
             panel3.Controls.Add(label5);
-            panel3.Controls.Add(tenUV);
+            panel3.Controls.Add(TenUVBox);
             panel3.Controls.Add(ThemHoSoButton);
             panel3.Controls.Add(LapDSHSButton);
             panel3.Controls.Add(DuyetHSButton);
@@ -114,6 +122,48 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(876, 266);
             panel3.TabIndex = 8;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.LightSeaGreen;
+            label8.Location = new Point(201, 95);
+            label8.Name = "label8";
+            label8.Size = new Size(83, 23);
+            label8.TabIndex = 27;
+            label8.Text = "Mã phiếu";
+            // 
+            // MaPhieuBox
+            // 
+            MaPhieuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaPhieuBox.Location = new Point(201, 120);
+            MaPhieuBox.Name = "MaPhieuBox";
+            MaPhieuBox.ReadOnly = true;
+            MaPhieuBox.Size = new Size(100, 30);
+            MaPhieuBox.TabIndex = 26;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.LightSeaGreen;
+            label7.Location = new Point(78, 95);
+            label7.Name = "label7";
+            label7.Size = new Size(65, 23);
+            label7.TabIndex = 25;
+            label7.Text = "Mã DN";
+            // 
+            // MaDNBox
+            // 
+            MaDNBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaDNBox.Location = new Point(78, 120);
+            MaDNBox.Name = "MaDNBox";
+            MaDNBox.ReadOnly = true;
+            MaDNBox.Size = new Size(100, 30);
+            MaDNBox.TabIndex = 24;
             // 
             // LamMoiButton
             // 
@@ -136,20 +186,20 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.LightSeaGreen;
-            label6.Location = new Point(377, 94);
+            label6.Location = new Point(397, 34);
             label6.Name = "label6";
             label6.Size = new Size(89, 23);
             label6.TabIndex = 22;
             label6.Text = "Tình trạng";
             // 
-            // tinhTrang
+            // TinhTrangBox
             // 
-            tinhTrang.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tinhTrang.Location = new Point(377, 120);
-            tinhTrang.Name = "tinhTrang";
-            tinhTrang.ReadOnly = true;
-            tinhTrang.Size = new Size(150, 30);
-            tinhTrang.TabIndex = 21;
+            TinhTrangBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TinhTrangBox.Location = new Point(397, 60);
+            TinhTrangBox.Name = "TinhTrangBox";
+            TinhTrangBox.ReadOnly = true;
+            TinhTrangBox.Size = new Size(130, 30);
+            TinhTrangBox.TabIndex = 21;
             // 
             // label4
             // 
@@ -163,23 +213,23 @@
             label4.TabIndex = 20;
             label4.Text = "Ghi chú";
             // 
-            // ghiChu
+            // GhiChuBox
             // 
-            ghiChu.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ghiChu.Location = new Point(78, 180);
-            ghiChu.Name = "ghiChu";
-            ghiChu.ReadOnly = true;
-            ghiChu.Size = new Size(449, 30);
-            ghiChu.TabIndex = 19;
+            GhiChuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GhiChuBox.Location = new Point(78, 180);
+            GhiChuBox.Name = "GhiChuBox";
+            GhiChuBox.ReadOnly = true;
+            GhiChuBox.Size = new Size(449, 30);
+            GhiChuBox.TabIndex = 19;
             // 
-            // vitriUT
+            // ViTriUTBox
             // 
-            vitriUT.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            vitriUT.Location = new Point(78, 120);
-            vitriUT.Name = "vitriUT";
-            vitriUT.ReadOnly = true;
-            vitriUT.Size = new Size(250, 30);
-            vitriUT.TabIndex = 18;
+            ViTriUTBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ViTriUTBox.Location = new Point(327, 120);
+            ViTriUTBox.Name = "ViTriUTBox";
+            ViTriUTBox.ReadOnly = true;
+            ViTriUTBox.Size = new Size(200, 30);
+            ViTriUTBox.TabIndex = 18;
             // 
             // label3
             // 
@@ -187,7 +237,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.LightSeaGreen;
-            label3.Location = new Point(78, 94);
+            label3.Location = new Point(327, 94);
             label3.Name = "label3";
             label3.Size = new Size(131, 23);
             label3.TabIndex = 17;
@@ -205,14 +255,14 @@
             label1.TabIndex = 16;
             label1.Text = "Mã ứng viên";
             // 
-            // maUV
+            // MaUVBox
             // 
-            maUV.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            maUV.Location = new Point(78, 60);
-            maUV.Name = "maUV";
-            maUV.ReadOnly = true;
-            maUV.Size = new Size(100, 30);
-            maUV.TabIndex = 15;
+            MaUVBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaUVBox.Location = new Point(78, 60);
+            MaUVBox.Name = "MaUVBox";
+            MaUVBox.ReadOnly = true;
+            MaUVBox.Size = new Size(100, 30);
+            MaUVBox.TabIndex = 15;
             // 
             // label5
             // 
@@ -220,20 +270,20 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.LightSeaGreen;
-            label5.Location = new Point(227, 34);
+            label5.Location = new Point(201, 34);
             label5.Name = "label5";
             label5.Size = new Size(109, 23);
             label5.TabIndex = 14;
             label5.Text = "Tên ứng viên";
             // 
-            // tenUV
+            // TenUVBox
             // 
-            tenUV.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tenUV.Location = new Point(227, 60);
-            tenUV.Name = "tenUV";
-            tenUV.ReadOnly = true;
-            tenUV.Size = new Size(300, 30);
-            tenUV.TabIndex = 13;
+            TenUVBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TenUVBox.Location = new Point(201, 60);
+            TenUVBox.Name = "TenUVBox";
+            TenUVBox.ReadOnly = true;
+            TenUVBox.Size = new Size(180, 30);
+            TenUVBox.TabIndex = 13;
             // 
             // ThemHoSoButton
             // 
@@ -309,15 +359,19 @@
         private Button DuyetHSButton;
         private Button ThemHoSoButton;
         private Label label5;
-        private TextBox tenUV;
+        private TextBox TenUVBox;
         private Label label1;
-        private TextBox maUV;
+        private TextBox MaUVBox;
         private Label label3;
-        private TextBox vitriUT;
+        private TextBox ViTriUTBox;
         private Label label4;
-        private TextBox ghiChu;
+        private TextBox GhiChuBox;
         private Label label6;
-        private TextBox tinhTrang;
+        private TextBox TinhTrangBox;
         private Button LamMoiButton;
+        private Label label7;
+        private TextBox MaDNBox;
+        private Label label8;
+        private TextBox MaPhieuBox;
     }
 }

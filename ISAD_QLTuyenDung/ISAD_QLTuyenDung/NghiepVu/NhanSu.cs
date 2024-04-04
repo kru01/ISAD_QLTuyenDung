@@ -5,9 +5,9 @@ namespace ISAD_QLTuyenDung.NghiepVu
 {
     internal class NhanSu
     {
-        public static string LanhDaoLoad(string curUser, OracleConnection conn)
+        public static string NhanSuLoad(string curUser, OracleConnection conn)
         {
-            return NhanSuDB.LayTenLanhDao(curUser, conn);
+            return NhanSuDB.LayTenNhanSu(curUser, conn);
         }
     }
 }

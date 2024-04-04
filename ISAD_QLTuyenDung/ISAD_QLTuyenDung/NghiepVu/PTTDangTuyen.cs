@@ -4,11 +4,13 @@ using System.Data;
 
 namespace ISAD_QLTuyenDung.NghiepVu
 {
-    internal class PTTDangTuyen (string maDN, string viTriUT, int soLuong, string ngayBD, string ngayKT, string yeuCau, int tongTien, int hinhThuc, string curUser)
+    internal class PTTDangTuyen (string maDN, string viTriUT, int soLuongTD, string ngayBD, string ngayKT,
+        string yeuCauUV, int tongTien, int htThanhToan, string nvLap)
     {
         public string? maPhieu;
-        readonly public string maDN = maDN, viTriUT = viTriUT, yeuCau = yeuCau, curUser = curUser, ngayBD = ngayBD, ngayKT = ngayKT;
-        readonly public int soLuong = soLuong, tongTien = tongTien, hinhThuc = hinhThuc;
+        readonly public string maDN = maDN, viTriUT = viTriUT, yeuCauUV = yeuCauUV, nvLap = nvLap,
+            ngayBD = ngayBD, ngayKT = ngayKT;
+        readonly public int soLuongTD = soLuongTD, tongTien = tongTien, htThanhToan = htThanhToan;
 
         public static DataTable LoadPhieuTTDT(OracleConnection conn, PTTDangTuyen? phieu = null)
         {
@@ -20,6 +22,11 @@ namespace ISAD_QLTuyenDung.NghiepVu
             return PTTDangTuyenDB.LayMaDN(conn);
         }
 
+        public static DataSet LoadMaPhieu(OracleConnection conn, string maDN)
+        {
+            return PTTDangTuyenDB.LayMaPhieu(conn, maDN);
+        }
+
         public static DataSet LoadViTriUT(OracleConnection conn)
         {
             return PTTDangTuyenDB.LayViTriUT(conn);
@@ -27,7 +34,7 @@ namespace ISAD_QLTuyenDung.NghiepVu
 
         public static bool ThemPhieu(ref PTTDangTuyen phieu, OracleConnection conn)
         {
-            if (string.IsNullOrEmpty(phieu.yeuCau)) return false;
+            if (string.IsNullOrEmpty(phieu.yeuCauUV)) return false;
             try
             {
                 phieu.maPhieu = PTTDangTuyenDB.ThemPhieu(phieu, conn);

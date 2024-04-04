@@ -5,31 +5,15 @@ using System.Data;
 
 namespace ISAD_QLTuyenDung.NghiepVu
 {
-    internal class HoSoUngTuyen(string maUV, string maDN, string maPhieu, int doUuTien, string ghiChu, int tinhTrang, string nvDuyet, string[]? thongTin = null, int[]? loaiGiayTo = null)
+    internal class HoSoUngTuyen(string maUV, string maDN, string maPhieu, int doUuTien, string ghiChu,
+        int tinhTrang, string nvDuyet)
     {
-        readonly public string[]? thongTin = thongTin;
-        readonly public int[]? loaiGiayTo = loaiGiayTo;
         readonly public string maUV = maUV, maDN = maDN, maPhieu = maPhieu, ghiChu = ghiChu, nvDuyet = nvDuyet;
         readonly public int doUuTien = doUuTien, tinhTrang = tinhTrang;
 
-        public static DataTable LoadHoSo(OracleConnection conn)
+        public static DataTable LoadHoSo(OracleConnection conn, HoSoUngTuyen? hoso = null)
         {
-            return HoSoUngTuyenDB.LayHoSo(conn);
-        }
-
-        public static DataSet LoadMaUngVien(OracleConnection conn)
-        {
-            return UngVienDB.LayIDUngVien(conn);
-        }
-
-        public static DataSet LoadMaPhieu(OracleConnection conn)
-        {
-            return PTTDangTuyenDB.LayMaPhieu(conn);
-        }
-
-        public static DataSet LoadMaDN(OracleConnection conn)
-        {
-            return PTTDangTuyenDB.LayMaDN(conn);
+            return HoSoUngTuyenDB.LayHoSo(conn, hoso);
         }
 
         public static bool ThemHoSo(ref HoSoUngTuyen hoso, OracleConnection conn)

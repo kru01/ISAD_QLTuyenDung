@@ -8,7 +8,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
         public event EventHandler? FormClosedEvent;
         private readonly OracleConnection conn;
         private readonly string curUser;
-        internal HoSoUngTuyen? hoso;
+        internal HoSoUngTuyen? hoso = null;
 
         public DuyetHoSo(string curUser, OracleConnection conn)
         {
@@ -28,12 +28,12 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
             DataGridViewRow cRow = HoSoData.Rows[e.RowIndex];
 
             int index = Convert.ToInt32(cRow.Cells["TINHTRANG"].Value);
-            maUV.Text = cRow.Cells["MAUV"].Value.ToString();
-            maPhieu.Text = cRow.Cells["MAPHIEU"].Value.ToString();
-            maDN.Text = cRow.Cells["MADN"].Value.ToString();
-            tinhTrang.SelectedItem = tinhTrang.Items[index - 1];
-            doUuTien.Text = cRow.Cells["DOUUTIEN"].Value.ToString();
-            ghiChu.Text = cRow.Cells["GHICHU"].Value.ToString();
+            MaUVBox.Text = cRow.Cells["MAUV"].Value.ToString();
+            MaPhieuBox.Text = cRow.Cells["MAPHIEU"].Value.ToString();
+            MaDNBox.Text = cRow.Cells["MADN"].Value.ToString();
+            TinhTrangCbo.SelectedItem = TinhTrangCbo.Items[index - 1];
+            UuTienUpDown.Text = cRow.Cells["DOUUTIEN"].Value.ToString();
+            GhiChuBox.Text = cRow.Cells["GHICHU"].Value.ToString();
         }
 
         private void LamMoiButton_Click(object sender, EventArgs e)
@@ -41,9 +41,9 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
             HoSoData.DataSource = HoSoUngTuyen.LoadHoSo(conn);
         }
 
-        private void ThemButton_Click(object sender, EventArgs e)
+        private void DuyetButton_Click(object sender, EventArgs e)
         {
-            hoso = new(maUV.Text, maDN.Text, maPhieu.Text, (int)doUuTien.Value, ghiChu.Text, tinhTrang.SelectedIndex + 1, curUser);
+            hoso = new(MaUVBox.Text, MaDNBox.Text, MaPhieuBox.Text, (int)UuTienUpDown.Value, GhiChuBox.Text, TinhTrangCbo.SelectedIndex + 1, curUser);
             try
             {
                 if (!HoSoUngTuyen.DuyetHoSo(ref hoso, conn))
@@ -54,6 +54,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
                 {
                     MessageBox.Show("Duyệt hồ sơ thành công!");
                     FormClosedEvent?.Invoke(this, EventArgs.Empty);
+                    hoso = null;
                     Close();
                 }
             }

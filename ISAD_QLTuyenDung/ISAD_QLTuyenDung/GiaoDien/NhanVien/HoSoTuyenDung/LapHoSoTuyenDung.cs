@@ -5,10 +5,11 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
 {
     public partial class LapHoSoTuyenDung : Form
     {
-        private static ThemHoSo? formHS;
-        private static DuyetHoSo? formDHS;
-        private readonly OracleConnection conn;
-        private readonly string curUser;
+        static ThemHoSo? formHS;
+        static DuyetHoSo? formDHS;
+        static HoSoUngTuyen? hoso;
+        readonly OracleConnection conn;
+        readonly string curUser;
 
         public LapHoSoTuyenDung(string curUser, OracleConnection conn)
         {
@@ -26,17 +27,22 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
         {
             if (e.RowIndex == -1 || e.RowIndex == HoSoData.RowCount) return;
             DataGridViewRow cRow = HoSoData.Rows[e.RowIndex];
+            string[] tinhTrangs = ["Chưa đủ điều kiện", "Đủ điều kiện", "Đã xử lý", "Đã đạt"];
 
-            maUV.Text = cRow.Cells["MAUV"].Value.ToString();
-            tenUV.Text = cRow.Cells["HOTEN"].Value.ToString();
-            vitriUT.Text = cRow.Cells["VITRIUT"].Value.ToString();
-            tinhTrang.Text = cRow.Cells["TINHTRANG"].Value.ToString();
-            ghiChu.Text = cRow.Cells["GHICHU"].Value.ToString();
+            MaUVBox.Text = cRow.Cells["MAUV"].Value.ToString();
+            TenUVBox.Text = cRow.Cells["HOTEN"].Value.ToString();
+            ViTriUTBox.Text = cRow.Cells["VITRIUT"].Value.ToString();
+            TinhTrangBox.Text = tinhTrangs[Convert.ToInt32(cRow.Cells["TINHTRANG"].Value) - 1];
+            MaDNBox.Text = cRow.Cells["MADN"].Value.ToString();
+            MaPhieuBox.Text = cRow.Cells["MAPHIEU"].Value.ToString();
+            GhiChuBox.Text = cRow.Cells["GHICHU"].Value.ToString();
         }
 
         private void FormClosedEvent(object? sender, EventArgs e)
         {
-            HoSoData.DataSource = HoSoUngTuyen.LoadHoSo(conn);
+            hoso = formHS?.hoso ?? formDHS?.hoso;
+            HoSoData.DataSource = HoSoUngTuyen.LoadHoSo(conn, hoso);
+            hoso = null;
         }
 
         private void ThemHoSoButton_Click(object sender, EventArgs e)

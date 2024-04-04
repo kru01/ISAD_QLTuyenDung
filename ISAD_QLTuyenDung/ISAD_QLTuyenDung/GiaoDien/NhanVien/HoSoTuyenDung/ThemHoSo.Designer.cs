@@ -32,22 +32,22 @@
             panel1 = new Panel();
             ThemGiayToButton = new Button();
             label7 = new Label();
-            maDN = new ComboBox();
+            MaDNCbo = new ComboBox();
             HuyButton = new Button();
             ThemButton = new Button();
             label6 = new Label();
-            doUuTien = new NumericUpDown();
+            DoUuTienUpDown = new NumericUpDown();
             label5 = new Label();
-            tinhTrang = new ComboBox();
+            TinhTrangCbo = new ComboBox();
             label2 = new Label();
             label4 = new Label();
-            maPhieu = new ComboBox();
-            maUV = new ComboBox();
+            MaPhieuCbo = new ComboBox();
+            MaUVCbo = new ComboBox();
             label3 = new Label();
-            ghiChu = new TextBox();
+            GhiChuBox = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)doUuTien).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DoUuTienUpDown).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -55,19 +55,19 @@
             panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(ThemGiayToButton);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(maDN);
+            panel1.Controls.Add(MaDNCbo);
             panel1.Controls.Add(HuyButton);
             panel1.Controls.Add(ThemButton);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(doUuTien);
+            panel1.Controls.Add(DoUuTienUpDown);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(tinhTrang);
+            panel1.Controls.Add(TinhTrangCbo);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(maPhieu);
-            panel1.Controls.Add(maUV);
+            panel1.Controls.Add(MaPhieuCbo);
+            panel1.Controls.Add(MaUVCbo);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(ghiChu);
+            panel1.Controls.Add(GhiChuBox);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -96,19 +96,20 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.LightSeaGreen;
-            label7.Location = new Point(239, 175);
+            label7.Location = new Point(65, 175);
             label7.Name = "label7";
             label7.Size = new Size(147, 23);
             label7.TabIndex = 25;
             label7.Text = "Mã doanh nghiệp";
             // 
-            // maDN
+            // MaDNCbo
             // 
-            maDN.FormattingEnabled = true;
-            maDN.Location = new Point(239, 200);
-            maDN.Name = "maDN";
-            maDN.Size = new Size(150, 28);
-            maDN.TabIndex = 24;
+            MaDNCbo.FormattingEnabled = true;
+            MaDNCbo.Location = new Point(65, 200);
+            MaDNCbo.Name = "MaDNCbo";
+            MaDNCbo.Size = new Size(150, 28);
+            MaDNCbo.TabIndex = 24;
+            MaDNCbo.TextChanged += MaDN_TextChanged;
             // 
             // HuyButton
             // 
@@ -152,13 +153,15 @@
             label6.TabIndex = 22;
             label6.Text = "Ưu tiên";
             // 
-            // doUuTien
+            // DoUuTienUpDown
             // 
-            doUuTien.Location = new Point(415, 201);
-            doUuTien.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            doUuTien.Name = "doUuTien";
-            doUuTien.Size = new Size(50, 27);
-            doUuTien.TabIndex = 21;
+            DoUuTienUpDown.Location = new Point(415, 201);
+            DoUuTienUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            DoUuTienUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            DoUuTienUpDown.Name = "DoUuTienUpDown";
+            DoUuTienUpDown.Size = new Size(50, 27);
+            DoUuTienUpDown.TabIndex = 21;
+            DoUuTienUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label5
             // 
@@ -172,14 +175,14 @@
             label5.TabIndex = 20;
             label5.Text = "Tình trạng";
             // 
-            // tinhTrang
+            // TinhTrangCbo
             // 
-            tinhTrang.FormattingEnabled = true;
-            tinhTrang.Items.AddRange(new object[] { "-- Tình trạng hồ sơ --", "Chưa đủ điều kiện", "Đủ điều kiện", "Đã xử lý", "Đã đạt" });
-            tinhTrang.Location = new Point(239, 105);
-            tinhTrang.Name = "tinhTrang";
-            tinhTrang.Size = new Size(226, 28);
-            tinhTrang.TabIndex = 19;
+            TinhTrangCbo.FormattingEnabled = true;
+            TinhTrangCbo.Items.AddRange(new object[] { "-- Tình trạng hồ sơ --", "Chưa đủ điều kiện", "Đủ điều kiện", "Đã xử lý", "Đã đạt" });
+            TinhTrangCbo.Location = new Point(239, 105);
+            TinhTrangCbo.Name = "TinhTrangCbo";
+            TinhTrangCbo.Size = new Size(226, 28);
+            TinhTrangCbo.TabIndex = 19;
             // 
             // label2
             // 
@@ -199,27 +202,27 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.LightSeaGreen;
-            label4.Location = new Point(65, 175);
+            label4.Location = new Point(239, 175);
             label4.Name = "label4";
             label4.Size = new Size(83, 23);
             label4.TabIndex = 18;
             label4.Text = "Mã phiếu";
             // 
-            // maPhieu
+            // MaPhieuCbo
             // 
-            maPhieu.FormattingEnabled = true;
-            maPhieu.Location = new Point(65, 200);
-            maPhieu.Name = "maPhieu";
-            maPhieu.Size = new Size(150, 28);
-            maPhieu.TabIndex = 17;
+            MaPhieuCbo.FormattingEnabled = true;
+            MaPhieuCbo.Location = new Point(239, 200);
+            MaPhieuCbo.Name = "MaPhieuCbo";
+            MaPhieuCbo.Size = new Size(150, 28);
+            MaPhieuCbo.TabIndex = 17;
             // 
-            // maUV
+            // MaUVCbo
             // 
-            maUV.FormattingEnabled = true;
-            maUV.Location = new Point(65, 105);
-            maUV.Name = "maUV";
-            maUV.Size = new Size(150, 28);
-            maUV.TabIndex = 16;
+            MaUVCbo.FormattingEnabled = true;
+            MaUVCbo.Location = new Point(65, 105);
+            MaUVCbo.Name = "MaUVCbo";
+            MaUVCbo.Size = new Size(150, 28);
+            MaUVCbo.TabIndex = 16;
             // 
             // label3
             // 
@@ -233,12 +236,12 @@
             label3.TabIndex = 15;
             label3.Text = "Mã ứng viên";
             // 
-            // ghiChu
+            // GhiChuBox
             // 
-            ghiChu.Location = new Point(65, 290);
-            ghiChu.Name = "ghiChu";
-            ghiChu.Size = new Size(400, 27);
-            ghiChu.TabIndex = 13;
+            GhiChuBox.Location = new Point(65, 290);
+            GhiChuBox.Name = "GhiChuBox";
+            GhiChuBox.Size = new Size(400, 27);
+            GhiChuBox.TabIndex = 13;
             // 
             // label1
             // 
@@ -267,7 +270,7 @@
             Load += ThemHoSo_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)doUuTien).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DoUuTienUpDown).EndInit();
             ResumeLayout(false);
         }
 
@@ -277,17 +280,17 @@
         private Label label1;
         private Label label3;
         private Label label2;
-        private TextBox ghiChu;
-        private NumericUpDown doUuTien;
+        private TextBox GhiChuBox;
+        private NumericUpDown DoUuTienUpDown;
         private Label label5;
-        private ComboBox tinhTrang;
+        private ComboBox TinhTrangCbo;
         private Label label4;
-        private ComboBox maPhieu;
-        private ComboBox maUV;
+        private ComboBox MaPhieuCbo;
+        private ComboBox MaUVCbo;
         private Label label6;
         private Button HuyButton;
         private Button ThemButton;
-        private ComboBox maDN;
+        private ComboBox MaDNCbo;
         private Label label7;
         private Button ThemGiayToButton;
     }

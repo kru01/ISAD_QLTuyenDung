@@ -5,7 +5,7 @@ namespace ISAD_QLTuyenDung.Database
 {
     internal class NhanSuDB
     {
-        public static string LayTenLanhDao(string curUser, OracleConnection conn)
+        public static string LayTenNhanSu(string curUser, OracleConnection conn)
         {
             string sql = $"SELECT HOTEN FROM {OracleConfig.schema}.NHANSU WHERE MANV='{curUser}'";
             string name = " ";
