@@ -1,6 +1,6 @@
 ﻿using Excel = Microsoft.Office.Interop.Excel;
-using ISAD_QLTuyenDung.Database;
 using Oracle.ManagedDataAccess.Client;
+using ISAD_QLTuyenDung.Database;
 using System.Data;
 
 namespace ISAD_QLTuyenDung.NghiepVu
@@ -14,6 +14,11 @@ namespace ISAD_QLTuyenDung.NghiepVu
         public static DataTable LoadHoSo(OracleConnection conn, HoSoUngTuyen? hoso = null)
         {
             return HoSoUngTuyenDB.LayHoSo(conn, hoso);
+        }
+
+        public static DataSet LoadMaNVDuyet(OracleConnection conn)
+        {
+            return HoSoUngTuyenDB.LayMaNVDuyet(conn);
         }
 
         public static bool ThemHoSo(ref HoSoUngTuyen hoso, OracleConnection conn)

@@ -7,6 +7,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
     {
         static ThemHoSo? formHS;
         static DuyetHoSo? formDHS;
+        static LapDSHoSo? formDSHS;
         static HoSoUngTuyen? hoso;
         readonly OracleConnection conn;
         readonly string curUser;
@@ -61,15 +62,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
 
         private void LapDSHSButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                HoSoUngTuyen.ExportHoSo(HoSoData);
-                MessageBox.Show("Copy vào clipboard thành công! Nếu Excel không tự động mở, vui lòng paste vào nơi cần thiết!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            formDSHS = new(curUser, conn);
+            formDSHS.Show();
         }
 
         private void LamMoiButton_Click(object sender, EventArgs e)

@@ -106,6 +106,7 @@
             MaCLBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaCLBox.Location = new Point(54, 70);
             MaCLBox.Name = "MaCLBox";
+            MaCLBox.PlaceholderText = "Mã chiến lược";
             MaCLBox.ReadOnly = true;
             MaCLBox.Size = new Size(119, 30);
             MaCLBox.TabIndex = 21;
@@ -139,6 +140,7 @@
             TenLDBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TenLDBox.Location = new Point(546, 70);
             TenLDBox.Name = "TenLDBox";
+            TenLDBox.PlaceholderText = "Tên lãnh đạo đề xuất";
             TenLDBox.ReadOnly = true;
             TenLDBox.Size = new Size(275, 30);
             TenLDBox.TabIndex = 17;
@@ -178,6 +180,7 @@
             TenCLBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TenCLBox.Location = new Point(202, 70);
             TenCLBox.Name = "TenCLBox";
+            TenCLBox.PlaceholderText = "Tên chiến lược";
             TenCLBox.ReadOnly = true;
             TenCLBox.Size = new Size(302, 30);
             TenCLBox.TabIndex = 15;
@@ -199,6 +202,7 @@
             MoTaBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MoTaBox.Location = new Point(54, 180);
             MoTaBox.Name = "MoTaBox";
+            MoTaBox.PlaceholderText = "Mô tả";
             MoTaBox.ReadOnly = true;
             MoTaBox.Size = new Size(500, 30);
             MoTaBox.TabIndex = 13;

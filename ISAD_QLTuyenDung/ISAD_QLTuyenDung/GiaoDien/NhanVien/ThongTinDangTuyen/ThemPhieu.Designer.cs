@@ -240,6 +240,7 @@
             yeuCau.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             yeuCau.Location = new Point(42, 300);
             yeuCau.Name = "yeuCau";
+            yeuCau.PlaceholderText = "Yêu cầu ứng viên";
             yeuCau.Size = new Size(500, 30);
             yeuCau.TabIndex = 37;
             // 

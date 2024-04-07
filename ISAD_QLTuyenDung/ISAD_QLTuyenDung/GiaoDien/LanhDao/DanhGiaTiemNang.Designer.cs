@@ -114,6 +114,7 @@
             TiemNangBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TiemNangBox.Location = new Point(384, 120);
             TiemNangBox.Name = "TiemNangBox";
+            TiemNangBox.PlaceholderText = "Tiềm năng";
             TiemNangBox.ReadOnly = true;
             TiemNangBox.Size = new Size(75, 30);
             TiemNangBox.TabIndex = 13;
@@ -147,6 +148,7 @@
             TenDNBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TenDNBox.Location = new Point(59, 50);
             TenDNBox.Name = "TenDNBox";
+            TenDNBox.PlaceholderText = "Tên doanh nghiệp";
             TenDNBox.ReadOnly = true;
             TenDNBox.Size = new Size(400, 30);
             TenDNBox.TabIndex = 11;
@@ -156,6 +158,7 @@
             TenLDBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TenLDBox.Location = new Point(59, 120);
             TenLDBox.Name = "TenLDBox";
+            TenLDBox.PlaceholderText = "Tên lãnh đạo đánh giá";
             TenLDBox.ReadOnly = true;
             TenLDBox.Size = new Size(300, 30);
             TenLDBox.TabIndex = 10;
@@ -177,6 +180,7 @@
             GhiChuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             GhiChuBox.Location = new Point(59, 190);
             GhiChuBox.Name = "GhiChuBox";
+            GhiChuBox.PlaceholderText = "Ghi chú";
             GhiChuBox.ReadOnly = true;
             GhiChuBox.Size = new Size(400, 30);
             GhiChuBox.TabIndex = 4;
@@ -259,9 +263,11 @@
             // DNThongKeBox
             // 
             DNThongKeBox.CharacterCasing = CharacterCasing.Upper;
-            DNThongKeBox.Location = new Point(187, 48);
+            DNThongKeBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DNThongKeBox.Location = new Point(187, 45);
             DNThongKeBox.Name = "DNThongKeBox";
-            DNThongKeBox.Size = new Size(125, 27);
+            DNThongKeBox.PlaceholderText = "Mã doanh nghiệp";
+            DNThongKeBox.Size = new Size(125, 30);
             DNThongKeBox.TabIndex = 4;
             // 
             // ThemDGButton

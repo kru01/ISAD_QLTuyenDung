@@ -71,7 +71,7 @@ namespace ISAD_QLTuyenDung.Database
                 cmd.Parameters.Add("IVITRIUT", OracleDbType.Varchar2, 255).Value = phieu.viTriUT;
                 cmd.Parameters.Add("ISOLUONGTD", OracleDbType.Int64, 255).Value = phieu.soLuongTD;
                 cmd.Parameters.Add("INGAYBD", OracleDbType.Varchar2, 255).Value = phieu.ngayBD;
-                cmd.Parameters.Add("INGAYBD", OracleDbType.Varchar2, 255).Value = phieu.ngayKT;
+                cmd.Parameters.Add("INGAYKT", OracleDbType.Varchar2, 255).Value = phieu.ngayKT;
                 cmd.Parameters.Add("IYEUCAUUV", OracleDbType.Varchar2, 255).Value = phieu.yeuCauUV;
                 cmd.Parameters.Add("ITONGTIEN", OracleDbType.Int64, 255).Value = phieu.tongTien;
                 cmd.Parameters.Add("IHTTHANHTOAN", OracleDbType.Int64, 255).Value = phieu.htThanhToan;

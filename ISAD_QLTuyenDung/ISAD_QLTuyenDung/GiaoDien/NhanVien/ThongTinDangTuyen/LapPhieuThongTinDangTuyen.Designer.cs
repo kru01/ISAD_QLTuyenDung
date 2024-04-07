@@ -138,6 +138,7 @@
             tongTien.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tongTien.Location = new Point(461, 128);
             tongTien.Name = "tongTien";
+            tongTien.PlaceholderText = "Tổng tiền";
             tongTien.ReadOnly = true;
             tongTien.Size = new Size(150, 30);
             tongTien.TabIndex = 28;
@@ -147,6 +148,7 @@
             tienDaTra.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tienDaTra.Location = new Point(663, 128);
             tienDaTra.Name = "tienDaTra";
+            tienDaTra.PlaceholderText = "Tiền đã trả";
             tienDaTra.ReadOnly = true;
             tienDaTra.Size = new Size(150, 30);
             tienDaTra.TabIndex = 27;
@@ -244,6 +246,7 @@
             hinhThucTT.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             hinhThucTT.Location = new Point(663, 68);
             hinhThucTT.Name = "hinhThucTT";
+            hinhThucTT.PlaceholderText = "Hình thức thanh toán";
             hinhThucTT.ReadOnly = true;
             hinhThucTT.Size = new Size(150, 30);
             hinhThucTT.TabIndex = 21;
@@ -265,6 +268,7 @@
             yeuCau.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             yeuCau.Location = new Point(62, 188);
             yeuCau.Name = "yeuCau";
+            yeuCau.PlaceholderText = "Yêu cầu ứng viên";
             yeuCau.ReadOnly = true;
             yeuCau.Size = new Size(475, 30);
             yeuCau.TabIndex = 19;
@@ -274,6 +278,7 @@
             vitriUT.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             vitriUT.Location = new Point(361, 68);
             vitriUT.Name = "vitriUT";
+            vitriUT.PlaceholderText = "Vị trí ứng tuyển";
             vitriUT.ReadOnly = true;
             vitriUT.Size = new Size(250, 30);
             vitriUT.TabIndex = 18;
@@ -307,6 +312,7 @@
             maDN.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             maDN.Location = new Point(62, 68);
             maDN.Name = "maDN";
+            maDN.PlaceholderText = "Mã DN";
             maDN.ReadOnly = true;
             maDN.Size = new Size(100, 30);
             maDN.TabIndex = 15;
@@ -328,6 +334,7 @@
             maPhieu.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             maPhieu.Location = new Point(211, 68);
             maPhieu.Name = "maPhieu";
+            maPhieu.PlaceholderText = "Mã Phiếu";
             maPhieu.ReadOnly = true;
             maPhieu.Size = new Size(100, 30);
             maPhieu.TabIndex = 13;
@@ -338,7 +345,7 @@
             PhieuTTDTData.AllowUserToDeleteRows = false;
             PhieuTTDTData.AllowUserToResizeColumns = false;
             PhieuTTDTData.AllowUserToResizeRows = false;
-            PhieuTTDTData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            PhieuTTDTData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             PhieuTTDTData.BorderStyle = BorderStyle.None;
             PhieuTTDTData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             PhieuTTDTData.Dock = DockStyle.Bottom;

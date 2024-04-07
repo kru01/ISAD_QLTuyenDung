@@ -21,7 +21,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
         {
             TenDNCbo.DisplayMember = "TENCTY";
             TenDNCbo.ValueMember = "MADN";
-            TenDNCbo.DataSource = DoanhNghiep.HienDSDoanhNghiep(conn).Tables[0];
+            TenDNCbo.DataSource = DoanhNghiep.LoadTenDoanhNghiep(conn).Tables[0];
         }
 
         private void HuyButton_Click(object sender, EventArgs e)

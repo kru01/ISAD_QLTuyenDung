@@ -69,9 +69,11 @@
             // TenCLBox
             // 
             TenCLBox.CharacterCasing = CharacterCasing.Upper;
+            TenCLBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TenCLBox.Location = new Point(54, 112);
             TenCLBox.Name = "TenCLBox";
-            TenCLBox.Size = new Size(425, 27);
+            TenCLBox.PlaceholderText = "Tên chiến lược";
+            TenCLBox.Size = new Size(425, 30);
             TenCLBox.TabIndex = 12;
             // 
             // HuyButton
@@ -130,9 +132,11 @@
             // 
             // MoTaBox
             // 
+            MoTaBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MoTaBox.Location = new Point(54, 196);
             MoTaBox.Name = "MoTaBox";
-            MoTaBox.Size = new Size(425, 27);
+            MoTaBox.PlaceholderText = "Mô tả";
+            MoTaBox.Size = new Size(425, 30);
             MoTaBox.TabIndex = 4;
             // 
             // label1

@@ -10,7 +10,7 @@ namespace ISAD_QLTuyenDung.Database
         public static DataTable LayHoSo(OracleConnection conn, HoSoUngTuyen? hoso = null)
         {
             string orderSql = "ORDER BY HS.MAUV, HS.MADN, HS.MAPHIEU";
-            string sql = $"SELECT HS.MAUV, UV.HOTEN, HS.MADN, HS.MAPHIEU, DT.VITRIUT, HS.DOUUTIEN, HS.GHICHU, HS.TINHTRANG " +
+            string sql = $"SELECT HS.MAUV, UV.HOTEN, HS.MADN, HS.MAPHIEU, DT.VITRIUT, HS.DOUUTIEN, HS.GHICHU, HS.TINHTRANG, HS.NVDUYET " +
                 $"FROM {OracleConfig.schema}.HOSOUNGTUYEN HS JOIN {OracleConfig.schema}.UNGVIEN UV ON HS.MAUV=UV.MAUV " +
                 $"JOIN {OracleConfig.schema}.PTTDANGTUYEN DT ON HS.MADN=DT.MADN AND HS.MAPHIEU=DT.MAPHIEU";
 
@@ -67,6 +67,18 @@ namespace ISAD_QLTuyenDung.Database
                 throw;
             }
             finally { conn.Close(); }
+        }
+
+        public static DataSet LayMaNVDuyet(OracleConnection conn)
+        {
+            String sql = $"SELECT DISTINCT NVDUYET FROM {OracleConfig.schema}.HOSOUNGTUYEN ORDER BY NVDUYET";
+
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            DataSet dt = new();
+            OracleDataAdapter ap = new(sql, conn);
+            ap.Fill(dt);
+            conn.Close();
+            return dt;
         }
     }
 }

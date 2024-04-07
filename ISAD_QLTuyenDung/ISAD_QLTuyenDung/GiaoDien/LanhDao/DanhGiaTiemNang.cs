@@ -1,5 +1,6 @@
 ﻿using ISAD_QLTuyenDung.NghiepVu;
 using Oracle.ManagedDataAccess.Client;
+using System.Data;
 
 namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 {
@@ -53,6 +54,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void LapDSTNButton_Click(object sender, EventArgs e)
         {
+            ((DataTable)DanhGiaData.DataSource).DefaultView.RowFilter = string.Format("TIEMNANG >= 7");
+
             try
             {
                 DNTiemNang.ExportDanhGia(DanhGiaData);

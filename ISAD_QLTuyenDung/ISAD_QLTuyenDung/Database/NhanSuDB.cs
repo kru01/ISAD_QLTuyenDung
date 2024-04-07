@@ -1,5 +1,6 @@
 ﻿using ISAD_QLTuyenDung.HoTro;
 using Oracle.ManagedDataAccess.Client;
+using System.Data;
 
 namespace ISAD_QLTuyenDung.Database
 {
@@ -26,6 +27,18 @@ namespace ISAD_QLTuyenDung.Database
                 throw;
             }
             finally { connection.Close(); }
+        }
+
+        public static DataSet LayMaNhanVien(OracleConnection conn)
+        {
+            String sql = $"SELECT MANV FROM {OracleConfig.schema}.NHANSU WHERE MANV LIKE 'N3NV%' ORDER BY MANV";
+
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            DataSet dt = new();
+            OracleDataAdapter ap = new(sql, conn);
+            ap.Fill(dt);
+            conn.Close();
+            return dt;
         }
     }
 }

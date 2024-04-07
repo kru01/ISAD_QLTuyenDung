@@ -6,9 +6,10 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.ThongTinDangTuyen
     public partial class ThemPhieu : Form
     {
         public event EventHandler? FormClosedEvent;
-        internal PTTDangTuyen? phieu;
         private readonly OracleConnection conn;
         private readonly string curUser;
+        internal PTTDangTuyen? phieu;
+        static ThemQuangCao? formQC;
 
         public ThemPhieu(string curUser, OracleConnection conn)
         {
@@ -41,6 +42,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.ThongTinDangTuyen
                 {
                     MessageBox.Show("Thêm phiếu đăng tuyển thành công!");
                     FormClosedEvent?.Invoke(this, EventArgs.Empty);
+                    formQC = new(conn, maDN.Text, phieu.maPhieu);
+                    formQC.Show();
                     Close();
                 }
             }

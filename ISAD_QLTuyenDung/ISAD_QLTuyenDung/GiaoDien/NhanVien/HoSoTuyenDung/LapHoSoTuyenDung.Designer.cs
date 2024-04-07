@@ -140,6 +140,7 @@
             MaPhieuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaPhieuBox.Location = new Point(201, 120);
             MaPhieuBox.Name = "MaPhieuBox";
+            MaPhieuBox.PlaceholderText = "Mã phiếu";
             MaPhieuBox.ReadOnly = true;
             MaPhieuBox.Size = new Size(100, 30);
             MaPhieuBox.TabIndex = 26;
@@ -161,6 +162,7 @@
             MaDNBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaDNBox.Location = new Point(78, 120);
             MaDNBox.Name = "MaDNBox";
+            MaDNBox.PlaceholderText = "Mã DN";
             MaDNBox.ReadOnly = true;
             MaDNBox.Size = new Size(100, 30);
             MaDNBox.TabIndex = 24;
@@ -197,6 +199,7 @@
             TinhTrangBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TinhTrangBox.Location = new Point(397, 60);
             TinhTrangBox.Name = "TinhTrangBox";
+            TinhTrangBox.PlaceholderText = "Tình trạng";
             TinhTrangBox.ReadOnly = true;
             TinhTrangBox.Size = new Size(130, 30);
             TinhTrangBox.TabIndex = 21;
@@ -218,6 +221,7 @@
             GhiChuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             GhiChuBox.Location = new Point(78, 180);
             GhiChuBox.Name = "GhiChuBox";
+            GhiChuBox.PlaceholderText = "Ghi chú";
             GhiChuBox.ReadOnly = true;
             GhiChuBox.Size = new Size(449, 30);
             GhiChuBox.TabIndex = 19;
@@ -227,6 +231,7 @@
             ViTriUTBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ViTriUTBox.Location = new Point(327, 120);
             ViTriUTBox.Name = "ViTriUTBox";
+            ViTriUTBox.PlaceholderText = "Vị trí ứng tuyển";
             ViTriUTBox.ReadOnly = true;
             ViTriUTBox.Size = new Size(200, 30);
             ViTriUTBox.TabIndex = 18;
@@ -260,6 +265,7 @@
             MaUVBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaUVBox.Location = new Point(78, 60);
             MaUVBox.Name = "MaUVBox";
+            MaUVBox.PlaceholderText = "Mã ứng viên";
             MaUVBox.ReadOnly = true;
             MaUVBox.Size = new Size(100, 30);
             MaUVBox.TabIndex = 15;
@@ -281,6 +287,7 @@
             TenUVBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TenUVBox.Location = new Point(201, 60);
             TenUVBox.Name = "TenUVBox";
+            TenUVBox.PlaceholderText = "Tên ứng viên";
             TenUVBox.ReadOnly = true;
             TenUVBox.Size = new Size(180, 30);
             TenUVBox.TabIndex = 13;

@@ -104,26 +104,32 @@
             // 
             // MaDNBox
             // 
+            MaDNBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaDNBox.Location = new Point(85, 126);
             MaDNBox.Name = "MaDNBox";
+            MaDNBox.PlaceholderText = "Mã doanh nghiệp";
             MaDNBox.ReadOnly = true;
-            MaDNBox.Size = new Size(150, 27);
+            MaDNBox.Size = new Size(150, 30);
             MaDNBox.TabIndex = 36;
             // 
             // MaPhieuBox
             // 
+            MaPhieuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaPhieuBox.Location = new Point(259, 126);
             MaPhieuBox.Name = "MaPhieuBox";
+            MaPhieuBox.PlaceholderText = "Mã phiếu";
             MaPhieuBox.ReadOnly = true;
-            MaPhieuBox.Size = new Size(150, 27);
+            MaPhieuBox.Size = new Size(150, 30);
             MaPhieuBox.TabIndex = 35;
             // 
             // MaUVBox
             // 
+            MaUVBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaUVBox.Location = new Point(85, 55);
             MaUVBox.Name = "MaUVBox";
+            MaUVBox.PlaceholderText = "Mã ứng viên";
             MaUVBox.ReadOnly = true;
-            MaUVBox.Size = new Size(150, 27);
+            MaUVBox.Size = new Size(150, 30);
             MaUVBox.TabIndex = 34;
             // 
             // label7
@@ -152,10 +158,11 @@
             // 
             // UuTienUpDown
             // 
+            UuTienUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             UuTienUpDown.Location = new Point(435, 126);
             UuTienUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             UuTienUpDown.Name = "UuTienUpDown";
-            UuTienUpDown.Size = new Size(50, 27);
+            UuTienUpDown.Size = new Size(50, 30);
             UuTienUpDown.TabIndex = 30;
             // 
             // label2
@@ -184,9 +191,11 @@
             // 
             // GhiChuBox
             // 
+            GhiChuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             GhiChuBox.Location = new Point(85, 195);
             GhiChuBox.Name = "GhiChuBox";
-            GhiChuBox.Size = new Size(400, 27);
+            GhiChuBox.PlaceholderText = "Ghi chú";
+            GhiChuBox.Size = new Size(400, 30);
             GhiChuBox.TabIndex = 26;
             // 
             // label5
@@ -218,11 +227,12 @@
             // 
             // TinhTrangCbo
             // 
+            TinhTrangCbo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TinhTrangCbo.FormattingEnabled = true;
             TinhTrangCbo.Items.AddRange(new object[] { "Chưa đủ điều kiện", "Đủ điều kiện", "Đã xử lý", "Đã đạt" });
             TinhTrangCbo.Location = new Point(259, 55);
             TinhTrangCbo.Name = "TinhTrangCbo";
-            TinhTrangCbo.Size = new Size(226, 28);
+            TinhTrangCbo.Size = new Size(226, 31);
             TinhTrangCbo.TabIndex = 23;
             // 
             // LamMoiButton

@@ -84,7 +84,7 @@
             DangXuatButton.TabIndex = 3;
             DangXuatButton.Text = "Đăng xuất";
             DangXuatButton.UseVisualStyleBackColor = false;
-            DangXuatButton.Click += DangXuatButton_Click_1;
+            DangXuatButton.Click += DangXuatButton_Click;
             // 
             // HSTuyenDungButton
             // 
@@ -206,11 +206,12 @@
             ClientSize = new Size(1200, 700);
             Controls.Add(mainPanel);
             Controls.Add(navigator);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "NhanVienForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Nhân viên";
+            Text = "Trang chủ (Nhân viên)";
             Load += NhanVienForm_Load;
             navigator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

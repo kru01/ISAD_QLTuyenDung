@@ -149,9 +149,11 @@
             // 
             // GhiChuBox
             // 
+            GhiChuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             GhiChuBox.Location = new Point(54, 196);
             GhiChuBox.Name = "GhiChuBox";
-            GhiChuBox.Size = new Size(425, 27);
+            GhiChuBox.PlaceholderText = "Ghi chú";
+            GhiChuBox.Size = new Size(425, 30);
             GhiChuBox.TabIndex = 4;
             // 
             // label1

@@ -240,6 +240,7 @@
             // 
             GhiChuBox.Location = new Point(65, 290);
             GhiChuBox.Name = "GhiChuBox";
+            GhiChuBox.PlaceholderText = "Ghi chú";
             GhiChuBox.Size = new Size(400, 27);
             GhiChuBox.TabIndex = 13;
             // 

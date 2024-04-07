@@ -20,17 +20,17 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 
         private void DKDNButton_Click(object sender, EventArgs e)
         {
-            Helper.Loadform(new DangKyDoanhNghiep(), mainPanel);
+            Helper.Loadform(new DangKyDoanhNghiep(curUser, conn), mainPanel);
         }
 
         private void GiaHanHDButton_Click(object sender, EventArgs e)
         {
-            Helper.Loadform(new GiaHanHopDong(), mainPanel);
+            Helper.Loadform(new GiaHanHopDong(conn), mainPanel);
         }
 
         private void DSHetHDButton_Click(object sender, EventArgs e)
         {
-            Helper.Loadform(new LapDSSapHetHopDong(), mainPanel);
+            Helper.Loadform(new LapDSSapHetHopDong(conn), mainPanel);
         }
 
         private void TTDangTuyenButton_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
             Helper.Loadform(new LapHoSoTuyenDung(curUser, conn), mainPanel);
         }
 
-        private void DangXuatButton_Click_1(object sender, EventArgs e)
+        private void DangXuatButton_Click(object sender, EventArgs e)
         {
             var res = MessageBox.Show("Bạn có chắc là muốn đăng xuất?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)

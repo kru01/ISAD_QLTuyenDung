@@ -1,7 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using ISAD_QLTuyenDung.NghiepVu;
-using ISAD_QLTuyenDung.HoTro;
-using System.Data;
 
 namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
 {
