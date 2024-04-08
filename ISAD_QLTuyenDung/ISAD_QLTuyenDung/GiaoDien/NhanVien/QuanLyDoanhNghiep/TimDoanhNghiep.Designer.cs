@@ -273,6 +273,7 @@
             // 
             // MaDNBox
             // 
+            MaDNBox.CharacterCasing = CharacterCasing.Upper;
             MaDNBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaDNBox.Location = new Point(66, 80);
             MaDNBox.Name = "MaDNBox";
@@ -322,6 +323,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(682, 453);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "TimDoanhNghiep";

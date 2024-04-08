@@ -5,9 +5,9 @@ using System.Data;
 namespace ISAD_QLTuyenDung.NghiepVu
 {
     internal class DoanhNghiep(string tenCty, string msThue, string ngDaiDien, string nvPhuTrach, 
-        string ngayLap, string ngayHD, string email, string diaChi)
+        string ngayLap, string ngayHD, string email, string diaChi, string? maDN = null)
     {
-        public string? maDN;
+        public string? maDN = maDN;
         readonly public string tenCty = tenCty, msThue = msThue, ngDaiDien = ngDaiDien, nvPhutrach = nvPhuTrach, 
             ngayLap = ngayLap, ngayHD = ngayHD, email = email, diaChi = diaChi;
 

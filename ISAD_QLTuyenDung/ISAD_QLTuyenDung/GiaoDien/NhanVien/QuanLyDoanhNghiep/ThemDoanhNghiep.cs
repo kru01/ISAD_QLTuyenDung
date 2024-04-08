@@ -6,7 +6,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
     public partial class ThemDoanhNghiep : Form
     {
         public event EventHandler? FormClosedEvent;
-        internal DoanhNghiep? doanhNghiep;
+        internal DoanhNghiep? doanhNghiep = null;
         readonly OracleConnection conn;
 
         public ThemDoanhNghiep(OracleConnection conn)
@@ -41,9 +41,13 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 }
-                MessageBox.Show("Thêm doanh nghiệp thành công!");
-                FormClosedEvent?.Invoke(this, EventArgs.Empty);
-                Close();
+                else
+                {
+                    MessageBox.Show("Thêm doanh nghiệp thành công!");
+                    FormClosedEvent?.Invoke(this, EventArgs.Empty);
+                    doanhNghiep = null;
+                    Close();
+                }
             }
             catch(Exception ex)
             {

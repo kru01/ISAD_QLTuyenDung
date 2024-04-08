@@ -16,7 +16,7 @@ namespace ISAD_QLTuyenDung.NghiepVu
 
         public static bool ThemChienLuoc(ref ChienLuocUuDai chienLuoc, OracleConnection conn)
         {
-            if (String.IsNullOrEmpty(chienLuoc.tenCL)) return false;
+            if (string.IsNullOrEmpty(chienLuoc.tenCL)) return false;
             try
             {
                 chienLuoc.maCL = ChienLuocUuDaiDB.ThemChienLuoc(chienLuoc, conn);

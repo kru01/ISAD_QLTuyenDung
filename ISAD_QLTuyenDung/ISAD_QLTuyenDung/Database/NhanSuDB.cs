@@ -31,14 +31,21 @@ namespace ISAD_QLTuyenDung.Database
 
         public static DataSet LayMaNhanVien(OracleConnection conn)
         {
-            String sql = $"SELECT MANV FROM {OracleConfig.schema}.NHANSU WHERE MANV LIKE 'N3NV%' ORDER BY MANV";
+            string sql = $"SELECT MANV FROM {OracleConfig.schema}.NHANSU WHERE MANV LIKE 'N3NV%' ORDER BY MANV";
 
-            if (conn.State == ConnectionState.Closed) conn.Open();
-            DataSet dt = new();
-            OracleDataAdapter ap = new(sql, conn);
-            ap.Fill(dt);
-            conn.Close();
-            return dt;
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                DataSet dt = new();
+                OracleDataAdapter ap = new(sql, conn);
+                ap.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close(); }
         }
     }
 }

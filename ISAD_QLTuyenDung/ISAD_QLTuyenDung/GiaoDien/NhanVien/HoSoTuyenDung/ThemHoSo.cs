@@ -128,7 +128,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
                 soGiayTo++;
                 panel1.SendToBack();
             }
-            else MessageBox.Show("Số giấy tờ đã đạt tối đa!");
+            else ThemGiayToButton.Visible = false;
         }
 
         private void MaDN_TextChanged(object sender, EventArgs e)

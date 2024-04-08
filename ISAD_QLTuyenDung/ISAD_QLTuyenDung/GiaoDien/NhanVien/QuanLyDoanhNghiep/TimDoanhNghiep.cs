@@ -1,11 +1,10 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using ISAD_QLTuyenDung.NghiepVu;
+﻿using ISAD_QLTuyenDung.NghiepVu;
 
 namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.QuanLyDoanhNghiep
 {
     public partial class TimDoanhNghiep : Form
     {
-        public string? maDN, tenCty, msThue, email, nvPhuTrach, ngDaiDien, diaChi, ngayLap, ngayHH;
+        internal DoanhNghiep? doanhNghiep = null;
         public event EventHandler? FormClosedEvent;
 
         public TimDoanhNghiep()
@@ -15,16 +14,10 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.QuanLyDoanhNghiep
 
         private void TimButton_Click(object sender, EventArgs e)
         {
-            maDN = MaDNBox.Text;
-            tenCty = TenCtyBox.Text;
-            msThue = MSThueBox.Text;
-            email = EmailBox.Text;
-            nvPhuTrach = NVPhuTrachCbo.Text;
-            ngDaiDien = NgDaiDienBox.Text;
-            diaChi = DiaChiBox.Text;
-            ngayLap = NgayLapDate.Text;
-            ngayHH = NgayHHDate.Text;
+            doanhNghiep = new(TenCtyBox.Text, MSThueBox.Text, NgDaiDienBox.Text, NVPhuTrachCbo.Text,
+                NgayLapDate.Text, NgayHHDate.Text, EmailBox.Text, DiaChiBox.Text, MaDNBox.Text);
             FormClosedEvent?.Invoke(this, EventArgs.Empty);
+            doanhNghiep = null;
             Close();
         }
 

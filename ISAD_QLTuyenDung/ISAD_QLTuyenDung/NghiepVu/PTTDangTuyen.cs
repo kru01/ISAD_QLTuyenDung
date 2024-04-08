@@ -22,14 +22,14 @@ namespace ISAD_QLTuyenDung.NghiepVu
             return PTTDangTuyenDB.LayMaDN(conn);
         }
 
-        public static DataSet LoadMaPhieu(OracleConnection conn, string maDN)
+        public static DataSet LoadMaPhieu(OracleConnection conn, string? maDN = null)
         {
             return PTTDangTuyenDB.LayMaPhieu(conn, maDN);
         }
 
-        public static DataSet LoadViTriUT(OracleConnection conn)
+        public static DataSet LoadViTriUT(OracleConnection conn, string? maDN = null)
         {
-            return PTTDangTuyenDB.LayViTriUT(conn);
+            return PTTDangTuyenDB.LayViTriUT(conn, maDN);
         }
 
         public static bool ThemPhieu(ref PTTDangTuyen phieu, OracleConnection conn)

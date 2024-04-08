@@ -17,7 +17,7 @@ namespace ISAD_QLTuyenDung.Database
             if (hoso != null) sql += $" WHERE HS.MAUV='{hoso.maUV}' AND HS.MADN='{hoso.maDN}' AND HS.MAPHIEU='{hoso.maPhieu}'";
             sql += $" {orderSql}";
 
-            conn.Open();
+            if (conn.State == ConnectionState.Closed) conn.Open();
             OracleDataAdapter adp = new(sql, conn);
             try
             {
@@ -36,7 +36,7 @@ namespace ISAD_QLTuyenDung.Database
         {
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed) conn.Open();
                 string hoSoSql = $"INSERT INTO {OracleConfig.schema}.HOSOUNGTUYEN " +
                     $"VALUES('{hoso.maUV}', '{hoso.maDN}', '{hoso.maPhieu}', '{hoso.doUuTien}', " +
                     $"'{hoso.ghiChu}', {hoso.tinhTrang}, '{hoso.nvDuyet}')";
@@ -54,7 +54,7 @@ namespace ISAD_QLTuyenDung.Database
         {
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed) conn.Open();
                 string hoSoSql = $"UPDATE {OracleConfig.schema}.HOSOUNGTUYEN " +
                     $"SET DOUUTIEN={hoso.doUuTien}, GHICHU='{hoso.ghiChu}', TINHTRANG={hoso.tinhTrang} " +
                     $"WHERE MAUV='{hoso.maUV}' AND MADN='{hoso.maDN}' AND MAPHIEU='{hoso.maPhieu}'";
@@ -71,14 +71,20 @@ namespace ISAD_QLTuyenDung.Database
 
         public static DataSet LayMaNVDuyet(OracleConnection conn)
         {
-            String sql = $"SELECT DISTINCT NVDUYET FROM {OracleConfig.schema}.HOSOUNGTUYEN ORDER BY NVDUYET";
-
-            if (conn.State == ConnectionState.Closed) conn.Open();
-            DataSet dt = new();
-            OracleDataAdapter ap = new(sql, conn);
-            ap.Fill(dt);
-            conn.Close();
-            return dt;
+            string sql = $"SELECT DISTINCT NVDUYET FROM {OracleConfig.schema}.HOSOUNGTUYEN ORDER BY NVDUYET";
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                DataSet dt = new();
+                OracleDataAdapter ap = new(sql, conn);
+                ap.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close(); }
         }
     }
 }

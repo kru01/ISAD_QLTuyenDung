@@ -1,24 +1,20 @@
-﻿namespace ISAD_QLTuyenDung.NghiepVu
+﻿using ISAD_QLTuyenDung.Database;
+
+namespace ISAD_QLTuyenDung.NghiepVu
 {
     public class Login
     {
         public static bool XuLyLogin(string username, string password)
         {
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password)) return false;
+            try
             {
-                return false;
+                LoginDB.KiemTraLogin(username, password);
+                return true;
             }
-            else
+            catch (Exception)
             {
-                try
-                {
-                    Database.LoginDB.KiemTraLogin(username, password);
-                    return true;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                throw;
             }
         }
     }

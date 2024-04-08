@@ -11,32 +11,57 @@ namespace ISAD_QLTuyenDung.Database
         {
             string sql = $"SELECT MADN, TENCTY FROM {OracleConfig.schema}.DOANHNGHIEP ORDER BY MADN";
 
-            conn.Open();
-            DataSet dt = new();
-            OracleDataAdapter ap = new(sql, conn);
-            ap.Fill(dt);
-            conn.Close();
-            return dt;
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                DataSet dt = new();
+                OracleDataAdapter ap = new(sql, conn);
+                ap.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close(); }
         }
 
         public static DataTable LayDSDoanhNghiep(OracleConnection conn, DoanhNghiep? doanhNghiep = null)
         {
             string sql = $"SELECT * FROM {OracleConfig.schema}.DOANHNGHIEP";
-            if (doanhNghiep != null) sql += $" WHERE MADN='{doanhNghiep.maDN}'";
-
-            conn.Open();
-            DataTable dt = new();
-            OracleDataAdapter ap = new(sql, conn);
-            ap.Fill(dt);
-            conn.Close();
-            return dt;
+            if (doanhNghiep != null)
+            {
+                sql += " WHERE";
+                if (doanhNghiep.maDN != null) sql += $" MADN LIKE '%{doanhNghiep.maDN}%'";
+                if (doanhNghiep.tenCty != null) sql += $" AND TENCTY LIKE '%{doanhNghiep.tenCty}%'";
+                if (doanhNghiep.msThue != null) sql += $" AND MASOTHUE LIKE '%{doanhNghiep.msThue}%'";
+                if (doanhNghiep.ngDaiDien != null) sql += $" AND NGDAIDIEN LIKE '%{doanhNghiep.ngDaiDien}%'";
+                if (doanhNghiep.diaChi != null) sql += $" AND DCHI LIKE '%{doanhNghiep.diaChi}%'";
+                if (doanhNghiep.email != null) sql += $" AND EMAIL LIKE '%{doanhNghiep.email}%'";
+                if (doanhNghiep.ngayLap != null) sql += $" AND NGAYLAPHD >= TO_DATE('{doanhNghiep.ngayLap}', 'DD/MM/YYYY')";
+                if (doanhNghiep.ngayHD != null) sql += $" AND NGAYHHHD <= TO_DATE('{doanhNghiep.ngayHD}', 'DD/MM/YYYY')";
+                if (doanhNghiep.nvPhutrach != null) sql += $" AND NVPHUTRACH LIKE '%{doanhNghiep.nvPhutrach}%'";
+            }
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                DataTable dt = new();
+                OracleDataAdapter ap = new(sql, conn);
+                ap.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close(); }
         }
 
         public static string? ThemDoanhNghiep(DoanhNghiep doanhNghiep, OracleConnection conn)
         {
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed) conn.Open();
                 OracleCommand cmd = new($"{OracleConfig.schema}.USP_DOANHNGHIEP_INS", conn)
                 {
                     CommandType = CommandType.StoredProcedure

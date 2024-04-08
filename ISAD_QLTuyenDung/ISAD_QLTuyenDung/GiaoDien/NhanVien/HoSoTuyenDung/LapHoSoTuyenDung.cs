@@ -62,7 +62,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
 
         private void LapDSHSButton_Click(object sender, EventArgs e)
         {
-            formDSHS = new(curUser, conn);
+            formDSHS = new(conn);
             formDSHS.Show();
         }
 

@@ -38,7 +38,7 @@ namespace ISAD_QLTuyenDung.Database
             OracleCommand cmd = new(inSql, conn);
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed) conn.Open();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)

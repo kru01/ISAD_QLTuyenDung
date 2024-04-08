@@ -5,12 +5,14 @@ using System.Data;
 
 namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 {
-    public partial class GiaHanHopDong : Form
+    public partial class QuanLyDN : Form
     {
         static TimDoanhNghiep? formTimDN;
+        static ThemDoanhNghiep? formDN;
+        internal DoanhNghiep? doanhNghiep = null;
         readonly OracleConnection conn;
 
-        public GiaHanHopDong(OracleConnection conn)
+        public QuanLyDN(OracleConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
@@ -28,25 +30,23 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 
         private void FormClosedEvent(object? sender, EventArgs e)
         {
-            /*string filter =
-                (formTimDN?.maDN != null ? $"MADN='{formTimDN?.maDN}'" : "") +
-                (formTimDN?.tenCty != null ? $"TENCTY='{formTimDN?.tenCty}'" : "") +
-                (formTimDN?.msThue != null ? $"MASOTHUE='{formTimDN?.msThue}'" : "") +
-                (formTimDN?.ngDaiDien != null ? $"NGDAIDIEN='{formTimDN?.ngDaiDien}'" : "") +
-                (formTimDN?.diaChi != null ? $"DCHI='{formTimDN?.diaChi}''" : "") +
-                (formTimDN?.email != null ? $"EMAIL='{formTimDN?.email}'" : "") +
-                (formTimDN?.nvPhuTrach != null ? $"NVPHUTRACH='{formTimDN?.nvPhuTrach}'" : "") +
-                (formTimDN?.ngayLap != null ? $"NGAYLAPHD=TO_DATE('{formTimDN?.ngayLap}', 'DD-MM-YYYY')" : "") +
-                (formTimDN?.ngayHH != null ? $"NGAYHH=TO_DATE('{formTimDN?.ngayHH}', 'DD-MM-YYYY')" : "");
-
-            ((DataTable)HopDongDNData.DataSource).DefaultView.RowFilter = string.Format(filter);*/
+            doanhNghiep = formTimDN?.doanhNghiep ?? formDN?.doanhNghiep;
+            HopDongDNData.DataSource = DoanhNghiep.LoadDSDoanhNghiep(conn, doanhNghiep);
+            doanhNghiep = null;
         }
 
-        private void ThemDNButton_Click(object sender, EventArgs e)
+        private void TimDNButton_Click(object sender, EventArgs e)
         {
             formTimDN = new();
             formTimDN.FormClosedEvent += FormClosedEvent;
             formTimDN.Show();
+        }
+
+        private void ThemDNButton_Click(object sender, EventArgs e)
+        {
+            formDN = new(conn);
+            formDN.FormClosedEvent += FormClosedEvent;
+            formDN.Show();
         }
 
         private void CapNhatButton_Click(object sender, EventArgs e)
@@ -78,6 +78,24 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
             DiaChiBox.Text = cRow.Cells["DCHI"].Value.ToString();
             NgayLapDate.Text = cRow.Cells["NGAYLAPHD"].Value.ToString();
             NgayHHDate.Text = cRow.Cells["NGAYHHHD"].Value.ToString();
+        }
+
+        private void ThongKeHDButton_Click(object sender, EventArgs e)
+        {
+            DateTime ngayHH = DateTime.Today.AddDays(-3);
+            ((DataTable)HopDongDNData.DataSource).DefaultView.RowFilter =
+                string.Format("CONVERT(NGAYHHHD, 'System.DateTime') < #{0}#", ngayHH.ToString("yyyy-MM-dd"));
+            try
+            {
+                LapDSHDHetHan.ExportHoSoHetHan(HopDongDNData);
+                MessageBox.Show("Copy vào clipboard thành công! Nếu Excel không tự động mở, " +
+                    "vui lòng paste vào nơi cần thiết!");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

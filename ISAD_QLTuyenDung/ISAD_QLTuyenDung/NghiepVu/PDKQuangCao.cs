@@ -9,11 +9,13 @@ namespace ISAD_QLTuyenDung.NghiepVu
         readonly public string maDN = maDN, ngayBD = ngayBD, ngayKT = ngayKT;
         readonly public int hinhThucDT = hinhThucDT;
 
-        public static void ThemQuangCao(ref PDKQuangCao qc, OracleConnection conn)
+        public static bool ThemQuangCao(ref PDKQuangCao qc, OracleConnection conn)
         {
+            if (qc.hinhThucDT == 0) return false;
             try
             {
                 PDKQuangCaoDB.ThemQuangCao(qc, conn);
+                return true;
             }
             catch (Exception) 
             {

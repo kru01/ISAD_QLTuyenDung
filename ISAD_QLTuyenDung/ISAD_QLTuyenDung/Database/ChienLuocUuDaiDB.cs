@@ -35,7 +35,7 @@ namespace ISAD_QLTuyenDung.Database
         {
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed) conn.Open();
                 OracleCommand cmd = new($"{OracleConfig.schema}.USP_CHIENLUOCUUDAI_INS", conn)
                 {
                     CommandType = CommandType.StoredProcedure

@@ -7,61 +7,92 @@ namespace ISAD_QLTuyenDung.Database
 {
     internal class PTTDangTuyenDB
     {
-        public static DataSet LayMaPhieu(OracleConnection conn, string maDN)
+        public static DataSet LayMaPhieu(OracleConnection conn, string? maDN = null)
         {
-            string sql = $"SELECT MAPHIEU FROM {OracleConfig.schema}.PTTDANGTUYEN " +
-                $"WHERE MADN = '{maDN}'";
+            string sql = $"SELECT DISTINCT MAPHIEU FROM {OracleConfig.schema}.PTTDANGTUYEN";
+            if (maDN != null) sql += $" WHERE MADN='{maDN}'";
 
-            conn.Open();
-            DataSet dt = new();
-            OracleDataAdapter ap = new(sql, conn);
-            ap.Fill(dt);
-            conn.Close();
-            return dt;
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                DataSet dt = new();
+                OracleDataAdapter ap = new(sql, conn);
+                ap.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close(); }
         }
 
         public static DataSet LayMaDN(OracleConnection conn)
         {
             string sql = $"SELECT DISTINCT MADN FROM {OracleConfig.schema}.PTTDANGTUYEN";
 
-            conn.Open();
-            DataSet dt = new();
-            OracleDataAdapter ap = new(sql, conn);
-            ap.Fill(dt);
-            conn.Close();
-            return dt;
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                DataSet dt = new();
+                OracleDataAdapter ap = new(sql, conn);
+                ap.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close() ; }
         }
 
-        public static DataSet LayViTriUT(OracleConnection conn)
+        public static DataSet LayViTriUT(OracleConnection conn, string? maDN = null)
         {
             string sql = $"SELECT DISTINCT VITRIUT FROM {OracleConfig.schema}.PTTDANGTUYEN";
+            if (maDN != null) sql += $" WHERE MADN!='{maDN}' AND VITRIUT NOT IN (SELECT PT.VITRIUT " +
+                                                                                $"FROM {OracleConfig.schema}.PTTDANGTUYEN PT " +
+                                                                                $"WHERE PT.MADN='{maDN}')";
 
-            conn.Open();
-            DataSet dt = new();
-            OracleDataAdapter ap = new(sql, conn);
-            ap.Fill(dt);
-            conn.Close();
-            return dt;
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                DataSet dt = new();
+                OracleDataAdapter ap = new(sql, conn);
+                ap.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close(); }
         }
 
         public static DataTable LayPhieuTTDT(OracleConnection conn, PTTDangTuyen? phieu = null)
         {
             string sql = $"SELECT * FROM {OracleConfig.schema}.PTTDANGTUYEN";
-            if (phieu!= null) sql += $" WHERE MAPHIEU = '{phieu.maPhieu}'";
+            if (phieu!= null) sql += $" WHERE MAPHIEU='{phieu.maPhieu}' AND MADN='{phieu.maDN}'";
 
-            conn.Open();
-            DataTable dt = new();
-            OracleDataAdapter ap = new(sql, conn);
-            ap.Fill(dt);
-            conn.Close();
-            return dt;
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                DataTable dt = new();
+                OracleDataAdapter ap = new(sql, conn);
+                ap.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close(); }
         }
 
         public static string? ThemPhieu(PTTDangTuyen phieu, OracleConnection conn)
         {
             try
             {
-                conn.Open();
+                if (conn.State == ConnectionState.Closed) conn.Open();
                 OracleCommand cmd = new($"{OracleConfig.schema}.USP_PTTDANGTUYEN_INS", conn)
                 {
                     CommandType = CommandType.StoredProcedure

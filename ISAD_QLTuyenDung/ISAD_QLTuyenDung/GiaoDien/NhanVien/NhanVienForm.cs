@@ -1,8 +1,12 @@
-﻿using ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung;
-using ISAD_QLTuyenDung.GiaoDien.NhanVien.ThongTinDangTuyen;
+﻿using ISAD_QLTuyenDung.GiaoDien.NhanVien.ThongTinDangTuyen;
+using ISAD_QLTuyenDung.GiaoDien.NhanVien.ApDungChienLuocUuDai;
+using ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung;
+using ISAD_QLTuyenDung.GiaoDien.NhanVien.QuanLyUngVien;
+using ISAD_QLTuyenDung.GiaoDien.NhanVien.ChiTietHoaDon;
 using Oracle.ManagedDataAccess.Client;
-using ISAD_QLTuyenDung.HoTro;
 using ISAD_QLTuyenDung.NghiepVu;
+using ISAD_QLTuyenDung.HoTro;
+
 
 namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 {
@@ -18,19 +22,29 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
             this.conn = new(conn);
         }
 
-        private void DKDNButton_Click(object sender, EventArgs e)
+        private void NhanVienForm_Load(object sender, EventArgs e)
         {
-            Helper.Loadform(new DangKyDoanhNghiep(curUser, conn), mainPanel);
+            NVNameLabel.Text = $"{curUser} - " + NhanSu.NhanSuLoad(curUser, conn);
         }
 
-        private void GiaHanHDButton_Click(object sender, EventArgs e)
+        private void CLUuDaiButton_Click(object sender, EventArgs e)
         {
-            Helper.Loadform(new GiaHanHopDong(conn), mainPanel);
+            Helper.Loadform(new ApDungCLUuDai(conn), mainPanel);
         }
 
-        private void DSHetHDButton_Click(object sender, EventArgs e)
+        private void ChiTietHDButton_Click(object sender, EventArgs e)
         {
-            Helper.Loadform(new LapDSSapHetHopDong(conn), mainPanel);
+            Helper.Loadform(new ThemChiTietHoaDon(conn), mainPanel);
+        }
+
+        private void DKUngVienButton_Click(object sender, EventArgs e)
+        {
+            Helper.Loadform(new DangKyUngVien(conn), mainPanel);
+        }
+
+        private void QuanLyDNButton_Click(object sender, EventArgs e)
+        {
+            Helper.Loadform(new QuanLyDN(conn), mainPanel);
         }
 
         private void TTDangTuyenButton_Click(object sender, EventArgs e)
@@ -52,11 +66,6 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
                 new Login().ShowDialog();
                 this.Close();
             }
-        }
-
-        private void NhanVienForm_Load(object sender, EventArgs e)
-        {
-            NVNameLabel.Text = $"{curUser} - " + NhanSu.NhanSuLoad(curUser, conn);
         }
     }
 }

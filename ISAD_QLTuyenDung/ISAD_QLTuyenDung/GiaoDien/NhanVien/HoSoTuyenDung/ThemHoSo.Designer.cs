@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.WhiteSmoke;
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(ThemGiayToButton);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(MaDNCbo);
@@ -104,10 +104,11 @@
             // 
             // MaDNCbo
             // 
+            MaDNCbo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaDNCbo.FormattingEnabled = true;
             MaDNCbo.Location = new Point(65, 200);
             MaDNCbo.Name = "MaDNCbo";
-            MaDNCbo.Size = new Size(150, 28);
+            MaDNCbo.Size = new Size(150, 31);
             MaDNCbo.TabIndex = 24;
             MaDNCbo.TextChanged += MaDN_TextChanged;
             // 
@@ -155,11 +156,12 @@
             // 
             // DoUuTienUpDown
             // 
+            DoUuTienUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DoUuTienUpDown.Location = new Point(415, 201);
             DoUuTienUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             DoUuTienUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             DoUuTienUpDown.Name = "DoUuTienUpDown";
-            DoUuTienUpDown.Size = new Size(50, 27);
+            DoUuTienUpDown.Size = new Size(50, 30);
             DoUuTienUpDown.TabIndex = 21;
             DoUuTienUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -177,11 +179,12 @@
             // 
             // TinhTrangCbo
             // 
+            TinhTrangCbo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TinhTrangCbo.FormattingEnabled = true;
             TinhTrangCbo.Items.AddRange(new object[] { "-- Tình trạng hồ sơ --", "Chưa đủ điều kiện", "Đủ điều kiện", "Đã xử lý", "Đã đạt" });
             TinhTrangCbo.Location = new Point(239, 105);
             TinhTrangCbo.Name = "TinhTrangCbo";
-            TinhTrangCbo.Size = new Size(226, 28);
+            TinhTrangCbo.Size = new Size(226, 31);
             TinhTrangCbo.TabIndex = 19;
             // 
             // label2
@@ -210,18 +213,20 @@
             // 
             // MaPhieuCbo
             // 
+            MaPhieuCbo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaPhieuCbo.FormattingEnabled = true;
             MaPhieuCbo.Location = new Point(239, 200);
             MaPhieuCbo.Name = "MaPhieuCbo";
-            MaPhieuCbo.Size = new Size(150, 28);
+            MaPhieuCbo.Size = new Size(150, 31);
             MaPhieuCbo.TabIndex = 17;
             // 
             // MaUVCbo
             // 
+            MaUVCbo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaUVCbo.FormattingEnabled = true;
             MaUVCbo.Location = new Point(65, 105);
             MaUVCbo.Name = "MaUVCbo";
-            MaUVCbo.Size = new Size(150, 28);
+            MaUVCbo.Size = new Size(150, 31);
             MaUVCbo.TabIndex = 16;
             // 
             // label3
@@ -238,10 +243,11 @@
             // 
             // GhiChuBox
             // 
+            GhiChuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             GhiChuBox.Location = new Point(65, 290);
             GhiChuBox.Name = "GhiChuBox";
             GhiChuBox.PlaceholderText = "Ghi chú";
-            GhiChuBox.Size = new Size(400, 27);
+            GhiChuBox.Size = new Size(400, 30);
             GhiChuBox.TabIndex = 13;
             // 
             // label1

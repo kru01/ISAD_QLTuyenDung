@@ -1,6 +1,6 @@
 ﻿namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 {
-    partial class GiaHanHopDong
+    partial class QuanLyDN
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,11 @@
             panel1 = new Panel();
             label2 = new Label();
             panel3 = new Panel();
+            ThongKeHDButton = new Button();
+            ThemDNButton = new Button();
             NVPhuTrachBox = new TextBox();
             CapNhatButton = new Button();
-            ThemDNButton = new Button();
+            TimDNButton = new Button();
             label10 = new Label();
             LamMoiButton = new Button();
             label9 = new Label();
@@ -75,19 +77,21 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.LightSeaGreen;
-            label2.Location = new Point(347, 11);
+            label2.Location = new Point(325, 11);
             label2.Name = "label2";
-            label2.Size = new Size(206, 31);
+            label2.Size = new Size(251, 31);
             label2.TabIndex = 9;
-            label2.Text = "Gia hạn hợp đồng";
+            label2.Text = "Quản lý doanh nghiệp";
             // 
             // panel3
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(ThongKeHDButton);
+            panel3.Controls.Add(ThemDNButton);
             panel3.Controls.Add(NVPhuTrachBox);
             panel3.Controls.Add(CapNhatButton);
-            panel3.Controls.Add(ThemDNButton);
+            panel3.Controls.Add(TimDNButton);
             panel3.Controls.Add(label10);
             panel3.Controls.Add(LamMoiButton);
             panel3.Controls.Add(label9);
@@ -111,14 +115,44 @@
             panel3.Size = new Size(876, 316);
             panel3.TabIndex = 8;
             // 
+            // ThongKeHDButton
+            // 
+            ThongKeHDButton.BackColor = Color.LightSeaGreen;
+            ThongKeHDButton.FlatAppearance.BorderSize = 0;
+            ThongKeHDButton.FlatStyle = FlatStyle.Flat;
+            ThongKeHDButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ThongKeHDButton.ForeColor = Color.White;
+            ThongKeHDButton.Location = new Point(412, 250);
+            ThongKeHDButton.Name = "ThongKeHDButton";
+            ThongKeHDButton.Size = new Size(205, 40);
+            ThongKeHDButton.TabIndex = 72;
+            ThongKeHDButton.Text = "Thống kê hạn hợp đồng";
+            ThongKeHDButton.UseVisualStyleBackColor = false;
+            ThongKeHDButton.Click += ThongKeHDButton_Click;
+            // 
+            // ThemDNButton
+            // 
+            ThemDNButton.BackColor = Color.LightSeaGreen;
+            ThemDNButton.FlatAppearance.BorderSize = 0;
+            ThemDNButton.FlatStyle = FlatStyle.Flat;
+            ThemDNButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ThemDNButton.ForeColor = Color.White;
+            ThemDNButton.Location = new Point(231, 250);
+            ThemDNButton.Name = "ThemDNButton";
+            ThemDNButton.Size = new Size(175, 40);
+            ThemDNButton.TabIndex = 11;
+            ThemDNButton.Text = "Thêm doanh nghiệp";
+            ThemDNButton.UseVisualStyleBackColor = false;
+            ThemDNButton.Click += ThemDNButton_Click;
+            // 
             // NVPhuTrachBox
             // 
             NVPhuTrachBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NVPhuTrachBox.Location = new Point(670, 51);
+            NVPhuTrachBox.Location = new Point(656, 51);
             NVPhuTrachBox.Name = "NVPhuTrachBox";
             NVPhuTrachBox.PlaceholderText = "Nhân viên";
             NVPhuTrachBox.ReadOnly = true;
-            NVPhuTrachBox.Size = new Size(125, 30);
+            NVPhuTrachBox.Size = new Size(153, 30);
             NVPhuTrachBox.TabIndex = 71;
             // 
             // CapNhatButton
@@ -128,28 +162,28 @@
             CapNhatButton.FlatStyle = FlatStyle.Flat;
             CapNhatButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CapNhatButton.ForeColor = Color.White;
-            CapNhatButton.Location = new Point(595, 250);
+            CapNhatButton.Location = new Point(623, 250);
             CapNhatButton.Name = "CapNhatButton";
-            CapNhatButton.Size = new Size(200, 40);
+            CapNhatButton.Size = new Size(90, 40);
             CapNhatButton.TabIndex = 70;
             CapNhatButton.Text = "Cập nhật";
             CapNhatButton.UseVisualStyleBackColor = false;
             CapNhatButton.Click += CapNhatButton_Click;
             // 
-            // ThemDNButton
+            // TimDNButton
             // 
-            ThemDNButton.BackColor = Color.LightSeaGreen;
-            ThemDNButton.FlatAppearance.BorderSize = 0;
-            ThemDNButton.FlatStyle = FlatStyle.Flat;
-            ThemDNButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ThemDNButton.ForeColor = Color.White;
-            ThemDNButton.Location = new Point(79, 250);
-            ThemDNButton.Name = "ThemDNButton";
-            ThemDNButton.Size = new Size(200, 40);
-            ThemDNButton.TabIndex = 6;
-            ThemDNButton.Text = "Tìm doanh nghiệp";
-            ThemDNButton.UseVisualStyleBackColor = false;
-            ThemDNButton.Click += ThemDNButton_Click;
+            TimDNButton.BackColor = Color.LightSeaGreen;
+            TimDNButton.FlatAppearance.BorderSize = 0;
+            TimDNButton.FlatStyle = FlatStyle.Flat;
+            TimDNButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TimDNButton.ForeColor = Color.White;
+            TimDNButton.Location = new Point(65, 250);
+            TimDNButton.Name = "TimDNButton";
+            TimDNButton.Size = new Size(160, 40);
+            TimDNButton.TabIndex = 6;
+            TimDNButton.Text = "Tìm doanh nghiệp";
+            TimDNButton.UseVisualStyleBackColor = false;
+            TimDNButton.Click += TimDNButton_Click;
             // 
             // label10
             // 
@@ -157,7 +191,7 @@
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.LightSeaGreen;
-            label10.Location = new Point(670, 25);
+            label10.Location = new Point(656, 25);
             label10.Name = "label10";
             label10.Size = new Size(113, 23);
             label10.TabIndex = 69;
@@ -170,9 +204,9 @@
             LamMoiButton.FlatStyle = FlatStyle.Flat;
             LamMoiButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LamMoiButton.ForeColor = Color.White;
-            LamMoiButton.Location = new Point(337, 250);
+            LamMoiButton.Location = new Point(719, 250);
             LamMoiButton.Name = "LamMoiButton";
-            LamMoiButton.Size = new Size(200, 40);
+            LamMoiButton.Size = new Size(90, 40);
             LamMoiButton.TabIndex = 23;
             LamMoiButton.Text = "Làm mới";
             LamMoiButton.UseVisualStyleBackColor = false;
@@ -184,7 +218,7 @@
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.LightSeaGreen;
-            label9.Location = new Point(395, 165);
+            label9.Location = new Point(381, 165);
             label9.Name = "label9";
             label9.Size = new Size(62, 23);
             label9.TabIndex = 67;
@@ -193,7 +227,7 @@
             // TenCtyBox
             // 
             TenCtyBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TenCtyBox.Location = new Point(194, 51);
+            TenCtyBox.Location = new Point(180, 51);
             TenCtyBox.Name = "TenCtyBox";
             TenCtyBox.PlaceholderText = "Tên công ty";
             TenCtyBox.ReadOnly = true;
@@ -203,17 +237,17 @@
             // DiaChiBox
             // 
             DiaChiBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DiaChiBox.Location = new Point(395, 191);
+            DiaChiBox.Location = new Point(381, 191);
             DiaChiBox.Name = "DiaChiBox";
             DiaChiBox.PlaceholderText = "Địa chỉ";
             DiaChiBox.ReadOnly = true;
-            DiaChiBox.Size = new Size(400, 30);
+            DiaChiBox.Size = new Size(428, 30);
             DiaChiBox.TabIndex = 66;
             // 
             // MaDNBox
             // 
             MaDNBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MaDNBox.Location = new Point(79, 51);
+            MaDNBox.Location = new Point(65, 51);
             MaDNBox.Name = "MaDNBox";
             MaDNBox.PlaceholderText = "Mã DN";
             MaDNBox.ReadOnly = true;
@@ -226,7 +260,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.LightSeaGreen;
-            label8.Location = new Point(545, 95);
+            label8.Location = new Point(531, 95);
             label8.Name = "label8";
             label8.Size = new Size(124, 23);
             label8.TabIndex = 65;
@@ -235,7 +269,7 @@
             // MSThueBox
             // 
             MSThueBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MSThueBox.Location = new Point(79, 121);
+            MSThueBox.Location = new Point(65, 121);
             MSThueBox.Name = "MSThueBox";
             MSThueBox.PlaceholderText = "Mã số thuế";
             MSThueBox.ReadOnly = true;
@@ -245,11 +279,11 @@
             // NgDaiDienBox
             // 
             NgDaiDienBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NgDaiDienBox.Location = new Point(545, 121);
+            NgDaiDienBox.Location = new Point(531, 121);
             NgDaiDienBox.Name = "NgDaiDienBox";
             NgDaiDienBox.PlaceholderText = "Người đại diện";
             NgDaiDienBox.ReadOnly = true;
-            NgDaiDienBox.Size = new Size(250, 30);
+            NgDaiDienBox.Size = new Size(278, 30);
             NgDaiDienBox.TabIndex = 64;
             // 
             // label5
@@ -258,7 +292,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.LightSeaGreen;
-            label5.Location = new Point(194, 25);
+            label5.Location = new Point(180, 25);
             label5.Name = "label5";
             label5.Size = new Size(99, 23);
             label5.TabIndex = 55;
@@ -270,7 +304,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.LightSeaGreen;
-            label7.Location = new Point(227, 165);
+            label7.Location = new Point(213, 165);
             label7.Name = "label7";
             label7.Size = new Size(115, 23);
             label7.TabIndex = 63;
@@ -282,7 +316,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.LightSeaGreen;
-            label1.Location = new Point(79, 25);
+            label1.Location = new Point(65, 25);
             label1.Name = "label1";
             label1.Size = new Size(65, 23);
             label1.TabIndex = 56;
@@ -293,7 +327,7 @@
             NgayHHDate.CustomFormat = "dd/MM/yyyy";
             NgayHHDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NgayHHDate.Format = DateTimePickerFormat.Custom;
-            NgayHHDate.Location = new Point(228, 191);
+            NgayHHDate.Location = new Point(214, 191);
             NgayHHDate.Name = "NgayHHDate";
             NgayHHDate.Size = new Size(125, 30);
             NgayHHDate.TabIndex = 62;
@@ -301,7 +335,7 @@
             // EmailBox
             // 
             EmailBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            EmailBox.Location = new Point(252, 121);
+            EmailBox.Location = new Point(238, 121);
             EmailBox.Name = "EmailBox";
             EmailBox.PlaceholderText = "Email";
             EmailBox.ReadOnly = true;
@@ -314,7 +348,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.LightSeaGreen;
-            label6.Location = new Point(79, 165);
+            label6.Location = new Point(65, 165);
             label6.Name = "label6";
             label6.Size = new Size(79, 23);
             label6.TabIndex = 61;
@@ -326,7 +360,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.LightSeaGreen;
-            label3.Location = new Point(79, 95);
+            label3.Location = new Point(65, 95);
             label3.Name = "label3";
             label3.Size = new Size(97, 23);
             label3.TabIndex = 58;
@@ -338,7 +372,7 @@
             NgayLapDate.Enabled = false;
             NgayLapDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NgayLapDate.Format = DateTimePickerFormat.Custom;
-            NgayLapDate.Location = new Point(79, 191);
+            NgayLapDate.Location = new Point(65, 191);
             NgayLapDate.Name = "NgayLapDate";
             NgayLapDate.Size = new Size(125, 30);
             NgayLapDate.TabIndex = 60;
@@ -349,7 +383,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.LightSeaGreen;
-            label4.Location = new Point(252, 95);
+            label4.Location = new Point(238, 95);
             label4.Name = "label4";
             label4.Size = new Size(51, 23);
             label4.TabIndex = 59;
@@ -399,7 +433,7 @@
         private Label label2;
         private Panel panel3;
         private Button LamMoiButton;
-        private Button ThemDNButton;
+        private Button TimDNButton;
         private Label label10;
         private Label label9;
         private TextBox TenCtyBox;
@@ -419,5 +453,7 @@
         private Label label4;
         private TextBox NVPhuTrachBox;
         private Button CapNhatButton;
+        private Button ThemDNButton;
+        private Button ThongKeHDButton;
     }
 }

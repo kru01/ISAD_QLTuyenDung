@@ -7,12 +7,10 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
     public partial class LapDSHoSo : Form
     {
         readonly OracleConnection conn;
-        readonly string curUser;
 
-        public LapDSHoSo(string curUser, OracleConnection conn)
+        public LapDSHoSo(OracleConnection conn)
         {
             InitializeComponent();
-            this.curUser = curUser;
             this.conn = conn;
         }
 
