@@ -14,8 +14,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.QuanLyDoanhNghiep
 
         private void TimButton_Click(object sender, EventArgs e)
         {
-            doanhNghiep = new(TenCtyBox.Text, MSThueBox.Text, NgDaiDienBox.Text, NVPhuTrachCbo.Text,
-                NgayLapDate.Text, NgayHHDate.Text, EmailBox.Text, DiaChiBox.Text, MaDNBox.Text);
+            doanhNghiep = new(MaDNBox.Text, TenCtyBox.Text, MaSoThueBox.Text, NgDaiDienBox.Text, DiaChiBox.Text,
+                EmailBox.Text, NgayLapDate.Text, NgayHHDate.Text, NVPhuTrachBox.Text);
             FormClosedEvent?.Invoke(this, EventArgs.Empty);
             doanhNghiep = null;
             Close();

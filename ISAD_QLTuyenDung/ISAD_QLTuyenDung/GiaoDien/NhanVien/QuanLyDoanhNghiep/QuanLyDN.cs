@@ -18,20 +18,20 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
             this.conn = conn;
         }
 
-        private void GiaHanHopDong_Load(object sender, EventArgs e)
+        private void QuanLyDN_Load(object sender, EventArgs e)
         {
             LamMoiButton.PerformClick();
         }
 
         private void LamMoiButton_Click(object sender, EventArgs e)
         {
-            HopDongDNData.DataSource = DoanhNghiep.LoadDSDoanhNghiep(conn);
+            DoanhNghiepData.DataSource = DoanhNghiep.LoadDSDoanhNghiep(conn);
         }
 
         private void FormClosedEvent(object? sender, EventArgs e)
         {
             doanhNghiep = formTimDN?.doanhNghiep ?? formDN?.doanhNghiep;
-            HopDongDNData.DataSource = DoanhNghiep.LoadDSDoanhNghiep(conn, doanhNghiep);
+            DoanhNghiepData.DataSource = DoanhNghiep.LoadDSDoanhNghiep(conn, doanhNghiep);
             doanhNghiep = null;
         }
 
@@ -55,8 +55,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
             {
                 DoanhNghiep.CapNhatHanHopDong(conn, NgayHHDate.Text, MaDNBox.Text);
                 MessageBox.Show("Gia hạn hợp đồng thành công!");
-                LamMoiButton.PerformClick();
-                ((DataTable)HopDongDNData.DataSource).DefaultView.RowFilter = string.Format($"MADN='{MaDNBox.Text}'");
+                DoanhNghiep updDN = new(MaDNBox.Text, "", "", "", "", "", "", "", "");
+                DoanhNghiepData.DataSource = DoanhNghiep.LoadDSDoanhNghiep(conn, updDN);
             }
             catch (Exception ex)
             {
@@ -64,15 +64,15 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
             }
         }
 
-        private void HopDongDNData_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DoanhNghiepData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 || e.RowIndex == HopDongDNData.RowCount) return;
-            DataGridViewRow cRow = HopDongDNData.Rows[e.RowIndex];
+            if (e.RowIndex == -1 || e.RowIndex == DoanhNghiepData.RowCount) return;
+            DataGridViewRow cRow = DoanhNghiepData.Rows[e.RowIndex];
 
             MaDNBox.Text = cRow.Cells["MADN"].Value.ToString();
             TenCtyBox.Text = cRow.Cells["TENCTY"].Value.ToString();
             NVPhuTrachBox.Text = cRow.Cells["NVPHUTRACH"].Value.ToString();
-            MSThueBox.Text = cRow.Cells["MASOTHUE"].Value.ToString();
+            MaSoThueBox.Text = cRow.Cells["MASOTHUE"].Value.ToString();
             EmailBox.Text = cRow.Cells["EMAIL"].Value.ToString();
             NgDaiDienBox.Text = cRow.Cells["NGDAIDIEN"].Value.ToString();
             DiaChiBox.Text = cRow.Cells["DCHI"].Value.ToString();
@@ -82,15 +82,16 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 
         private void ThongKeHDButton_Click(object sender, EventArgs e)
         {
-            DateTime ngayHH = DateTime.Today.AddDays(-3);
-            ((DataTable)HopDongDNData.DataSource).DefaultView.RowFilter =
-                string.Format("CONVERT(NGAYHHHD, 'System.DateTime') < #{0}#", ngayHH.ToString("yyyy-MM-dd"));
+            LamMoiButton.PerformClick();
+            DateTime ngayHH = DateTime.Today.AddDays(3);
+            ((DataTable)DoanhNghiepData.DataSource).DefaultView.RowFilter =
+                $"CONVERT(NGAYHHHD, 'System.DateTime') < '{ngayHH}'";
             try
             {
-                LapDSHDHetHan.ExportHoSoHetHan(HopDongDNData);
-                MessageBox.Show("Copy vào clipboard thành công! Nếu Excel không tự động mở, " +
-                    "vui lòng paste vào nơi cần thiết!");
-                Close();
+                DoanhNghiep.ExportHDSapHetHan(DoanhNghiepData);
+                MessageBox.Show("Danh sách lọc ra các doanh nghiệp đã hết hạn hợp đồng, hoặc có " +
+                    "ngày hết hạn cách hiện tại 3 ngày!\nCopy vào clipboard thành công! " +
+                    "Nếu Excel không tự động mở, vui lòng paste vào nơi cần thiết!");
             }
             catch (Exception ex)
             {

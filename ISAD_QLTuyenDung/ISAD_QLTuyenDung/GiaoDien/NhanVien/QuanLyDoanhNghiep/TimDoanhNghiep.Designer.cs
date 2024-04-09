@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimDoanhNghiep));
             panel1 = new Panel();
+            NVPhuTrachBox = new TextBox();
             HuyButton = new Button();
             label10 = new Label();
-            NVPhuTrachCbo = new ComboBox();
             label9 = new Label();
             DiaChiBox = new TextBox();
             label8 = new Label();
@@ -46,7 +46,7 @@
             EmailBox = new TextBox();
             label2 = new Label();
             label5 = new Label();
-            MSThueBox = new TextBox();
+            MaSoThueBox = new TextBox();
             MaDNBox = new TextBox();
             TenCtyBox = new TextBox();
             TimButton = new Button();
@@ -57,9 +57,9 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(NVPhuTrachBox);
             panel1.Controls.Add(HuyButton);
             panel1.Controls.Add(label10);
-            panel1.Controls.Add(NVPhuTrachCbo);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(DiaChiBox);
             panel1.Controls.Add(label8);
@@ -73,7 +73,7 @@
             panel1.Controls.Add(EmailBox);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(MSThueBox);
+            panel1.Controls.Add(MaSoThueBox);
             panel1.Controls.Add(MaDNBox);
             panel1.Controls.Add(TenCtyBox);
             panel1.Controls.Add(TimButton);
@@ -83,6 +83,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(682, 453);
             panel1.TabIndex = 0;
+            // 
+            // NVPhuTrachBox
+            // 
+            NVPhuTrachBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NVPhuTrachBox.Location = new Point(506, 150);
+            NVPhuTrachBox.Name = "NVPhuTrachBox";
+            NVPhuTrachBox.PlaceholderText = "Nhân viên";
+            NVPhuTrachBox.Size = new Size(125, 30);
+            NVPhuTrachBox.TabIndex = 53;
             // 
             // HuyButton
             // 
@@ -110,14 +119,6 @@
             label10.Size = new Size(113, 23);
             label10.TabIndex = 51;
             label10.Text = "NV phụ trách";
-            // 
-            // NVPhuTrachCbo
-            // 
-            NVPhuTrachCbo.FormattingEnabled = true;
-            NVPhuTrachCbo.Location = new Point(506, 152);
-            NVPhuTrachCbo.Name = "NVPhuTrachCbo";
-            NVPhuTrachCbo.Size = new Size(125, 28);
-            NVPhuTrachCbo.TabIndex = 50;
             // 
             // label9
             // 
@@ -182,6 +183,7 @@
             NgayHHDate.Name = "NgayHHDate";
             NgayHHDate.Size = new Size(125, 30);
             NgayHHDate.TabIndex = 44;
+            NgayHHDate.Value = new DateTime(2027, 1, 1, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -204,6 +206,7 @@
             NgayLapDate.Name = "NgayLapDate";
             NgayLapDate.Size = new Size(125, 30);
             NgayLapDate.TabIndex = 42;
+            NgayLapDate.Value = new DateTime(2022, 1, 1, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -262,14 +265,14 @@
             label5.TabIndex = 32;
             label5.Text = "Tên công ty";
             // 
-            // MSThueBox
+            // MaSoThueBox
             // 
-            MSThueBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MSThueBox.Location = new Point(66, 150);
-            MSThueBox.Name = "MSThueBox";
-            MSThueBox.PlaceholderText = "Mã số thuế";
-            MSThueBox.Size = new Size(150, 30);
-            MSThueBox.TabIndex = 31;
+            MaSoThueBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaSoThueBox.Location = new Point(66, 150);
+            MaSoThueBox.Name = "MaSoThueBox";
+            MaSoThueBox.PlaceholderText = "Mã số thuế";
+            MaSoThueBox.Size = new Size(150, 30);
+            MaSoThueBox.TabIndex = 31;
             // 
             // MaDNBox
             // 
@@ -341,7 +344,7 @@
         private Button TimButton;
         private TextBox MaDNBox;
         private TextBox TenCtyBox;
-        private TextBox MSThueBox;
+        private TextBox MaSoThueBox;
         private Label label2;
         private Label label5;
         private Label label4;
@@ -357,6 +360,6 @@
         private Label label9;
         private Button HuyButton;
         private Label label10;
-        private ComboBox NVPhuTrachCbo;
+        private TextBox NVPhuTrachBox;
     }
 }

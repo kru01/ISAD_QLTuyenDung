@@ -43,7 +43,7 @@
             DiaChiBox = new TextBox();
             MaDNBox = new TextBox();
             label8 = new Label();
-            MSThueBox = new TextBox();
+            MaSoThueBox = new TextBox();
             NgDaiDienBox = new TextBox();
             label5 = new Label();
             label7 = new Label();
@@ -54,10 +54,10 @@
             label3 = new Label();
             NgayLapDate = new DateTimePicker();
             label4 = new Label();
-            HopDongDNData = new DataGridView();
+            DoanhNghiepData = new DataGridView();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)HopDongDNData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DoanhNghiepData).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -65,7 +65,7 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(HopDongDNData);
+            panel1.Controls.Add(DoanhNghiepData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -99,7 +99,7 @@
             panel3.Controls.Add(DiaChiBox);
             panel3.Controls.Add(MaDNBox);
             panel3.Controls.Add(label8);
-            panel3.Controls.Add(MSThueBox);
+            panel3.Controls.Add(MaSoThueBox);
             panel3.Controls.Add(NgDaiDienBox);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label7);
@@ -266,15 +266,15 @@
             label8.TabIndex = 65;
             label8.Text = "Người đại diện";
             // 
-            // MSThueBox
+            // MaSoThueBox
             // 
-            MSThueBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MSThueBox.Location = new Point(65, 121);
-            MSThueBox.Name = "MSThueBox";
-            MSThueBox.PlaceholderText = "Mã số thuế";
-            MSThueBox.ReadOnly = true;
-            MSThueBox.Size = new Size(150, 30);
-            MSThueBox.TabIndex = 54;
+            MaSoThueBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaSoThueBox.Location = new Point(65, 121);
+            MaSoThueBox.Name = "MaSoThueBox";
+            MaSoThueBox.PlaceholderText = "Mã số thuế";
+            MaSoThueBox.ReadOnly = true;
+            MaSoThueBox.Size = new Size(150, 30);
+            MaSoThueBox.TabIndex = 54;
             // 
             // NgDaiDienBox
             // 
@@ -389,47 +389,47 @@
             label4.TabIndex = 59;
             label4.Text = "Email";
             // 
-            // HopDongDNData
+            // DoanhNghiepData
             // 
-            HopDongDNData.AllowUserToAddRows = false;
-            HopDongDNData.AllowUserToDeleteRows = false;
-            HopDongDNData.AllowUserToResizeColumns = false;
-            HopDongDNData.AllowUserToResizeRows = false;
-            HopDongDNData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            HopDongDNData.BorderStyle = BorderStyle.None;
-            HopDongDNData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            HopDongDNData.Dock = DockStyle.Bottom;
-            HopDongDNData.Location = new Point(0, 350);
-            HopDongDNData.Name = "HopDongDNData";
-            HopDongDNData.ReadOnly = true;
-            HopDongDNData.RowHeadersVisible = false;
-            HopDongDNData.RowHeadersWidth = 51;
-            HopDongDNData.Size = new Size(900, 350);
-            HopDongDNData.TabIndex = 10;
-            HopDongDNData.CellClick += HopDongDNData_CellClick;
+            DoanhNghiepData.AllowUserToAddRows = false;
+            DoanhNghiepData.AllowUserToDeleteRows = false;
+            DoanhNghiepData.AllowUserToResizeColumns = false;
+            DoanhNghiepData.AllowUserToResizeRows = false;
+            DoanhNghiepData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DoanhNghiepData.BorderStyle = BorderStyle.None;
+            DoanhNghiepData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DoanhNghiepData.Dock = DockStyle.Bottom;
+            DoanhNghiepData.Location = new Point(0, 350);
+            DoanhNghiepData.Name = "DoanhNghiepData";
+            DoanhNghiepData.ReadOnly = true;
+            DoanhNghiepData.RowHeadersVisible = false;
+            DoanhNghiepData.RowHeadersWidth = 51;
+            DoanhNghiepData.Size = new Size(900, 350);
+            DoanhNghiepData.TabIndex = 10;
+            DoanhNghiepData.CellClick += DoanhNghiepData_CellClick;
             // 
-            // GiaHanHopDong
+            // QuanLyDN
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(900, 700);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "GiaHanHopDong";
-            Text = "GiaHanHopDong";
-            Load += GiaHanHopDong_Load;
+            Name = "QuanLyDN";
+            Text = "QuanLyDN";
+            Load += QuanLyDN_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)HopDongDNData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DoanhNghiepData).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private DataGridView HopDongDNData;
+        private DataGridView DoanhNghiepData;
         private Label label2;
         private Panel panel3;
         private Button LamMoiButton;
@@ -440,7 +440,7 @@
         private TextBox DiaChiBox;
         private TextBox MaDNBox;
         private Label label8;
-        private TextBox MSThueBox;
+        private TextBox MaSoThueBox;
         private TextBox NgDaiDienBox;
         private Label label5;
         private Label label7;

@@ -14,7 +14,7 @@ namespace ISAD_QLTuyenDung.Database
 
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 DataSet dt = new();
                 OracleDataAdapter ap = new(sql, conn);
                 ap.Fill(dt);
@@ -33,7 +33,7 @@ namespace ISAD_QLTuyenDung.Database
 
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 DataSet dt = new();
                 OracleDataAdapter ap = new(sql, conn);
                 ap.Fill(dt);
@@ -55,7 +55,7 @@ namespace ISAD_QLTuyenDung.Database
 
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 DataSet dt = new();
                 OracleDataAdapter ap = new(sql, conn);
                 ap.Fill(dt);
@@ -75,7 +75,7 @@ namespace ISAD_QLTuyenDung.Database
 
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 DataTable dt = new();
                 OracleDataAdapter ap = new(sql, conn);
                 ap.Fill(dt);
@@ -92,7 +92,7 @@ namespace ISAD_QLTuyenDung.Database
         {
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 OracleCommand cmd = new($"{OracleConfig.schema}.USP_PTTDANGTUYEN_INS", conn)
                 {
                     CommandType = CommandType.StoredProcedure

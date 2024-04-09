@@ -29,14 +29,12 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.QuanLyUngVien
             {
                 if (!UngVien.ThemUngVien(ref ungVien, conn))
                 {
-                    MessageBox.Show("Vui lòng nhập đầu đủ thông tin!");
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Đăng ký ứng viên thành công!");
-                    FormClosedEvent?.Invoke(this, EventArgs.Empty);
-                    Close();
-                }
+                MessageBox.Show("Đăng ký ứng viên thành công!");
+                FormClosedEvent?.Invoke(this, EventArgs.Empty);
+                Close();
             }
             catch (Exception ex)
             {

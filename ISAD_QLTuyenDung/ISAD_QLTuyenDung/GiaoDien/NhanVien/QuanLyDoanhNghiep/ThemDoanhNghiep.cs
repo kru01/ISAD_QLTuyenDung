@@ -33,13 +33,14 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 
         private void ThemButton_Click(object sender, EventArgs e)
         {
-            doanhNghiep = new(TenCtyBox.Text, MaSoThueBox.Text, NguoiDaiDienBox.Text, NVPhuTrachCbo.Text, 
-                NgayLapDate.Text, NgayHHDate.Text, EmailBox.Text, DiaChiBox.Text);
+            doanhNghiep = new("", TenCtyBox.Text, MaSoThueBox.Text, NguoiDaiDienBox.Text, DiaChiBox.Text,
+                EmailBox.Text, NgayLapDate.Text, NgayHHDate.Text, NVPhuTrachCbo.Text);
             try
             {
                 if (!DoanhNghiep.ThemDoanhNghiep(ref doanhNghiep, conn))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                    return;
                 }
                 else
                 {

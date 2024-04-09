@@ -16,10 +16,10 @@ namespace ISAD_QLTuyenDung.Database
         {
             string seSql = sql;
             if (chienLuoc != null) seSql += $" WHERE CL.MACL = '{chienLuoc.maCL}'";
-            if (conn.State == ConnectionState.Closed) conn.Open();
             OracleDataAdapter adp = new($"{seSql} {orderSql}", conn);
             try
             {
+                conn.Open();
                 DataTable dt = new();
                 adp.Fill(dt);
                 return dt;
@@ -35,7 +35,7 @@ namespace ISAD_QLTuyenDung.Database
         {
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 OracleCommand cmd = new($"{OracleConfig.schema}.USP_CHIENLUOCUUDAI_INS", conn)
                 {
                     CommandType = CommandType.StoredProcedure

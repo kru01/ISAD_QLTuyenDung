@@ -43,7 +43,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.HoSoTuyenDung
 
         private void DuyetButton_Click(object sender, EventArgs e)
         {
-            hoso = new(MaUVBox.Text, MaDNBox.Text, MaPhieuBox.Text, (int)UuTienUpDown.Value, GhiChuBox.Text, TinhTrangCbo.SelectedIndex + 1, curUser);
+            hoso = new(MaUVBox.Text, MaDNBox.Text, MaPhieuBox.Text, (int)UuTienUpDown.Value,
+                GhiChuBox.Text, TinhTrangCbo.SelectedIndex + 1, curUser);
             try
             {
                 if (!HoSoUngTuyen.DuyetHoSo(ref hoso, conn))

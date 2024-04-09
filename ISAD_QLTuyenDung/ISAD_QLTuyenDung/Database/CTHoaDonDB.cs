@@ -11,7 +11,7 @@ namespace ISAD_QLTuyenDung.Database
         {
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 OracleCommand cmd = new($"{OracleConfig.schema}.USP_CTHOADON_INS", conn)
                 {
                     CommandType = CommandType.StoredProcedure
@@ -42,7 +42,7 @@ namespace ISAD_QLTuyenDung.Database
             if (hoaDon != null) sql += $" WHERE HD.MADN='{hoaDon.maDN}' AND HD.MAPHIEU='{hoaDon.maPhieu}' AND HD.MACT='{hoaDon.maCT}'";
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 DataTable dt = new();
                 OracleDataAdapter ap = new(sql, conn);
                 ap.Fill(dt);
