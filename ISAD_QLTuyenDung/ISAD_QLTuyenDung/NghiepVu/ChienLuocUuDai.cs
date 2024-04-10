@@ -14,6 +14,11 @@ namespace ISAD_QLTuyenDung.NghiepVu
             return ChienLuocUuDaiDB.LayChienLuocUuDai(conn, chienLuoc);
         }
 
+        public static DataSet LoadMaCL(OracleConnection conn)
+        {
+            return ChienLuocUuDaiDB.LayMaCL(conn);
+        }
+
         public static bool ThemChienLuoc(ref ChienLuocUuDai chienLuoc, OracleConnection conn)
         {
             if (string.IsNullOrEmpty(chienLuoc.tenCL)) return false;

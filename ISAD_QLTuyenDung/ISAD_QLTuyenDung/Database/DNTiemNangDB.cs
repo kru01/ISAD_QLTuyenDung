@@ -32,7 +32,7 @@ namespace ISAD_QLTuyenDung.Database
 
         public static void ThemDanhGia(DNTiemNang danhGia, OracleConnection conn)
         {
-            String inSql = $"INSERT INTO {OracleConfig.schema}.DNTIEMNANG " +
+            string inSql = $"INSERT INTO {OracleConfig.schema}.DNTIEMNANG " +
                 $"VALUES('{danhGia.maDN}', '{danhGia.ldDanhGia}', {danhGia.tiemNang}, " +
                     $"'{danhGia.ghiChu}', TO_DATE('{danhGia.ngayCapNhat:dd/MM/yyyy}', 'DD/MM/YYYY'))";
             OracleCommand cmd = new(inSql, conn);
