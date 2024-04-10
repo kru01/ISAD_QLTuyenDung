@@ -23,7 +23,9 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.ChiTietHoaDon
 
             MaPhieuCbo.DisplayMember = "MAPHIEU";
             MaPhieuCbo.ValueMember = "MAPHIEU";
-            MaPhieuCbo.DataSource = PTTDangTuyen.LoadMaPhieu(conn).Tables[0];
+            MaPhieuCbo.DataSource = PTTDangTuyen.LoadMaPhieu(conn, MaDNCbo.Text).Tables[0];
+
+            PhuongThucTTCbo.SelectedIndex = 0;
         }
 
         private void HuyButton_Click(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.ChiTietHoaDon
 
         private void LapButton_Click(object sender, EventArgs e)
         {
-            hoaDon = new(MaDNCbo.Text, MaPhieuCbo.Text, (int)SoTienUpDown.Value, 
+            hoaDon = new(MaDNCbo.Text, MaPhieuCbo.Text, (int)SoTienUpDown.Value,
                 NgayTraDate.Text, PhuongThucTTCbo.SelectedIndex + 1);
             try
             {
@@ -54,6 +56,11 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.ChiTietHoaDon
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void MaDNCbo_TextChanged(object sender, EventArgs e)
+        {
+            MaPhieuCbo.DataSource = PTTDangTuyen.LoadMaPhieu(conn, MaDNCbo.Text).Tables[0];
         }
     }
 }

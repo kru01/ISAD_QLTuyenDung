@@ -7,7 +7,7 @@ namespace ISAD_QLTuyenDung.Database
 {
     internal class CTHoaDonDB
     {
-        public static string? ThemHoaDon(CTHoaDon hoaDon, OracleConnection conn)
+        public static int? ThemHoaDon(CTHoaDon hoaDon, OracleConnection conn)
         {
             try
             {
@@ -21,11 +21,11 @@ namespace ISAD_QLTuyenDung.Database
                 cmd.Parameters.Add("IMAPHIEU", OracleDbType.Varchar2, 255).Value = hoaDon.maPhieu;
                 cmd.Parameters.Add("ISOTIEN", OracleDbType.Int64, 255).Value = hoaDon.soTien;
                 cmd.Parameters.Add("INGAYTRA", OracleDbType.Varchar2, 255).Value = hoaDon.ngayTra;
-                cmd.Parameters.Add("IPTTHANHTOAN", OracleDbType.Int64, 255).Value = hoaDon.phuongThucTT;
+                cmd.Parameters.Add("IPTTHANHTOAN", OracleDbType.Int64, 255).Value = hoaDon.ptThanhToan;
                 cmd.Parameters.Add("IMACT", OracleDbType.Int64, ParameterDirection.Output).Size = 255;
 
                 cmd.ExecuteNonQuery();
-                return cmd.Parameters[5].Value.ToString();
+                return Convert.ToInt32(cmd.Parameters[5].Value.ToString());
             }
             catch (Exception)
             {
@@ -40,6 +40,7 @@ namespace ISAD_QLTuyenDung.Database
                 $"FROM {OracleConfig.schema}.CTHOADON HD JOIN {OracleConfig.schema}.DOANHNGHIEP DN ON HD.MADN=DN.MADN " +
                 $"JOIN {OracleConfig.schema}.PTTHANHTOAN PT ON PT.MAPT=HD.PTTHANHTOAN";
             if (hoaDon != null) sql += $" WHERE HD.MADN='{hoaDon.maDN}' AND HD.MAPHIEU='{hoaDon.maPhieu}' AND HD.MACT='{hoaDon.maCT}'";
+            sql += " ORDER BY HD.MADN, HD.MAPHIEU, HD.MACT";
             try
             {
                 conn.Open();

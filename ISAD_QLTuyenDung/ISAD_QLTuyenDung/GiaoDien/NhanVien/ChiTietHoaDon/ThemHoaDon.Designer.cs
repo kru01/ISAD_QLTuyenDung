@@ -159,7 +159,7 @@
             // 
             SoTienUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SoTienUpDown.Location = new Point(66, 180);
-            SoTienUpDown.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            SoTienUpDown.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             SoTienUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             SoTienUpDown.Name = "SoTienUpDown";
             SoTienUpDown.Size = new Size(150, 30);
@@ -207,6 +207,7 @@
             MaDNCbo.Name = "MaDNCbo";
             MaDNCbo.Size = new Size(150, 31);
             MaDNCbo.TabIndex = 17;
+            MaDNCbo.TextChanged += MaDNCbo_TextChanged;
             // 
             // label1
             // 

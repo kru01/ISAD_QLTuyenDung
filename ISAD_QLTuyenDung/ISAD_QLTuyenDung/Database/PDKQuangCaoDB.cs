@@ -19,7 +19,7 @@ namespace ISAD_QLTuyenDung.Database
 
                 cmd.Parameters.Add("IMADN", OracleDbType.Varchar2, 255).Value = qc.maDN;
                 cmd.Parameters.Add("IMAPHIEU", OracleDbType.Varchar2, 255).Value = qc.maPhieu;
-                cmd.Parameters.Add("IMAHT", OracleDbType.Int64, 255).Value = qc.hinhThucDT;
+                cmd.Parameters.Add("IMAHT", OracleDbType.Int64, 255).Value = qc.maHT;
                 cmd.Parameters.Add("INGAYBD", OracleDbType.Varchar2, 255).Value = qc.ngayBD;
                 cmd.Parameters.Add("INGAYKT", OracleDbType.Varchar2, 255).Value = qc.ngayKT;
 

@@ -10,7 +10,7 @@ namespace ISAD_QLTuyenDung.NghiepVu
         public string? maPhieu;
         readonly public string maDN = maDN, viTriUT = viTriUT, yeuCauUV = yeuCauUV, nvLap = nvLap,
             ngayBD = ngayBD, ngayKT = ngayKT;
-        readonly public int soLuongTD = soLuongTD, tongTien = tongTien, htThanhToan = htThanhToan;
+        readonly public int soLuongTD = soLuongTD, tongTien = tongTien, tienDaTra = 0, htThanhToan = htThanhToan;
 
         public static DataTable LoadPhieuTTDT(OracleConnection conn, PTTDangTuyen? phieu = null)
         {
@@ -25,11 +25,6 @@ namespace ISAD_QLTuyenDung.NghiepVu
         public static DataSet LoadMaPhieu(OracleConnection conn, string? maDN = null)
         {
             return PTTDangTuyenDB.LayMaPhieu(conn, maDN);
-        }
-
-        public static DataSet LoadViTriUT(OracleConnection conn, string? maDN = null)
-        {
-            return PTTDangTuyenDB.LayViTriUT(conn, maDN);
         }
 
         public static bool ThemPhieu(ref PTTDangTuyen phieu, OracleConnection conn)

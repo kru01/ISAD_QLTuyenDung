@@ -14,10 +14,11 @@ namespace ISAD_QLTuyenDung.Database
                 $"JOIN {OracleConfig.schema}.CHIENLUOCUUDAI UD ON CL.MACL=UD.MACL";
 
             if (clApDung != null) sql += $" WHERE CL.MADN='{clApDung.maDN}' AND CL.MACL='{clApDung.maCL}'";
-            if (conn.State == ConnectionState.Closed) conn.Open();
+            sql += " ORDER BY CL.MADN, CL.MACL";
             OracleDataAdapter adp = new(sql, conn);
             try
             {
+                conn.Open();
                 DataTable dt = new();
                 adp.Fill(dt);
                 return dt;
@@ -38,7 +39,7 @@ namespace ISAD_QLTuyenDung.Database
             OracleCommand cmd = new(insSql, conn);
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)

@@ -49,7 +49,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien
 
         private void TTDangTuyenButton_Click(object sender, EventArgs e)
         {
-            Helper.Loadform(new LapPhieuThongTinDangTuyen(curUser, conn), mainPanel);
+            Helper.Loadform(new LapPTTDangTuyen(curUser, conn), mainPanel);
         }
 
         private void HSTuyenDungButton_Click(object sender, EventArgs e)

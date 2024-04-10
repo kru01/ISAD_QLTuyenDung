@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApDungCL));
             panel1 = new Panel();
             HuyButton = new Button();
-            LapButton = new Button();
+            ThemButton = new Button();
             label5 = new Label();
             label4 = new Label();
             NgayKTDate = new DateTimePicker();
@@ -48,7 +48,7 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(HuyButton);
-            panel1.Controls.Add(LapButton);
+            panel1.Controls.Add(ThemButton);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(NgayKTDate);
@@ -79,20 +79,20 @@
             HuyButton.UseVisualStyleBackColor = false;
             HuyButton.Click += HuyButton_Click;
             // 
-            // LapButton
+            // ThemButton
             // 
-            LapButton.BackColor = Color.LightSeaGreen;
-            LapButton.FlatAppearance.BorderSize = 0;
-            LapButton.FlatStyle = FlatStyle.Flat;
-            LapButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LapButton.ForeColor = Color.White;
-            LapButton.Location = new Point(66, 260);
-            LapButton.Name = "LapButton";
-            LapButton.Size = new Size(150, 40);
-            LapButton.TabIndex = 75;
-            LapButton.Text = "Thêm";
-            LapButton.UseVisualStyleBackColor = false;
-            LapButton.Click += LapButton_Click;
+            ThemButton.BackColor = Color.LightSeaGreen;
+            ThemButton.FlatAppearance.BorderSize = 0;
+            ThemButton.FlatStyle = FlatStyle.Flat;
+            ThemButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ThemButton.ForeColor = Color.White;
+            ThemButton.Location = new Point(66, 260);
+            ThemButton.Name = "ThemButton";
+            ThemButton.Size = new Size(150, 40);
+            ThemButton.TabIndex = 75;
+            ThemButton.Text = "Thêm";
+            ThemButton.UseVisualStyleBackColor = false;
+            ThemButton.Click += ThemButton_Click;
             // 
             // label5
             // 
@@ -127,7 +127,6 @@
             NgayKTDate.Name = "NgayKTDate";
             NgayKTDate.Size = new Size(150, 30);
             NgayKTDate.TabIndex = 71;
-            NgayKTDate.ValueChanged += NgayKTDate_ValueChanged;
             // 
             // NgayBDDate
             // 
@@ -138,7 +137,7 @@
             NgayBDDate.Name = "NgayBDDate";
             NgayBDDate.Size = new Size(150, 30);
             NgayBDDate.TabIndex = 70;
-            NgayBDDate.ValueChanged += NgayBDDate_ValueChanged;
+            NgayBDDate.Value = new DateTime(2024, 4, 10, 22, 47, 30, 0);
             // 
             // label2
             // 
@@ -224,6 +223,6 @@
         private Label label5;
         private Label label4;
         private Button HuyButton;
-        private Button LapButton;
+        private Button ThemButton;
     }
 }

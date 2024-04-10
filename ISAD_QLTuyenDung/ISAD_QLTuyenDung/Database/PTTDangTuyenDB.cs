@@ -11,7 +11,7 @@ namespace ISAD_QLTuyenDung.Database
         {
             string sql = $"SELECT DISTINCT MAPHIEU FROM {OracleConfig.schema}.PTTDANGTUYEN";
             if (maDN != null) sql += $" WHERE MADN='{maDN}'";
-
+            sql += " ORDER BY MAPHIEU";
             try
             {
                 conn.Open();
@@ -29,7 +29,7 @@ namespace ISAD_QLTuyenDung.Database
 
         public static DataSet LayMaDN(OracleConnection conn)
         {
-            string sql = $"SELECT DISTINCT MADN FROM {OracleConfig.schema}.PTTDANGTUYEN";
+            string sql = $"SELECT DISTINCT MADN FROM {OracleConfig.schema}.PTTDANGTUYEN ORDER BY MADN";
 
             try
             {
@@ -46,33 +46,11 @@ namespace ISAD_QLTuyenDung.Database
             finally { conn.Close() ; }
         }
 
-        public static DataSet LayViTriUT(OracleConnection conn, string? maDN = null)
-        {
-            string sql = $"SELECT DISTINCT VITRIUT FROM {OracleConfig.schema}.PTTDANGTUYEN";
-            if (maDN != null) sql += $" WHERE MADN!='{maDN}' AND VITRIUT NOT IN (SELECT PT.VITRIUT " +
-                                                                                $"FROM {OracleConfig.schema}.PTTDANGTUYEN PT " +
-                                                                                $"WHERE PT.MADN='{maDN}')";
-
-            try
-            {
-                conn.Open();
-                DataSet dt = new();
-                OracleDataAdapter ap = new(sql, conn);
-                ap.Fill(dt);
-                return dt;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally { conn.Close(); }
-        }
-
         public static DataTable LayPhieuTTDT(OracleConnection conn, PTTDangTuyen? phieu = null)
         {
             string sql = $"SELECT * FROM {OracleConfig.schema}.PTTDANGTUYEN";
             if (phieu!= null) sql += $" WHERE MAPHIEU='{phieu.maPhieu}' AND MADN='{phieu.maDN}'";
-
+            sql += " ORDER BY MADN, MAPHIEU";
             try
             {
                 conn.Open();

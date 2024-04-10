@@ -4,6 +4,15 @@
 
 -   Group project from HCMUS's 2024 Information Systems Analysis & Design course.
 
+<div align="center">
+  <img alt="NhanVien" src="READMEsrc/nhanvien.jpg" width="49%" height="auto">
+  <img alt="LanhDao" src="READMEsrc/lanhdao.jpg" width="49%" height="auto">
+</div>
+<div align="center">
+  <img alt="analysis&design" src="READMEsrc/a&d.jpg" width="49%" height="auto">
+  <img alt="EnterpriseArchitect" src="READMEsrc/enterpriseArch.jpg" width="49%" height="auto">
+</div>
+
 <details open>
   <summary>Table of Contents</summary>
   <ul>
@@ -33,6 +42,36 @@
 
 ## Content
 
+-   `DataGenerators` for generating silly data, duh, go read its [`README.md`](DataGenerators/README.md).
+
+-   [`DATH_PTTKHTTT_HK2_2324.pdf`](DATH_PTTKHTTT_HK2_2324.pdf) describes all the tasks and requirements of the project.
+
+-   `Diagrams.eapx` contains all diagrams that are in `Report.pdf`, opened with `Enterprise Architect`.
+
+-   [`Report.pdf`](Report.pdf) is our FULL documentation for all the designs and required tasks.
+
+### `ISAD_QLTuyenDung`, `QLTD_Release`
+
+Source code, release build, and resources pertaining to the C# WinForms app.
+
+Before trying to run the solution in `ISAD_QLTuyenDung`, **make sure to modify [`Others/OracleConfig.cs`](ISAD_QLTuyenDung/ISAD_QLTuyenDung/HoTro/OracleConfig.cs) to fit YOUR environment**.
+
+### `SQL`
+
+Note that we use Oracle 21c Express, the default CDB and PDB created during installation, i.e., `XE` and `XEPDB1`, with the configuration as follows,
+
+-   **Database host name:** localhost,
+-   **Port number:** 1521,
+-   **Service name:** XEPDB1.
+
+Therefore, a full connection to PDB, let's say as `SYS`, will have the format,
+
+```sql
+CONN SYS/password@LOCALHOST:1521/XEPDB1 AS SYSDBA;
+```
+
+Furthermore, the database is hosted on schema/user `PTTK03_QLTUYENDUNG`. All users share the same password of `123`, and their username (i.e., ID) can be found in `data.sql`.
+
 ## Getting Started
 
 ### Prerequisites
@@ -43,6 +82,8 @@
 -   **_For WinForms development:_**
 
     -   [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) and its `.NET desktop development` workload.
+
+-   **_For drawing diagrams:_** [Sparx Systems Enterprise Architect](https://sparxsystems.com/products/ea/).
 
 -   _(Optional)_ Any decent code editor, preferably [VSCode](https://code.visualstudio.com/).
     -   It just makes editing the database's source code easier.
@@ -119,14 +160,16 @@
 [oracleurl]: https://www.oracle.com/database/technologies/xe-downloads.html
 [sqldevicon]: https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg
 [sqldevurl]: https://www.oracle.com/database/sqldeveloper/technologies/download/
+[EAicon]: https://sparxsystems.com/images/earose.png
+[EAurl]: https://sparxsystems.com/products/ea/
 [vscodeicon]: https://skillicons.dev/icons?i=vscode&theme=dark
 [vscodeurl]: https://code.visualstudio.com/
 [windowsicon]: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg
 [windowsurl]: https://www.microsoft.com/en-us/windows/
 
-| [![VisualStudio2022][vsicon]][vsurl] | [![.NET8.0][dotneticon]][dotneturl] | [![Oracle 21c Express][oracleicon]][oracleurl] | [![SQL Developer][sqldevicon]][sqldevurl] | [![VSCode][vscodeicon]][vscodeurl] | [![Windows][windowsicon]][windowsurl] |
-| :----------------------------------: | :---------------------------------: | :--------------------------------------------: | :---------------------------------------: | :--------------------------------: | :-----------------------------------: |
-|             2022 v17.9.4             |                 8.0                 |              21c Express Edition               |                23.1.1.345                 |               1.87.2               |     &nbsp;&nbsp; 11 &nbsp;&nbsp;      |
+| [![VisualStudio2022][vsicon]][vsurl] | [![.NET8.0][dotneticon]][dotneturl] | [![Oracle 21c Express][oracleicon]][oracleurl] | [![SQL Developer][sqldevicon]][sqldevurl] | [![EnterpriseArchitect][EAicon]][EAurl] | [![VSCode][vscodeicon]][vscodeurl] | [![Windows][windowsicon]][windowsurl] |
+| :----------------------------------: | :---------------------------------: | :--------------------------------------------: | :---------------------------------------: | :-------------------------------------: | :--------------------------------: | :-----------------------------------: |
+|             2022 v17.9.4             |                 8.0                 |              21c Express Edition               |                23.1.1.345                 |                15.2.1554                |               1.87.2               |     &nbsp;&nbsp; 11 &nbsp;&nbsp;      |
 
 ## Meet The Team
 

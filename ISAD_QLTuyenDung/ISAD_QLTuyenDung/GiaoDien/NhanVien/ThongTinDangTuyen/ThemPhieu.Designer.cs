@@ -37,12 +37,16 @@
             LapButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            NgayKTMangDate = new DateTimePicker();
+            NgayBDMangDate = new DateTimePicker();
             label6 = new Label();
             label11 = new Label();
             BaoGiayCheckBox = new CheckBox();
-            NgayKTQCDate = new DateTimePicker();
+            NgayKTBannerDate = new DateTimePicker();
+            NgayKTBaoGiayDate = new DateTimePicker();
             BannerCheckBox = new CheckBox();
-            NgayBDQCDate = new DateTimePicker();
+            NgayBDBannerDate = new DateTimePicker();
+            NgayBDBaoGiayDate = new DateTimePicker();
             MangCheckBox = new CheckBox();
             panel3 = new Panel();
             label16 = new Label();
@@ -52,12 +56,13 @@
             SoTienUpDown = new NumericUpDown();
             NgayTraDate = new DateTimePicker();
             panel4 = new Panel();
-            YeuCauBox = new TextBox();
+            ViTriUTBox = new TextBox();
+            YeuCauUVBox = new TextBox();
             label4 = new Label();
             label7 = new Label();
-            NgayKetThuc = new DateTimePicker();
+            NgayKTPhieuDate = new DateTimePicker();
             label8 = new Label();
-            NgayBatDau = new DateTimePicker();
+            NgayBDPhieuDate = new DateTimePicker();
             HinhThucTTCbo = new ComboBox();
             label10 = new Label();
             label5 = new Label();
@@ -66,7 +71,6 @@
             SoLuongUpDown = new NumericUpDown();
             TongTienUpDown = new NumericUpDown();
             label2 = new Label();
-            ViTriCbo = new ComboBox();
             label3 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -177,17 +181,45 @@
             // 
             panel2.BackColor = Color.WhiteSmoke;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(NgayKTMangDate);
+            panel2.Controls.Add(NgayBDMangDate);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(BaoGiayCheckBox);
-            panel2.Controls.Add(NgayKTQCDate);
+            panel2.Controls.Add(NgayKTBannerDate);
+            panel2.Controls.Add(NgayKTBaoGiayDate);
             panel2.Controls.Add(BannerCheckBox);
-            panel2.Controls.Add(NgayBDQCDate);
+            panel2.Controls.Add(NgayBDBannerDate);
+            panel2.Controls.Add(NgayBDBaoGiayDate);
             panel2.Controls.Add(MangCheckBox);
             panel2.Location = new Point(579, 77);
             panel2.Name = "panel2";
             panel2.Size = new Size(570, 180);
             panel2.TabIndex = 70;
+            // 
+            // NgayKTMangDate
+            // 
+            NgayKTMangDate.CustomFormat = "dd/MM/yyyy";
+            NgayKTMangDate.Enabled = false;
+            NgayKTMangDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NgayKTMangDate.Format = DateTimePickerFormat.Custom;
+            NgayKTMangDate.Location = new Point(418, 129);
+            NgayKTMangDate.Name = "NgayKTMangDate";
+            NgayKTMangDate.Size = new Size(140, 30);
+            NgayKTMangDate.TabIndex = 64;
+            // 
+            // NgayBDMangDate
+            // 
+            NgayBDMangDate.CustomFormat = "dd/MM/yyyy";
+            NgayBDMangDate.Enabled = false;
+            NgayBDMangDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NgayBDMangDate.Format = DateTimePickerFormat.Custom;
+            NgayBDMangDate.Location = new Point(262, 129);
+            NgayBDMangDate.Name = "NgayBDMangDate";
+            NgayBDMangDate.Size = new Size(140, 30);
+            NgayBDMangDate.TabIndex = 63;
+            NgayBDMangDate.Value = new DateTime(2024, 4, 10, 10, 38, 39, 0);
+            NgayBDMangDate.ValueChanged += NgayBDMangDate_ValueChanged;
             // 
             // label6
             // 
@@ -195,11 +227,11 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.LightSeaGreen;
-            label6.Location = new Point(24, 79);
+            label6.Location = new Point(262, 19);
             label6.Name = "label6";
-            label6.Size = new Size(201, 23);
+            label6.Size = new Size(115, 23);
             label6.TabIndex = 61;
-            label6.Text = "Ngày bắt đầu quảng cáo";
+            label6.Text = "Ngày bắt đầu";
             // 
             // label11
             // 
@@ -207,17 +239,19 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.LightSeaGreen;
-            label11.Location = new Point(295, 79);
+            label11.Location = new Point(418, 21);
             label11.Name = "label11";
-            label11.Size = new Size(205, 23);
+            label11.Size = new Size(119, 23);
             label11.TabIndex = 62;
-            label11.Text = "Ngày kết thúc quảng cáo";
+            label11.Text = "Ngày kết thúc";
             // 
             // BaoGiayCheckBox
             // 
             BaoGiayCheckBox.AutoSize = true;
+            BaoGiayCheckBox.Checked = true;
+            BaoGiayCheckBox.CheckState = CheckState.Checked;
             BaoGiayCheckBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BaoGiayCheckBox.Location = new Point(25, 45);
+            BaoGiayCheckBox.Location = new Point(25, 47);
             BaoGiayCheckBox.Name = "BaoGiayCheckBox";
             BaoGiayCheckBox.Size = new Size(143, 27);
             BaoGiayCheckBox.TabIndex = 57;
@@ -225,23 +259,32 @@
             BaoGiayCheckBox.UseVisualStyleBackColor = true;
             BaoGiayCheckBox.CheckedChanged += BaoGiayCheckBox_CheckedChanged;
             // 
-            // NgayKTQCDate
+            // NgayKTBannerDate
             // 
-            NgayKTQCDate.CustomFormat = "dd/MM/yyyy";
-            NgayKTQCDate.Enabled = false;
-            NgayKTQCDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NgayKTQCDate.Format = DateTimePickerFormat.Custom;
-            NgayKTQCDate.Location = new Point(295, 103);
-            NgayKTQCDate.Name = "NgayKTQCDate";
-            NgayKTQCDate.Size = new Size(250, 30);
-            NgayKTQCDate.TabIndex = 60;
-            NgayKTQCDate.ValueChanged += NgayKTQCDate_ValueChanged;
+            NgayKTBannerDate.CustomFormat = "dd/MM/yyyy";
+            NgayKTBannerDate.Enabled = false;
+            NgayKTBannerDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NgayKTBannerDate.Format = DateTimePickerFormat.Custom;
+            NgayKTBannerDate.Location = new Point(418, 87);
+            NgayKTBannerDate.Name = "NgayKTBannerDate";
+            NgayKTBannerDate.Size = new Size(140, 30);
+            NgayKTBannerDate.TabIndex = 60;
+            // 
+            // NgayKTBaoGiayDate
+            // 
+            NgayKTBaoGiayDate.CustomFormat = "dd/MM/yyyy";
+            NgayKTBaoGiayDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NgayKTBaoGiayDate.Format = DateTimePickerFormat.Custom;
+            NgayKTBaoGiayDate.Location = new Point(418, 45);
+            NgayKTBaoGiayDate.Name = "NgayKTBaoGiayDate";
+            NgayKTBaoGiayDate.Size = new Size(140, 30);
+            NgayKTBaoGiayDate.TabIndex = 60;
             // 
             // BannerCheckBox
             // 
             BannerCheckBox.AutoSize = true;
             BannerCheckBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BannerCheckBox.Location = new Point(173, 45);
+            BannerCheckBox.Location = new Point(25, 89);
             BannerCheckBox.Name = "BannerCheckBox";
             BannerCheckBox.Size = new Size(132, 27);
             BannerCheckBox.TabIndex = 58;
@@ -249,24 +292,36 @@
             BannerCheckBox.UseVisualStyleBackColor = true;
             BannerCheckBox.CheckedChanged += BannerCheckBox_CheckedChanged;
             // 
-            // NgayBDQCDate
+            // NgayBDBannerDate
             // 
-            NgayBDQCDate.CustomFormat = "dd/MM/yyyy";
-            NgayBDQCDate.Enabled = false;
-            NgayBDQCDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NgayBDQCDate.Format = DateTimePickerFormat.Custom;
-            NgayBDQCDate.Location = new Point(24, 105);
-            NgayBDQCDate.Name = "NgayBDQCDate";
-            NgayBDQCDate.Size = new Size(250, 30);
-            NgayBDQCDate.TabIndex = 54;
-            NgayBDQCDate.Value = new DateTime(2024, 4, 8, 19, 26, 10, 551);
-            NgayBDQCDate.ValueChanged += NgayBDQCDate_ValueChanged;
+            NgayBDBannerDate.CustomFormat = "dd/MM/yyyy";
+            NgayBDBannerDate.Enabled = false;
+            NgayBDBannerDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NgayBDBannerDate.Format = DateTimePickerFormat.Custom;
+            NgayBDBannerDate.Location = new Point(262, 87);
+            NgayBDBannerDate.Name = "NgayBDBannerDate";
+            NgayBDBannerDate.Size = new Size(140, 30);
+            NgayBDBannerDate.TabIndex = 54;
+            NgayBDBannerDate.Value = new DateTime(2024, 4, 10, 10, 38, 35, 0);
+            NgayBDBannerDate.ValueChanged += NgayBDBannerDate_ValueChanged;
+            // 
+            // NgayBDBaoGiayDate
+            // 
+            NgayBDBaoGiayDate.CustomFormat = "dd/MM/yyyy";
+            NgayBDBaoGiayDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NgayBDBaoGiayDate.Format = DateTimePickerFormat.Custom;
+            NgayBDBaoGiayDate.Location = new Point(262, 45);
+            NgayBDBaoGiayDate.Name = "NgayBDBaoGiayDate";
+            NgayBDBaoGiayDate.Size = new Size(140, 30);
+            NgayBDBaoGiayDate.TabIndex = 54;
+            NgayBDBaoGiayDate.Value = new DateTime(2024, 4, 10, 10, 38, 43, 0);
+            NgayBDBaoGiayDate.ValueChanged += NgayBDBaoGiayDate_ValueChanged;
             // 
             // MangCheckBox
             // 
             MangCheckBox.AutoSize = true;
             MangCheckBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MangCheckBox.Location = new Point(311, 45);
+            MangCheckBox.Location = new Point(25, 131);
             MangCheckBox.Name = "MangCheckBox";
             MangCheckBox.Size = new Size(234, 27);
             MangCheckBox.TabIndex = 59;
@@ -337,15 +392,15 @@
             // 
             // SoTienUpDown
             // 
+            SoTienUpDown.Enabled = false;
             SoTienUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SoTienUpDown.Location = new Point(17, 52);
-            SoTienUpDown.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            SoTienUpDown.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             SoTienUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             SoTienUpDown.Name = "SoTienUpDown";
             SoTienUpDown.Size = new Size(100, 30);
             SoTienUpDown.TabIndex = 67;
             SoTienUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            SoTienUpDown.ValueChanged += SoTienUpDown_ValueChanged;
             // 
             // NgayTraDate
             // 
@@ -356,17 +411,19 @@
             NgayTraDate.Name = "NgayTraDate";
             NgayTraDate.Size = new Size(150, 30);
             NgayTraDate.TabIndex = 68;
+            NgayTraDate.Value = new DateTime(2024, 4, 10, 10, 9, 22, 0);
             // 
             // panel4
             // 
             panel4.BackColor = Color.WhiteSmoke;
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(YeuCauBox);
+            panel4.Controls.Add(ViTriUTBox);
+            panel4.Controls.Add(YeuCauUVBox);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label7);
-            panel4.Controls.Add(NgayKetThuc);
+            panel4.Controls.Add(NgayKTPhieuDate);
             panel4.Controls.Add(label8);
-            panel4.Controls.Add(NgayBatDau);
+            panel4.Controls.Add(NgayBDPhieuDate);
             panel4.Controls.Add(HinhThucTTCbo);
             panel4.Controls.Add(label10);
             panel4.Controls.Add(label5);
@@ -375,22 +432,31 @@
             panel4.Controls.Add(SoLuongUpDown);
             panel4.Controls.Add(TongTienUpDown);
             panel4.Controls.Add(label2);
-            panel4.Controls.Add(ViTriCbo);
             panel4.Controls.Add(label3);
             panel4.Location = new Point(34, 77);
             panel4.Name = "panel4";
             panel4.Size = new Size(529, 250);
             panel4.TabIndex = 74;
             // 
-            // YeuCauBox
+            // ViTriUTBox
             // 
-            YeuCauBox.CharacterCasing = CharacterCasing.Upper;
-            YeuCauBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            YeuCauBox.Location = new Point(15, 195);
-            YeuCauBox.Name = "YeuCauBox";
-            YeuCauBox.PlaceholderText = "Yêu cầu ứng viên";
-            YeuCauBox.Size = new Size(500, 30);
-            YeuCauBox.TabIndex = 37;
+            ViTriUTBox.CharacterCasing = CharacterCasing.Upper;
+            ViTriUTBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ViTriUTBox.Location = new Point(165, 55);
+            ViTriUTBox.Name = "ViTriUTBox";
+            ViTriUTBox.PlaceholderText = "Vị trí";
+            ViTriUTBox.Size = new Size(125, 30);
+            ViTriUTBox.TabIndex = 57;
+            // 
+            // YeuCauUVBox
+            // 
+            YeuCauUVBox.CharacterCasing = CharacterCasing.Upper;
+            YeuCauUVBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            YeuCauUVBox.Location = new Point(15, 195);
+            YeuCauUVBox.Name = "YeuCauUVBox";
+            YeuCauUVBox.PlaceholderText = "Yêu cầu ứng viên";
+            YeuCauUVBox.Size = new Size(500, 30);
+            YeuCauUVBox.TabIndex = 37;
             // 
             // label4
             // 
@@ -416,17 +482,17 @@
             label7.TabIndex = 42;
             label7.Text = "Ngày bắt đầu";
             // 
-            // NgayKetThuc
+            // NgayKTPhieuDate
             // 
-            NgayKetThuc.Checked = false;
-            NgayKetThuc.CustomFormat = "dd/MM/yyyy";
-            NgayKetThuc.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NgayKetThuc.Format = DateTimePickerFormat.Custom;
-            NgayKetThuc.Location = new Point(165, 125);
-            NgayKetThuc.Name = "NgayKetThuc";
-            NgayKetThuc.Size = new Size(125, 30);
-            NgayKetThuc.TabIndex = 43;
-            NgayKetThuc.ValueChanged += NgayKetThuc_ValueChanged;
+            NgayKTPhieuDate.Checked = false;
+            NgayKTPhieuDate.CustomFormat = "dd/MM/yyyy";
+            NgayKTPhieuDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NgayKTPhieuDate.Format = DateTimePickerFormat.Custom;
+            NgayKTPhieuDate.Location = new Point(165, 125);
+            NgayKTPhieuDate.Name = "NgayKTPhieuDate";
+            NgayKTPhieuDate.Size = new Size(125, 30);
+            NgayKTPhieuDate.TabIndex = 43;
+            NgayKTPhieuDate.ValueChanged += NgayKTPhieuDate_ValueChanged;
             // 
             // label8
             // 
@@ -440,17 +506,17 @@
             label8.TabIndex = 44;
             label8.Text = "Ngày kết thúc";
             // 
-            // NgayBatDau
+            // NgayBDPhieuDate
             // 
-            NgayBatDau.CustomFormat = "dd/MM/yyyy";
-            NgayBatDau.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NgayBatDau.Format = DateTimePickerFormat.Custom;
-            NgayBatDau.Location = new Point(15, 125);
-            NgayBatDau.Name = "NgayBatDau";
-            NgayBatDau.Size = new Size(125, 30);
-            NgayBatDau.TabIndex = 41;
-            NgayBatDau.Value = new DateTime(2024, 4, 8, 19, 26, 10, 575);
-            NgayBatDau.ValueChanged += NgayBatDau_ValueChanged;
+            NgayBDPhieuDate.CustomFormat = "dd/MM/yyyy";
+            NgayBDPhieuDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NgayBDPhieuDate.Format = DateTimePickerFormat.Custom;
+            NgayBDPhieuDate.Location = new Point(15, 125);
+            NgayBDPhieuDate.Name = "NgayBDPhieuDate";
+            NgayBDPhieuDate.Size = new Size(125, 30);
+            NgayBDPhieuDate.TabIndex = 41;
+            NgayBDPhieuDate.Value = new DateTime(2024, 4, 10, 11, 26, 57, 0);
+            NgayBDPhieuDate.ValueChanged += NgayBDPhieuDate_ValueChanged;
             // 
             // HinhThucTTCbo
             // 
@@ -508,7 +574,6 @@
             MaDNCbo.Name = "MaDNCbo";
             MaDNCbo.Size = new Size(125, 31);
             MaDNCbo.TabIndex = 48;
-            MaDNCbo.SelectedIndexChanged += MaDNCbo_SelectedIndexChanged;
             // 
             // SoLuongUpDown
             // 
@@ -524,12 +589,12 @@
             // 
             TongTienUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TongTienUpDown.Location = new Point(415, 56);
-            TongTienUpDown.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            TongTienUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            TongTienUpDown.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            TongTienUpDown.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
             TongTienUpDown.Name = "TongTienUpDown";
             TongTienUpDown.Size = new Size(100, 30);
             TongTienUpDown.TabIndex = 52;
-            TongTienUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            TongTienUpDown.Value = new decimal(new int[] { 100, 0, 0, 0 });
             TongTienUpDown.ValueChanged += TongTienUpDown_ValueChanged;
             // 
             // label2
@@ -543,15 +608,6 @@
             label2.Size = new Size(65, 23);
             label2.TabIndex = 34;
             label2.Text = "Mã DN";
-            // 
-            // ViTriCbo
-            // 
-            ViTriCbo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ViTriCbo.FormattingEnabled = true;
-            ViTriCbo.Location = new Point(165, 55);
-            ViTriCbo.Name = "ViTriCbo";
-            ViTriCbo.Size = new Size(125, 31);
-            ViTriCbo.TabIndex = 53;
             // 
             // label3
             // 
@@ -599,17 +655,16 @@
         private Button LapButton;
         private Label label9;
         private Label label8;
-        private DateTimePicker NgayKetThuc;
+        private DateTimePicker NgayKTPhieuDate;
         private Label label7;
-        private DateTimePicker NgayBatDau;
+        private DateTimePicker NgayBDPhieuDate;
         private Label label4;
-        private TextBox YeuCauBox;
+        private TextBox YeuCauUVBox;
         private Label label3;
         private Label label2;
         private ComboBox HinhThucTTCbo;
         private ComboBox MaDNCbo;
         private Button HuyButton;
-        private ComboBox ViTriCbo;
         private NumericUpDown TongTienUpDown;
         private Label label10;
         private Label label5;
@@ -618,8 +673,8 @@
         private CheckBox BaoGiayCheckBox;
         private CheckBox MangCheckBox;
         private Label label6;
-        private DateTimePicker NgayKTQCDate;
-        private DateTimePicker NgayBDQCDate;
+        private DateTimePicker NgayKTBaoGiayDate;
+        private DateTimePicker NgayBDBaoGiayDate;
         private Label label11;
         private NumericUpDown SoTienUpDown;
         private DateTimePicker NgayTraDate;
@@ -633,5 +688,10 @@
         private Label label15;
         private Panel panel4;
         private Label label17;
+        private DateTimePicker NgayKTBannerDate;
+        private DateTimePicker NgayBDBannerDate;
+        private DateTimePicker NgayKTMangDate;
+        private DateTimePicker NgayBDMangDate;
+        private TextBox ViTriUTBox;
     }
 }

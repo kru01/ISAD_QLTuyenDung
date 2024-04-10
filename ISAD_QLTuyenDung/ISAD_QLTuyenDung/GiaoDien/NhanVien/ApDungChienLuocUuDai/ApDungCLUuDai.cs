@@ -42,7 +42,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.NhanVien.ApDungChienLuocUuDai
             CLUuDaiData.DataSource = CLApDung.LoadCLApDung(conn, formAD?.clApDung);
         }
 
-        private void ThemCLButton_Click(object sender, EventArgs e)
+        private void ThemADCLButton_Click(object sender, EventArgs e)
         {
             formAD = new(conn);
             formAD.FormClosedEvent += FormClosedEvent;

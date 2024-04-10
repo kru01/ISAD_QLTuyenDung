@@ -31,13 +31,13 @@ namespace ISAD_QLTuyenDung.Database
             finally { conn.Close(); }
         }
 
-        public static DataSet LayMaCL(OracleConnection conn)
+        public static DataSet LayMaTenCL(OracleConnection conn)
         {
-            string sql = $"SELECT MACL FROM {OracleConfig.schema}.CHIENLUOCUUDAI";
-            if (conn.State == ConnectionState.Closed) conn.Open();
+            string sql = $"SELECT MACL, TENCL FROM {OracleConfig.schema}.CHIENLUOCUUDAI ORDER BY MACL";
             OracleDataAdapter adp = new(sql, conn);
             try
             {
+                conn.Open();
                 DataSet dt = new();
                 adp.Fill(dt);
                 return dt;

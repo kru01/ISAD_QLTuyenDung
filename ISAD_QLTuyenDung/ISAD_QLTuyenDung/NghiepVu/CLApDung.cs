@@ -13,11 +13,12 @@ namespace ISAD_QLTuyenDung.NghiepVu
             return CLApDungDB.LayChienLuocApDung(conn, clApDung);
         }
 
-        public static void ThemCLApDung(ref CLApDung clApDung, OracleConnection conn)
+        public static bool ThemCLApDung(ref CLApDung clApDung, OracleConnection conn)
         {
             try
             {
                 CLApDungDB.ApDungCL(clApDung, conn);
+                return true;
             }
             catch (Exception)
             {
