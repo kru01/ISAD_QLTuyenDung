@@ -9,11 +9,11 @@ namespace ISAD_QLTuyenDung.Database
     {
         public static DataSet LayIDUngVien(OracleConnection conn)
         {
-            string sql = $"SELECT MAUV FROM {OracleConfig.schema}.UNGVIEN";
+            string sql = $"SELECT MAUV FROM {OracleConfig.schema}.UNGVIEN ORDER BY MAUV";
 
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 DataSet dt = new();
                 OracleDataAdapter ap = new(sql, conn);
                 ap.Fill(dt);
@@ -30,10 +30,10 @@ namespace ISAD_QLTuyenDung.Database
         {
             string sql = $"SELECT * FROM {OracleConfig.schema}.UNGVIEN";
             if (ungVien != null) sql += $" WHERE MAUV='{ungVien.maUV}'";
-
+            sql += " ORDER BY MAUV";
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 DataTable dt = new();
                 OracleDataAdapter ap = new(sql, conn);
                 ap.Fill(dt);

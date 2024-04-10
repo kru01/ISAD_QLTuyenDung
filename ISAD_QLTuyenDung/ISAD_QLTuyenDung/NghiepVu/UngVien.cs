@@ -4,7 +4,7 @@ using System.Data;
 
 namespace ISAD_QLTuyenDung.NghiepVu
 {
-    internal class UngVien (string hoTen, string dChi, string sdt, string email, string nvPhuTrach)
+    internal class UngVien(string hoTen, string dChi, string sdt, string email, string nvPhuTrach)
     {
         public string? maUV;
         readonly public string hoTen = hoTen, dChi = dChi, sdt = sdt, email = email, nvPhuTrach = nvPhuTrach;

@@ -32,24 +32,26 @@
             DanhSachHoSoData = new DataGridView();
             label1 = new Label();
             panel1 = new Panel();
+            UuTienHighUpDown = new NumericUpDown();
+            MaDNBox = new TextBox();
+            MaPhieuBox = new TextBox();
+            MaNVDuyetBox = new TextBox();
             LamMoiButton = new Button();
             label5 = new Label();
-            MaNVDuyetCbo = new ComboBox();
             label3 = new Label();
             TinhTrangCbo = new ComboBox();
             label4 = new Label();
             GhiChuBox = new TextBox();
             label6 = new Label();
-            DoUuTienUpDown = new NumericUpDown();
+            UuTienLowUpDown = new NumericUpDown();
             label2 = new Label();
-            MaPhieuCbo = new ComboBox();
             label7 = new Label();
-            MaDNCbo = new ComboBox();
             HuyButton = new Button();
-            LapDSButtion = new Button();
+            LapDSButton = new Button();
             ((System.ComponentModel.ISupportInitialize)DanhSachHoSoData).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DoUuTienUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UuTienHighUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UuTienLowUpDown).BeginInit();
             SuspendLayout();
             // 
             // DanhSachHoSoData
@@ -84,28 +86,70 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(UuTienHighUpDown);
+            panel1.Controls.Add(MaDNBox);
+            panel1.Controls.Add(MaPhieuBox);
+            panel1.Controls.Add(MaNVDuyetBox);
             panel1.Controls.Add(LamMoiButton);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(MaNVDuyetCbo);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(TinhTrangCbo);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(GhiChuBox);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(DoUuTienUpDown);
+            panel1.Controls.Add(UuTienLowUpDown);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(MaPhieuCbo);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(MaDNCbo);
             panel1.Controls.Add(DanhSachHoSoData);
             panel1.Controls.Add(HuyButton);
-            panel1.Controls.Add(LapDSButtion);
+            panel1.Controls.Add(LapDSButton);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(682, 653);
             panel1.TabIndex = 6;
+            // 
+            // UuTienHighUpDown
+            // 
+            UuTienHighUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            UuTienHighUpDown.Location = new Point(424, 72);
+            UuTienHighUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            UuTienHighUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            UuTienHighUpDown.Name = "UuTienHighUpDown";
+            UuTienHighUpDown.Size = new Size(50, 30);
+            UuTienHighUpDown.TabIndex = 41;
+            UuTienHighUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            // 
+            // MaDNBox
+            // 
+            MaDNBox.AcceptsReturn = true;
+            MaDNBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaDNBox.Location = new Point(49, 72);
+            MaDNBox.Name = "MaDNBox";
+            MaDNBox.PlaceholderText = "Mã doanh nghiệp";
+            MaDNBox.Size = new Size(175, 30);
+            MaDNBox.TabIndex = 40;
+            // 
+            // MaPhieuBox
+            // 
+            MaPhieuBox.AcceptsReturn = true;
+            MaPhieuBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaPhieuBox.Location = new Point(324, 131);
+            MaPhieuBox.Name = "MaPhieuBox";
+            MaPhieuBox.PlaceholderText = "Mã phiếu";
+            MaPhieuBox.Size = new Size(150, 30);
+            MaPhieuBox.TabIndex = 39;
+            // 
+            // MaNVDuyetBox
+            // 
+            MaNVDuyetBox.AcceptsReturn = true;
+            MaNVDuyetBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MaNVDuyetBox.Location = new Point(324, 192);
+            MaNVDuyetBox.Name = "MaNVDuyetBox";
+            MaNVDuyetBox.PlaceholderText = "Nhân viên";
+            MaNVDuyetBox.Size = new Size(150, 30);
+            MaNVDuyetBox.TabIndex = 38;
             // 
             // LamMoiButton
             // 
@@ -128,19 +172,11 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.LightSeaGreen;
-            label5.Location = new Point(324, 106);
+            label5.Location = new Point(324, 166);
             label5.Name = "label5";
             label5.Size = new Size(165, 23);
             label5.TabIndex = 36;
             label5.Text = "Mã nhân viên duyệt";
-            // 
-            // MaNVDuyetCbo
-            // 
-            MaNVDuyetCbo.FormattingEnabled = true;
-            MaNVDuyetCbo.Location = new Point(324, 132);
-            MaNVDuyetCbo.Name = "MaNVDuyetCbo";
-            MaNVDuyetCbo.Size = new Size(150, 28);
-            MaNVDuyetCbo.TabIndex = 35;
             // 
             // label3
             // 
@@ -157,11 +193,12 @@
             // TinhTrangCbo
             // 
             TinhTrangCbo.FormattingEnabled = true;
-            TinhTrangCbo.Items.AddRange(new object[] { "Chưa đủ điều kiện ứng tuyển", "Đủ điều kiện ứng tuyển", "Đã xử lý", "Đã đạt" });
+            TinhTrangCbo.Items.AddRange(new object[] { "-- Tất cả --", "Chưa đủ điều kiện ứng tuyển", "Đủ điều kiện ứng tuyển", "Đã xử lý", "Đã đạt" });
             TinhTrangCbo.Location = new Point(49, 132);
             TinhTrangCbo.Name = "TinhTrangCbo";
             TinhTrangCbo.Size = new Size(250, 28);
             TinhTrangCbo.TabIndex = 33;
+            TinhTrangCbo.Text = "-- Tất cả --";
             // 
             // label4
             // 
@@ -181,31 +218,31 @@
             GhiChuBox.Location = new Point(49, 192);
             GhiChuBox.Name = "GhiChuBox";
             GhiChuBox.PlaceholderText = "Ghi chú";
-            GhiChuBox.Size = new Size(425, 30);
+            GhiChuBox.Size = new Size(250, 30);
             GhiChuBox.TabIndex = 31;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label6.ForeColor = Color.LightSeaGreen;
-            label6.Location = new Point(232, 46);
+            label6.Location = new Point(308, 77);
             label6.Name = "label6";
-            label6.Size = new Size(67, 23);
+            label6.Size = new Size(107, 20);
             label6.TabIndex = 30;
-            label6.Text = "Ưu tiên";
+            label6.Text = "<= Ưu tiên <=";
             // 
-            // DoUuTienUpDown
+            // UuTienLowUpDown
             // 
-            DoUuTienUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DoUuTienUpDown.Location = new Point(249, 72);
-            DoUuTienUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            DoUuTienUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            DoUuTienUpDown.Name = "DoUuTienUpDown";
-            DoUuTienUpDown.Size = new Size(50, 30);
-            DoUuTienUpDown.TabIndex = 29;
-            DoUuTienUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            UuTienLowUpDown.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            UuTienLowUpDown.Location = new Point(249, 72);
+            UuTienLowUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            UuTienLowUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            UuTienLowUpDown.Name = "UuTienLowUpDown";
+            UuTienLowUpDown.Size = new Size(50, 30);
+            UuTienLowUpDown.TabIndex = 29;
+            UuTienLowUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label2
             // 
@@ -213,19 +250,11 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.LightSeaGreen;
-            label2.Location = new Point(324, 46);
+            label2.Location = new Point(324, 106);
             label2.Name = "label2";
             label2.Size = new Size(83, 23);
             label2.TabIndex = 28;
             label2.Text = "Mã phiếu";
-            // 
-            // MaPhieuCbo
-            // 
-            MaPhieuCbo.FormattingEnabled = true;
-            MaPhieuCbo.Location = new Point(324, 72);
-            MaPhieuCbo.Name = "MaPhieuCbo";
-            MaPhieuCbo.Size = new Size(150, 28);
-            MaPhieuCbo.TabIndex = 27;
             // 
             // label7
             // 
@@ -238,14 +267,6 @@
             label7.Size = new Size(65, 23);
             label7.TabIndex = 26;
             label7.Text = "Mã DN";
-            // 
-            // MaDNCbo
-            // 
-            MaDNCbo.FormattingEnabled = true;
-            MaDNCbo.Location = new Point(49, 72);
-            MaDNCbo.Name = "MaDNCbo";
-            MaDNCbo.Size = new Size(175, 28);
-            MaDNCbo.TabIndex = 9;
             // 
             // HuyButton
             // 
@@ -262,20 +283,20 @@
             HuyButton.UseVisualStyleBackColor = false;
             HuyButton.Click += HuyButton_Click;
             // 
-            // LapDSButtion
+            // LapDSButton
             // 
-            LapDSButtion.BackColor = Color.LightSeaGreen;
-            LapDSButtion.FlatAppearance.BorderSize = 0;
-            LapDSButtion.FlatStyle = FlatStyle.Flat;
-            LapDSButtion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LapDSButtion.ForeColor = Color.White;
-            LapDSButtion.Location = new Point(533, 72);
-            LapDSButtion.Name = "LapDSButtion";
-            LapDSButtion.Size = new Size(100, 40);
-            LapDSButtion.TabIndex = 7;
-            LapDSButtion.Text = "Lập";
-            LapDSButtion.UseVisualStyleBackColor = false;
-            LapDSButtion.Click += LapDSButtion_Click;
+            LapDSButton.BackColor = Color.LightSeaGreen;
+            LapDSButton.FlatAppearance.BorderSize = 0;
+            LapDSButton.FlatStyle = FlatStyle.Flat;
+            LapDSButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LapDSButton.ForeColor = Color.White;
+            LapDSButton.Location = new Point(533, 72);
+            LapDSButton.Name = "LapDSButton";
+            LapDSButton.Size = new Size(100, 40);
+            LapDSButton.TabIndex = 7;
+            LapDSButton.Text = "Lập";
+            LapDSButton.UseVisualStyleBackColor = false;
+            LapDSButton.Click += LapDSButton_Click;
             // 
             // LapDSHoSo
             // 
@@ -293,7 +314,8 @@
             ((System.ComponentModel.ISupportInitialize)DanhSachHoSoData).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DoUuTienUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UuTienHighUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UuTienLowUpDown).EndInit();
             ResumeLayout(false);
         }
 
@@ -302,20 +324,21 @@
         private DataGridView DanhSachHoSoData;
         private Label label1;
         private Panel panel1;
-        private Button LapDSButtion;
+        private Button LapDSButton;
         private Button HuyButton;
-        private ComboBox MaDNCbo;
         private Label label7;
         private Label label2;
-        private ComboBox MaPhieuCbo;
         private Label label6;
-        private NumericUpDown DoUuTienUpDown;
+        private NumericUpDown UuTienLowUpDown;
         private Label label4;
         private TextBox GhiChuBox;
         private ComboBox TinhTrangCbo;
         private Label label3;
         private Label label5;
-        private ComboBox MaNVDuyetCbo;
         private Button LamMoiButton;
+        private TextBox MaNVDuyetBox;
+        private TextBox MaDNBox;
+        private TextBox MaPhieuBox;
+        private NumericUpDown UuTienHighUpDown;
     }
 }

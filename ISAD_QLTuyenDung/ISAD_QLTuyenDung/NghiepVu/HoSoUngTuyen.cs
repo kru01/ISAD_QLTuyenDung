@@ -16,9 +16,9 @@ namespace ISAD_QLTuyenDung.NghiepVu
             return HoSoUngTuyenDB.LayHoSo(conn, hoso);
         }
 
-        public static DataSet LoadMaNVDuyet(OracleConnection conn)
+        public static DataTable LapDSHoSoUT(OracleConnection conn, decimal uuTienLow, decimal uuTienHigh, HoSoUngTuyen? hoso = null)
         {
-            return HoSoUngTuyenDB.LayMaNVDuyet(conn);
+            return HoSoUngTuyenDB.LapDSHoSoUT(conn, uuTienLow, uuTienHigh, hoso);
         }
 
         public static bool ThemHoSo(ref HoSoUngTuyen hoso, OracleConnection conn)

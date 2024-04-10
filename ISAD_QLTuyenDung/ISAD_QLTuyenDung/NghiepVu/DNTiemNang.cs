@@ -21,6 +21,11 @@ namespace ISAD_QLTuyenDung.NghiepVu
             return DNTiemNangDB.ThongKeDoanhNghiep(maDN, conn);
         }
 
+        public static DataTable LoadDSTiemNang(OracleConnection conn, decimal lower=0, decimal upper=10)
+        {
+            return DNTiemNangDB.LapDSTiemNang(conn, lower, upper);
+        }
+
         public static bool ThemDanhGia(DNTiemNang danhGia, OracleConnection conn)
         {
             if (danhGia.tiemNang < 1 || danhGia.tiemNang > 10) return false;
@@ -35,7 +40,7 @@ namespace ISAD_QLTuyenDung.NghiepVu
             }
         }
 
-        public static void ExportDanhGia(DataGridView grid)
+        public static void ExportDSTiemNang(DataGridView grid)
         {
             try
             {

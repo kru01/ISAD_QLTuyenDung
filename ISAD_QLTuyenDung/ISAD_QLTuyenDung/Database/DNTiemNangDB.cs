@@ -11,14 +11,15 @@ namespace ISAD_QLTuyenDung.Database
                 $"FROM {OracleConfig.schema}.DNTIEMNANG DG JOIN {OracleConfig.schema}.DOANHNGHIEP DN ON DG.MADN=DN.MADN " +
                 $"JOIN {OracleConfig.schema}.NHANSU NS ON DG.LDDANHGIA=NS.MANV";
         static readonly string orderSql = "ORDER BY DG.MADN, DG.LDDANHGIA";
+
         public static DataTable LayDanhGia(OracleConnection conn, DNTiemNang? danhGia = null)
         {
             string seSql = sql;
             if (danhGia != null) seSql += $" WHERE DG.MADN = '{danhGia.maDN}' AND DG.LDDANHGIA = '{danhGia.ldDanhGia}'";
-            if (conn.State == ConnectionState.Closed) conn.Open();
             OracleDataAdapter adp = new($"{seSql} {orderSql}", conn);
             try
             {
+                conn.Open();
                 DataTable dt = new();
                 adp.Fill(dt);
                 return dt;
@@ -38,7 +39,7 @@ namespace ISAD_QLTuyenDung.Database
             OracleCommand cmd = new(inSql, conn);
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)
@@ -54,10 +55,31 @@ namespace ISAD_QLTuyenDung.Database
                 $"FROM {OracleConfig.schema}.HOSOUNGTUYEN HS JOIN {OracleConfig.schema}.PTTDANGTUYEN DT ON HS.MAPHIEU=DT.MAPHIEU " +
                 $"WHERE HS.MADN='{maDN}' ORDER BY DT.VITRIUT";
 
-            if (conn.State == ConnectionState.Closed) conn.Open();
             OracleDataAdapter adp = new(sql, conn);
             try
             {
+                conn.Open();
+                DataTable dt = new();
+                adp.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { conn.Close(); }
+        }
+
+        public static DataTable LapDSTiemNang(OracleConnection conn, decimal lower=0, decimal upper=10)
+        {
+            string sql = $"SELECT MADN, ROUND(AVG(TIEMNANG), 2) FROM {OracleConfig.schema}.DNTIEMNANG " +
+                $"GROUP BY MADN HAVING {lower} <= AVG(TIEMNANG) AND AVG(TIEMNANG) <= {upper} " +
+                $"ORDER BY AVG(TIEMNANG) DESC";
+
+            OracleDataAdapter adp = new(sql, conn);
+            try
+            {
+                conn.Open();
                 DataTable dt = new();
                 adp.Fill(dt);
                 return dt;

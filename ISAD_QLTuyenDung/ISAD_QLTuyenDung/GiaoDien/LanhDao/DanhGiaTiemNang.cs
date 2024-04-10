@@ -8,6 +8,7 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
     {
         private static ThemDanhGia? formDG;
         private static ThongKeDN? formTK;
+        private static LapDSTiemNang? formLapDSTiemNang;
         private readonly OracleConnection conn;
         private readonly string curUser;
 
@@ -54,18 +55,8 @@ namespace ISAD_QLTuyenDung.GiaoDien.LanhDao
 
         private void LapDSTNButton_Click(object sender, EventArgs e)
         {
-            ((DataTable)DanhGiaData.DataSource).DefaultView.RowFilter = string.Format("TIEMNANG >= 7");
-
-            try
-            {
-                DNTiemNang.ExportDanhGia(DanhGiaData);
-                MessageBox.Show("Copy vào clipboard thành công! Nếu Excel không tự động mở, " +
-                    "vui lòng paste vào nơi cần thiết!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            formLapDSTiemNang = new(conn);
+            formLapDSTiemNang.Show();
         }
 
         private void ThongKeButton_Click(object sender, EventArgs e)

@@ -10,11 +10,10 @@ namespace ISAD_QLTuyenDung.Database
         {
             string sql = $"SELECT HOTEN FROM {OracleConfig.schema}.NHANSU WHERE MANV='{curUser}'";
             string name = " ";
-            OracleConnection connection = conn;
             OracleCommand cmd = new(sql, conn);
             try
             {
-                connection.Open();
+                conn.Open();
                 OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -26,7 +25,7 @@ namespace ISAD_QLTuyenDung.Database
             {
                 throw;
             }
-            finally { connection.Close(); }
+            finally { conn.Close(); }
         }
 
         public static DataSet LayMaNhanVien(OracleConnection conn)
@@ -35,7 +34,7 @@ namespace ISAD_QLTuyenDung.Database
 
             try
             {
-                if (conn.State == ConnectionState.Closed) conn.Open();
+                conn.Open();
                 DataSet dt = new();
                 OracleDataAdapter ap = new(sql, conn);
                 ap.Fill(dt);
